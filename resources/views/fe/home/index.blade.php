@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="zxx" class="js">
 
 <head>
@@ -58,8 +58,8 @@
 
 </body>
 
-</html>
-<!-- 
+</html> -->
+
 <!DOCTYPE html>
 <html>
 <style>
@@ -155,4 +155,4 @@ var x = setInterval(function() {
 }, 1000);
 </script>
 </body>
-</html> -->
+</html>
