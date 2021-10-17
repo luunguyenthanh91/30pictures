@@ -2,8 +2,16 @@
 namespace App\Helpers;
 use App\Models\PostCategories;
 use App\Models\Setting;
+use App\Models\Story;
 class Helper
 {
+    public static function getListStory()
+    {
+        $listStory = Story::all();
+        
+        return $listStory;
+    }
+    
     public static function getSetting( $id )
     {
         $detail = Setting::where('id','=', $id)->first();

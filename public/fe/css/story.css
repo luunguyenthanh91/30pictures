@@ -60,7 +60,7 @@ main {
 }
 
 .home_content_image {
-    padding: 120px 30px;
+    padding: 0px 30px;
     overflow: hidden;
     height: 100%;
 }
@@ -96,6 +96,11 @@ main {
     width: 32%;
     float: left;
     margin-right: 2%;
+    height: 100%;
+    padding-top: 3%;
+}
+.pc_style_slide .item a {
+    float: left;
     height: 100%;
 }
 .pc_style_slide .item.first {

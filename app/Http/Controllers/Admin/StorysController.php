@@ -60,6 +60,7 @@ class StorysController extends Controller
                     $data->description = $request->description;
                     $data->image_pc = $request->image_pc;
                     $data->image_mobile = $request->image_mobile;
+                    $data->khachhang = $request->khachhang;
                     $data->save();
     
                     if ($request->filesData) {
@@ -136,6 +137,7 @@ class StorysController extends Controller
                 $data->description = $request->description;
                 $data->image_pc = $request->image_pc;
                 $data->image_mobile = $request->image_mobile;
+                $data->khachhang = $request->khachhang;
                 $data->save();
 
                 if ($request->filesData) {

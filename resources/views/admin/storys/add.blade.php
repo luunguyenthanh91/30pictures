@@ -77,6 +77,12 @@
                                     <input type="text" value="{{@$data->description != '' ? @$data->description : '' }}" name="description"  class="form-control" required >
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <label class="form-label">Khách Hàng</label>
+                                <div class="search-form" >
+                                    <input type="text" value="{{@$data->khachhang != '' ? @$data->khachhang : '' }}" name="khachhang"  class="form-control" required >
+                                </div>
+                            </div>
                             <div class="d-flex">
                                 <div class="form-group col-lg-6 p-0">
                                     <label class="form-label">Background PC:</label>

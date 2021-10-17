@@ -49,17 +49,17 @@ class HomeController extends Controller
             $slug = @Session::get('slug');
         }
         $listVideos = VideoHome::all();
-        $listStory = Story::all();
+        $listStoryLimit = Story::limit(4)->get();
         
         return view(
             'fe.home.home',
             compact([
                 'menu_active',
                 'menu_parent_active',
+                'listStoryLimit',
                 'slug',
                 'bgHome',
-                'listVideos',
-                'listStory'
+                'listVideos'
             ])
         );
     }
