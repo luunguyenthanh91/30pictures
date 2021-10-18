@@ -131,12 +131,12 @@ header {
 }
 
 .header_logo a img {
-    height: 108px;
+    height: 90px;
 }
 
 .header_menu {
     float: right;
-    height: 54px;
+    height: 32px;
     margin: 0px 31px 0px 0px;
     display: flex;
     align-items: center;
@@ -144,7 +144,7 @@ header {
 
 .header_search {
     float: right;
-    height: 54px;
+    height: 32px;
     margin: 0px 10px 0px 0px;
     display: flex;
     align-items: center;
@@ -153,7 +153,7 @@ header {
 
 .header_search a svg {
     width: 100%;
-    height: 54px;
+    height: 32px;
     color: #fff;
 }
 
@@ -212,7 +212,7 @@ header {
 
 .header_menu a {
     width: 100%;
-    height: 54px;
+    height: 32px;
 }
 
 .header_menu a img {
@@ -255,10 +255,10 @@ footer {
 
 .footer_static p.title {
     color: #fff;
-    font-size: 18px;
+    font-size: 16px;
     font-family: OswaldRegular;
     margin: 0px;
-    line-height: 18px;
+    line-height: 16px;
 }
 
 .footer_static p.description {
@@ -338,14 +338,14 @@ footer {
 
 .footer_list .menu_item p.title {
     color: #fff;
-    font-size: 18px;
+    font-size: 16px;
     font-family: OswaldRegular;
     margin: 0px;
     opacity: 0.8;
     display: flex;
     justify-content: center;
     align-items: center;
-    line-height: 18px;
+    line-height: 16px;
 }
 
 .footer_list .menu_item p.title i {
@@ -584,9 +584,9 @@ main {
 }
 
 .footer_search a {
-    width: 18px;
+    width: 16px;
     margin-right: 10px;
-    height: 18px;
+    height: 16px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -648,7 +648,7 @@ main {
 
 .titleListDirectory a {
     color: #fff !important;
-    font-size: 40px;
+    font-size: 32px;
     font-weight: bold;
     font-family: OswaldRegular;
     display: flex;
@@ -656,8 +656,7 @@ main {
     align-items: flex-start;
     float: left;
     margin-left: 10px;
-    font-style: italic;
-    line-height: 45px;
+    line-height: 32px;
 }
 
 .titleListDirectory a:first-child {

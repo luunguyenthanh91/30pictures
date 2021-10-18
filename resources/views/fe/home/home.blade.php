@@ -68,7 +68,7 @@
                     <!-- @foreach($listStoryLimit as $item)
                         <a href="/director-{{$item->id}}.html">{{$item->description}}<span>{{$item->khachhang}}</span></a>
                     @endforeach -->
-                    <!-- <a href="">Đỗ Thái Tài</a> -->
+                    <a href="">Đỗ Thái Tài</a>
                 </div>
             </div>
             @include('fe.layouts.menu')
