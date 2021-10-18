@@ -78,23 +78,23 @@ a:hover {
 header {
     position: fixed;
     width: 100vw;
-    /* background: #000; */
     top: 0;
     left: 0;
     padding: 31px 0px;
     display: block;
-    height: 86px;
+    height: 105px;
     z-index: 800;
+    box-sizing: border-box;
 }
 
 .header_logo {
     float: left;
-    height: 108px;
+    height: 74px;
     margin: 0px 0px 0px 31px;
 }
 
 .header_logo a {
-    height: 108px;
+    height: 74px;
     float: left;
 }
 
@@ -131,7 +131,7 @@ header {
 }
 
 .header_logo a img {
-    height: 90px;
+    height: 74px;
 }
 
 .header_menu {
