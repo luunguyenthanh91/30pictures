@@ -61,13 +61,14 @@
 
     <!-- JavaScript -->
     <script src="{{ asset('fe/js/vendor/jquery-3.4.1.min.js') }}"></script>
+    <script src="{{ asset('fe/js/debounce.js') }}"></script>
     <script src="{{ asset('fe/js/vendor/jquery-ui.min.js') }}"></script>
     <script src="{{ asset('fe/js/vendor.min.js') }}"></script>
     <script src="{{ asset('fe/js/functions.js') }}"></script>
     <script src="{{ asset('fe/slick/slick.js') }}" type="text/javascript" charset="utf-8"></script>
     <script src="{{ asset('fe/js/home.js') }}"></script>
     
-   
+    @yield('before_footer_scripts')
     
 
 </body>

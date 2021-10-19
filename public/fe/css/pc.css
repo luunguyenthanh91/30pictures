@@ -325,6 +325,13 @@ footer {
     font-weight: bold;
 }
 
+.groupSlide {
+    width: 100%;
+    height: 100%;
+    float: left;
+    overflow: hidden;
+}
+
 .footer_list .menu_item .absolu_footer_list .title_content_list {
     width: 100%;
     float: left;
@@ -676,7 +683,7 @@ main {
     position: absolute;
     width: calc(100% - 62px);
     left: 31px;
-    bottom: 45%;
+    bottom: 55%;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -702,11 +709,30 @@ main {
     margin-top: 10px;
 }
 
-.titleListDirectory i {
+.d-none {
+    display: none;
+}
+
+.titleListDirectory {
+    position: relative;
+}
+
+.titleListDirectory i.fa-arrow-down {
     font-size: 16px;
-    margin-top: 10px;
     color: #fff;
     animation: slide1 1s ease-in-out infinite;
+    position: absolute;
+    bottom: -20px;
+    left: 0px;
+}
+
+.titleListDirectory i.fa-arrow-up {
+    font-size: 16px;
+    color: #fff;
+    animation: slide2 1s ease-in-out infinite;
+    position: absolute;
+    top: -30px;
+    left: 0px;
 }
 
 @keyframes slide1 {
@@ -716,6 +742,16 @@ main {
     }
     50% {
         transform: translate(0, 10px);
+    }
+}
+
+@keyframes slide2 {
+    0%,
+    100% {
+        transform: translate(0, 10px);
+    }
+    50% {
+        transform: translate(0, 0);
     }
 }
 
