@@ -51,7 +51,7 @@ a:hover {
 }
 
 .menu_mail_left .logo_menu img {
-    width: 100px;
+    height: 200px;
 }
 
 .slide_mobile_mail {
@@ -419,10 +419,10 @@ main {
     overflow: hidden;
     width: 350px;
     background: #fff;
-    height: calc(80% - 78px);
+    height: 100%;
     position: fixed;
-    right: 0;
-    bottom: 78px;
+    right: 31px;
+    bottom: 0;
     z-index: 1000;
     border-radius: 15px;
     display: none;
