@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="home_content_image home_banner_video_full">
-    <div class="groupSlide slideHome1">
+    <div class="groupSlide slideHome1" style="display: none;">
         <div class="fullSize">
             <img src="https://wallpaperaccess.com/full/869923.gif" />
         </div>
@@ -10,10 +10,10 @@
             <!-- @foreach($listStoryLimit as $item)
                         <a href="/director-{{$item->id}}.html">{{$item->description}}<span>{{$item->khachhang}}</span></a>
                     @endforeach -->
-            <i class="fas fa-arrow-up d-none"></i>
+            <i class="fas fa-chevron-up d-none"></i>
             <a href="#" class="titleSlide">Đỗ Thái Tài</a>
             <a href="#" class="desSlide">Generalli</a>
-            <i class="fas fa-arrow-down"></i>
+            <i class="fas fa-chevron-down"></i>
 
         </div>
     </div>
@@ -25,10 +25,10 @@
             <!-- @foreach($listStoryLimit as $item)
                         <a href="/director-{{$item->id}}.html">{{$item->description}}<span>{{$item->khachhang}}</span></a>
                     @endforeach -->
-            <i class="fas fa-arrow-up"></i>
+            <i class="fas fa-chevron-up"></i>
             <a href="#" class="titleSlide">Chung Chí Công</a>
             <a href="#" class="desSlide">Generalli</a>
-            <i class="fas fa-arrow-down"></i>
+            <i class="fas fa-chevron-down"></i>
 
         </div>
     </div>
@@ -40,10 +40,10 @@
             <!-- @foreach($listStoryLimit as $item)
                         <a href="/director-{{$item->id}}.html">{{$item->description}}<span>{{$item->khachhang}}</span></a>
                     @endforeach -->
-            <i class="fas fa-arrow-up"></i>
+            <i class="fas fa-chevron-up"></i>
             <a href="#" class="titleSlide">Ai Cũng Được</a>
             <a href="#" class="desSlide">Generalli</a>
-            <i class="fas fa-arrow-down"></i>
+            <i class="fas fa-chevron-down"></i>
 
         </div>
     </div>
@@ -54,60 +54,61 @@
     var slideImage = 1;
     var countSlide = 3;
     $(document).ready(function() {
-        $('.fa-arrow-down').on('click', function() {
-            $('.fa-arrow-up').removeClass('d-none');
+        $('.slideHome1').fadeIn(500);
+        $('.fa-chevron-down').on('click', function() {
+            $('.titleListDirectory .fa-chevron-up').removeClass('d-none');
             if (slideImage < countSlide) {
                 $(".slideHome" + slideImage).fadeOut(0);
                 $(".slideHome" + (slideImage + 1)).fadeIn(500);
-                $('.fa-arrow-down').removeClass('d-none');
+                $('.fa-chevron-down').removeClass('d-none');
                 slideImage++;
                 if (slideImage == countSlide) {
-                    $('.fa-arrow-down').addClass('d-none');
+                    $('.fa-chevron-down').addClass('d-none');
                 }
             } else {
-                $('.fa-arrow-down').addClass('d-none');
+                $('.fa-chevron-down').addClass('d-none');
             }
         });
-        $('.fa-arrow-up').on('click', function() {
-            $('.fa-arrow-down').removeClass('d-none');
+        $('.titleListDirectory .fa-chevron-up').on('click', function() {
+            $('.fa-chevron-down').removeClass('d-none');
             if (slideImage > 1) {
                 $(".slideHome" + slideImage).fadeOut(0);
                 $(".slideHome" + (slideImage - 1)).fadeIn(500);
                 slideImage--;
-                $('.fa-arrow-up').removeClass('d-none');
+                $('.fa-chevron-up').removeClass('d-none');
                 if (slideImage == 1) {
-                    $('.fa-arrow-up').addClass('d-none');
+                    $('.fa-chevron-up').addClass('d-none');
                 }
             } else {
-                $('.fa-arrow-up').addClass('d-none');
+                $('.fa-chevron-up').addClass('d-none');
             }
         });
         $(window).on('DOMMouseScroll mousewheel', $.debounce(250, function(event) {
             if (event.originalEvent.wheelDelta > 0) {
-                $('.fa-arrow-down').removeClass('d-none');
+                $('.fa-chevron-down').removeClass('d-none');
                 if (slideImage > 1) {
                     $(".slideHome" + slideImage).fadeOut(0);
                     $(".slideHome" + (slideImage - 1)).fadeIn(500);
                     slideImage--;
-                    $('.fa-arrow-up').removeClass('d-none');
+                    $('.titleListDirectory .fa-chevron-up').removeClass('d-none');
                     if (slideImage == 1) {
-                        $('.fa-arrow-up').addClass('d-none');
+                        $('.titleListDirectory .fa-chevron-up').addClass('d-none');
                     }
                 } else {
-                    $('.fa-arrow-up').addClass('d-none');
+                    $('.titleListDirectory .fa-chevron-up').addClass('d-none');
                 }
             } else {
-                $('.fa-arrow-up').removeClass('d-none');
+                $('.titleListDirectory .fa-chevron-up').removeClass('d-none');
                 if (slideImage < countSlide) {
                     $(".slideHome" + slideImage).fadeOut(0);
                     $(".slideHome" + (slideImage + 1)).fadeIn(500);
-                    $('.fa-arrow-down').removeClass('d-none');
+                    $('.fa-chevron-down').removeClass('d-none');
                     slideImage++;
                     if (slideImage == countSlide) {
-                        $('.fa-arrow-down').addClass('d-none');
+                        $('.fa-chevron-down').addClass('d-none');
                     }
                 } else {
-                    $('.fa-arrow-down').addClass('d-none');
+                    $('.fa-chevron-down').addClass('d-none');
                 }
             }
         }));
