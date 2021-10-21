@@ -142,13 +142,12 @@ header {
     height: 24px;
     display: flex;
     align-items: center;
-    margin-top: 20px;
 }
 
 .header_search {
     float: right;
     height: 24px;
-    margin: 20px 20px 0px 0px;
+    margin: 0px 20px 0px 0px;
     display: flex;
     align-items: center;
     position: relative;
