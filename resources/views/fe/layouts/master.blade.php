@@ -4,10 +4,10 @@
 <head>
 <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>{{Helper::getSetting(1)->description}}</title>
+    <title>@yield('title')</title>
     <meta property="og:url" content="{{@url('/')}}">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="{{Helper::getSetting(1)->description}}">
+    <meta property="og:title" content="@yield('title')">
     <meta property="og:description" content="{{Helper::getSetting(2)->description}}">
     <meta property="og:image" content="{{@url(Helper::getSetting(4)->image_pc)}}">
     <!-- <meta property="fb:app_id" content=""> -->
@@ -15,19 +15,19 @@
     <meta name="description" content="This is the website description. Nice eh?">
  
     <!-- Google / Search Engine Tags -->
-    <meta itemprop="name" content="{{Helper::getSetting(1)->description}}">
+    <meta itemprop="name" content="@yield('title')">
     <meta itemprop="description" content="{{Helper::getSetting(2)->description}}">
     <meta itemprop="image" content="{{@url(Helper::getSetting(4)->image_pc)}}">
    
     
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{Helper::getSetting(1)->description}}">
+    <meta name="twitter:title" content="@yield('title')">
     <meta name="twitter:description" content="{{Helper::getSetting(2)->description}}">
     <meta name="twitter:image" content="{{@url(Helper::getSetting(4)->image_pc)}}">
 
 
-    <meta name="keywords" content="{{Helper::getSetting(1)->description}}">
+    <meta name="keywords" content="@yield('title')">
     <meta name="description" content="{{Helper::getSetting(2)->description}}">
     <meta name="author" content="tivatheme">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -41,16 +41,16 @@
     <link rel="stylesheet" href="{{ asset('fe/css/main.css') }}">
     <link rel="stylesheet" href="{{ asset('fe/css/pc.css') }}">
     <link rel="stylesheet" href="{{ asset('fe/css/mobile.css') }}">
-    <link rel="stylesheet" href="{{ asset('fe/css/home.css') }}">
+    @yield('css_page')
     <link rel="stylesheet" type="text/css" href="{{ asset('fe/slick/slick.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('fe/slick/slick-theme.css') }}">
 </head>
 
-<body class="nk-body home_banner_video_full_header">
+<body class="nk-body @yield('class_body')">
 
     <div class="nk-wrap">
         @include('fe.includes.header')
-        <main>
+        <main class="@yield('class_main')" style="@yield('style_main')">
             @yield('content')
             @include('fe.layouts.menu')
         </main>

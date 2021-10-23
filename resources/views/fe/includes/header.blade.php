@@ -16,5 +16,6 @@
             <input class="search_input" type="text" name="key" required placeholder="Director Video">
         </form>
     </div>
+    @yield('nav_title')
 
 </header>

@@ -1,5 +1,9 @@
 @extends('fe.layouts.master')
-
+@section('title', Helper::getSetting(1)->description)
+@section('css_page')
+<link rel="stylesheet" href="{{ asset('fe/css/home.css') }}">
+@endsection
+@section('class_body', "home_banner_video_full_header")
 @section('content')
 <div class="home_content_image home_banner_video_full">
     <div class="groupSlide slideHome1" style="display: none;">
