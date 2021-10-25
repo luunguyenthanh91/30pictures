@@ -26,12 +26,11 @@ main {
 
 .content-about-us {
     width: calc(50% - 31px);
-    height: calc(100% - 204px);
+    height: calc(100% - 245px);
     float: left;
     display: block;
-    margin: 126px 0px 78px;
     overflow-y: auto;
-    padding: 0px 41px 0px 0px;
+    padding: 0px 23px 0px 0px;
     box-sizing: border-box;
 }
 
@@ -57,7 +56,7 @@ main {
     line-height: 24px;
     width: 100%;
     margin-bottom: 10px;
-    text-align: right;
+    text-align: left;
     float: left;
 }
 
@@ -91,56 +90,9 @@ main {
     display: none;
 }
 
-@media screen and (max-width: 1024px) {
-    .content-about-us {
-        float: right;
-        width: 100% !important;
-        ;
-        height: unset;
-        margin: unset;
-        padding: 0px;
-    }
-    .logo-content-about-us {
-        width: 100%;
-        padding: 0px;
-        margin-bottom: 10px;
-        height: unset;
-    }
-    .logo-content-about-us img {
-        width: 300px;
-        height: 100px;
-        object-fit: contain;
-        object-position: center;
-        margin-top: 20px;
-    }
-    .home_content_image {
-        display: block;
-        height: 100%;
-        overflow: hidden;
-    }
-    .pc-display {
-        display: none !important;
-    }
-    .mobile-display {
-        display: flex;
-    }
-    main {
-        padding: 80px 0px;
-        overflow: hidden;
-        margin: 0px;
-    }
-    .content-about-us {
-        padding: 0px 48px 0px 48px;
-        text-align: justify;
-        height: 100%;
-        overflow: auto;
-    }
-    .content-about-us p {
-        color: #fff;
-        font-size: 16px;
-        font-family: PlayfairDisplayItalic;
-        width: 100%;
-        padding: unset;
-        margin-bottom: 20px;
-    }
+.home_content_image {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
 }

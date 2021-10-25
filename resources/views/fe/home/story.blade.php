@@ -26,12 +26,12 @@
                     @if ($key%2 == 0)
                     <img src="{{@url($item->image_pc ? $item->image_pc  : '/' )}}" class="image_size" alt="{{$item->description}}" />
                     <div class="box_info">
-                        <p class="title">{{$item->description}} - <span>{{$item->name}}</span></p>
+                        <p class="title">{{$item->description}}</span></p>
                         <p class="description">View Showreel - Projects ></p>
                     </div>
                     @else
                     <div class="box_info">
-                        <p class="title">{{$item->description}} - <span>{{$item->name}}</span></p>
+                        <p class="title">{{$item->description}}</span></p>
                         <p class="description">View Showreel - Projects ></p>
                     </div>
                     <img src="{{@url($item->image_pc ? $item->image_pc  : '/' )}}" class="image_size" alt="{{$item->description}}" />
@@ -42,7 +42,6 @@
             @endforeach
         </div>
     </div>
-    @include('fe.layouts.menu')
 </div>
 @endsection
 @section('before_footer_scripts')
