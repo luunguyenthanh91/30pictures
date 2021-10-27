@@ -58,8 +58,29 @@ main {
     margin: 0px;
 }
 
-.home_content_image {
+.bg_style {
     padding: 3% 31px;
+}
+
+.home_content_image {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+}
+
+.home_content_image::-webkit-scrollbar {
+    width: 2px;
+}
+
+.home_content_image::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(255, 255, 255, 0);
+    border-radius: 10px;
+}
+
+.home_content_image::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.2);
 }
 
 .mobile_style_slide {
@@ -71,6 +92,8 @@ main {
     width: 100%;
     height: 100%;
     padding-right: 22px;
+    padding-bottom: 22px;
+    box-sizing: border-box;
 }
 
 .pc_style_slide .video_big {
@@ -78,6 +101,14 @@ main {
     float: left;
     height: 100%;
     margin-right: 2%;
+}
+
+.pc_style_slide.slide-2 .video_big {
+    width: 66%;
+    float: right;
+    height: 100%;
+    margin-left: 2%;
+    margin-right: unset;
 }
 
 .pc_style_slide .video_big .item {
@@ -153,26 +184,27 @@ main {
 }
 
 .pc_style_slide .video_big .item .block .seemore {
-    color: rgb(169 164 164);
-    font-size: 14px;
-    font-family: OswaldRegular;
+    color: #fff;
+    font-size: 16px;
+    font-family: Nunito;
     margin: 0px;
     position: absolute;
     left: 20px;
-    bottom: 100px;
+    bottom: -30px;
     opacity: 0;
     transition: visibility 0s, opacity 0.5s linear;
     z-index: 100;
 }
 
 .pc_style_slide .video_big .item .block .desscription {
-    color: rgb(169 164 164);
+    color: #fff;
     font-size: 16px;
-    font-family: OswaldRegular;
+    line-height: 20px;
+    font-family: Nunito;
     margin: 0px;
     position: absolute;
     left: 20px;
-    bottom: 125px;
+    bottom: 0px;
     opacity: 0;
     transition: visibility 0s, opacity 0.5s linear;
     z-index: 100;
@@ -185,7 +217,7 @@ main {
 
 .pc_style_slide .video_big .item .block .title_play {
     color: #fff;
-    font-size: 20px;
+    font-size: 24px;
     font-family: OswaldRegular;
     margin: 0px;
     position: absolute;
@@ -195,12 +227,13 @@ main {
     transition: visibility 0s, opacity 0.5s linear;
     z-index: 100;
     font-weight: bold;
+    line-height: 30px;
 }
 
 .pc_style_slide .video_big .item .block .title_play_des {
     color: #fff;
     font-size: 16px;
-    font-family: OswaldRegular;
+    font-family: Nunito;
     margin: 0px;
     position: absolute;
     left: 20px;
@@ -212,14 +245,20 @@ main {
 
 .pc_style_slide .video_big .item:hover .block .title_play {
     opacity: 1;
+    transform: translate(0, -150px);
+    transition: transform 0.5s linear;
 }
 
 .pc_style_slide .video_big .item:hover .block .seemore {
     opacity: 1;
+    transform: translate(0, -50px);
+    transition: transform 1.5s;
 }
 
 .pc_style_slide .video_big .item:hover .block .title_play_des {
     opacity: 1;
+    transform: translate(0, -150px);
+    transition: transform 1s;
 }
 
 .pc_style_slide .video_big .item:hover .block .bg_bg {
@@ -228,6 +267,8 @@ main {
 
 .pc_style_slide .video_big .item:hover .block .desscription {
     opacity: 1;
+    transform: translate(0, -125px);
+    transition: transform 1.5s;
 }
 
 .pc_style_slide .video_small {
@@ -241,7 +282,7 @@ main {
     width: 100%;
     float: left;
     height: 100%;
-    overflow-y: auto;
+    overflow-y: hidden;
 }
 
 .pc_style_slide .video_small .olv_nav {
@@ -300,10 +341,13 @@ main {
     display: block;
     width: 100%;
     position: relative;
-    height: 48%;
-    margin: 0px 0px 10px 0px;
+    height: calc(50% - 1vw);
     overflow: hidden;
     border-radius: 10px;
+}
+
+.pc_style_slide .video_small .item:first-child {
+    margin-bottom: 2vw;
 }
 
 .pc_style_slide .video_small .item .block {
@@ -352,13 +396,13 @@ main {
 
 .pc_style_slide .video_small .item .block .title_play {
     color: #fff;
-    font-size: 20px;
+    font-size: 24px;
     font-family: OswaldRegular;
     margin: 0px;
-    line-height: 20px;
+    line-height: 30px;
     position: absolute;
     left: 20px;
-    bottom: 50px;
+    bottom: 40px;
     opacity: 0.8;
     transition: visibility 0s, opacity 0.5s linear;
     z-index: 100;
@@ -367,9 +411,9 @@ main {
 .pc_style_slide .video_small .item .block .title_play_des {
     color: #fff;
     font-size: 16px;
-    font-family: OswaldRegular;
+    font-family: Nunito;
     margin: 0px;
-    line-height: 12px;
+    line-height: 16px;
     position: absolute;
     left: 20px;
     bottom: 20px;
@@ -379,16 +423,17 @@ main {
 }
 
 .pc_style_slide .video_small .item .block .seemore {
-    color: rgb(169 164 164);
-    font-size: 14px;
-    font-family: OswaldRegular;
+    color: #fff;
+    font-size: 16px;
+    font-family: Nunito;
     margin: 0px;
     position: absolute;
     left: 20px;
-    bottom: 100px;
+    bottom: -30px;
     opacity: 0;
     transition: visibility 0s, opacity 0.5s linear;
     z-index: 100;
+    line-height: 16px;
 }
 
 .pc_style_slide .video_small .item .block .bg_bg {
@@ -404,10 +449,14 @@ main {
 
 .pc_style_slide .video_small .item:hover .block .title_play {
     opacity: 1;
+    transform: translate(0, -50px);
+    transition: transform 0.5s linear;
 }
 
 .pc_style_slide .video_small .item:hover .block .title_play_des {
     opacity: 1;
+    transform: translate(0, -50px);
+    transition: transform 0.7s linear;
 }
 
 .pc_style_slide .video_small .item:hover .block .bg_bg {
@@ -416,6 +465,8 @@ main {
 
 .pc_style_slide .video_small .item:hover .block .seemore {
     opacity: 1;
+    transform: translate(0, -50px);
+    transition: transform 1s linear;
 }
 
 .pc_style_slide .video_small .item .block .play {

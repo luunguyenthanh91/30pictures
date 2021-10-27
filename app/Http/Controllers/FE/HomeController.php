@@ -113,22 +113,9 @@ class HomeController extends Controller
     }
     function director(Request $request , $id){
         $slug = '';
-        $idWhere = 0;
         $bgDirectory = Setting::find(19);
-        $storyBig = Derector::where('story_id', $id)->where('type_display','!=' ,0)->first();
-        if ($storyBig) {
-            $idWhere = $storyBig->id;
-            $max_length = 340;
-
-            $storyBig->description = strip_tags($storyBig->description);
-            if (strlen($storyBig->description) > $max_length)
-            {
-                $offset = ($max_length - 3) - strlen($storyBig->description);
-                $storyBig->description = substr($storyBig->description, 0, strrpos($storyBig->description, ' ', $offset)) . '...';
-            }
-            
-        }
-        $listStory = Derector::where('story_id', $id)->where('id','!=' ,$idWhere)->get();
+        
+        $listStory = Derector::where('story_id', $id)->get();
         // if (count($listStory)%2 != 0 && count($listStory) > 0) {
         //     $listStory[] = $listStory[0];
         // }
@@ -141,7 +128,6 @@ class HomeController extends Controller
                 'listStory',
                 'bgDirectory',
                 'story',
-                'storyBig',
                 'listStoryS'
             ])
         );

@@ -52,21 +52,11 @@ main {
 .content-about-us div {
     color: #fff;
     font-size: 16px;
-    font-family: Nunito !important;
     line-height: 24px;
     width: 100%;
     margin-bottom: 10px;
     text-align: left;
     float: left;
-}
-
-.content-about-us p,
-.content-about-us div,
-.content-about-us div span,
-.content-about-us div p,
-.content-about-us div a,
-.content-about-us div h1 {
-    font-family: Nunito !important;
 }
 
 .logo-content-about-us {

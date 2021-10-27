@@ -40,7 +40,7 @@
     <link href="{{ asset('fe/css/vendor/jquery-ui.min.css') }}" rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset('fe/css/main.css') }}">
     <link rel="stylesheet" href="{{ asset('fe/css/pc.css') }}">
-    <link rel="stylesheet" href="{{ asset('fe/css/mobile.css') }}">
+    <!-- <link rel="stylesheet" href="{{ asset('fe/css/mobile.css') }}"> -->
     @yield('css_page')
     <link rel="stylesheet" type="text/css" href="{{ asset('fe/slick/slick.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('fe/slick/slick-theme.css') }}">
