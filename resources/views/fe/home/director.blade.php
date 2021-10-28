@@ -32,7 +32,7 @@
                             <div class="block-1 block">
                                 <img src="{{@url($item->image_pc ? $item->image_pc : '/' )}}" class="bg" alt="{{$item->name}}" />
                                 <div class="bg_bg"></div>
-                                <div class="desscription">{!! $item->description !!}</div>
+                                <div class="desscription">{!! \Illuminate\Support\Str::limit($item->description, $limit = 100, $end = '...') !!}</div>
                                 <div class="seemore">See More ></div>
                                 <div class="title_play">{{$item->name}}</div>
                                 <div class="title_play_des">{{$item->meme}}</div>
