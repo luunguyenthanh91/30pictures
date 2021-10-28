@@ -19,9 +19,12 @@
 @section('content')
 <div class="bg_style">
     <div class="home_content_image">
+
+        @php($count=1)
         @foreach($listStory as $key => $item)
             @if($key%3 == 0)
-            <div class="pc_style_slide @if($key%6 > 2) slide-2 @endif">
+            <div class="pc_style_slide @if($key%6 > 2) slide-2 @endif slide-count-{{$count}}">
+            @php($count++)
             @endif
                 @if($key%3 == 0)
                     <div class="video_big">
@@ -67,6 +70,20 @@
 @endsection
 @section('before_footer_scripts')
 <script>
-
+    var slideImage = 1;
+    var countSlide = {{$count - 1}};
+    $(document).ready(function() {
+        $('.home_content_image').on('DOMMouseScroll mousewheel', $.debounce(250, function(event) {
+            var heightElement = $('.pc_style_slide').height();
+            var $container = $('.home_content_image');
+            if (event.originalEvent.wheelDelta > 0) {
+                var $scrollTo = $('.slide-count-'+ (Math.floor($('.home_content_image').scrollTop()/heightElement) + 1));
+                $container.animate({scrollTop: $scrollTo.offset().top - $container.offset().top + $container.scrollTop(), scrollLeft: 0},500); 
+            } else {
+                var $scrollTo = $('.slide-count-'+ (Math.ceil($('.home_content_image').scrollTop()/heightElement) + 1));
+                $container.animate({scrollTop: $scrollTo.offset().top - $container.offset().top + $container.scrollTop(), scrollLeft: 0},500); 
+            }
+        }));
+    });
 </script>
 @endsection

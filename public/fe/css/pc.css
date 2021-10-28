@@ -129,7 +129,7 @@ header {
 
 .header_titleLogo .contentLogo {
     color: #fff;
-    font-size: 24px;
+    font-size: 16px;
     font-family: OswaldRegular;
     width: 100%;
     float: left;
@@ -424,15 +424,14 @@ main {
 
 .box {
     overflow: hidden;
-    width: 350px;
+    width: 0px;
     background: #fff;
     height: 100%;
     position: fixed;
-    right: 31px;
+    right: 0px;
     bottom: 0;
     z-index: 1000;
     border-radius: 15px;
-    display: none;
 }
 
 .menu_mail_left {

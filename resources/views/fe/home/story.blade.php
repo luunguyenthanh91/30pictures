@@ -20,7 +20,12 @@
 <div class="bg_style">
     <div class="home_content_image">
         <div class="pc_style_slide">
+            @php($count=1)
             @foreach($listStory as $key => $item)
+            @if($key%3 == 0)
+            <div class="slide-story slide-count-{{$count}}">
+            @php($count++)
+            @endif
             <div class="item @if ($key%3 == 1) first @endif @if ($key%3 == 2) last @endif ">
                 <a rel="{{@url($item->image_pc ? $item->image_pc  : '/' )}}" href="/director-{{$item->id}}.html" class="@if ($key == 0 || $key%2 == 0) block-1 @else block-2 @endif block">
                     @if ($key%2 == 0)
@@ -39,6 +44,9 @@
 
                 </a>
             </div>
+            @if($key%3 == 2 || $key == count($listStory) - 1)
+            </div>
+            @endif
             @endforeach
         </div>
     </div>
@@ -46,6 +54,20 @@
 @endsection
 @section('before_footer_scripts')
 <script>
-
+    var slideImage = 1;
+    var countSlide = {{$count - 1}};
+    $(document).ready(function() {
+        $('.pc_style_slide').on('DOMMouseScroll mousewheel', $.debounce(250, function(event) {
+            var heightElement = $('.pc_style_slide').height();
+            var $container = $('.pc_style_slide');
+            if (event.originalEvent.wheelDelta > 0) {
+                var $scrollTo = $('.slide-count-'+ (Math.floor($('.pc_style_slide').scrollTop()/heightElement) + 1));
+                $container.animate({scrollTop: $scrollTo.offset().top - $container.offset().top + $container.scrollTop(), scrollLeft: 0},500); 
+            } else {
+                var $scrollTo = $('.slide-count-'+ (Math.ceil($('.pc_style_slide').scrollTop()/heightElement) + 1));
+                $container.animate({scrollTop: $scrollTo.offset().top - $container.offset().top + $container.scrollTop(), scrollLeft: 0},500); 
+            }
+        }));
+    });
 </script>
 @endsection
