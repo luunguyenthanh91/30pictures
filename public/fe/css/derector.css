@@ -268,7 +268,7 @@ main {
 
 .pc_style_slide .video_big .item:hover .block .desscription {
     opacity: 1;
-    transform: translate(0, -125px);
+    transform: translate(0, -105px);
     transition: transform 0.5s;
 }
 

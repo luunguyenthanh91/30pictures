@@ -32,7 +32,7 @@
                             <div class="block-1 block">
                                 <img src="{{@url($item->image_pc ? $item->image_pc : '/' )}}" class="bg" alt="{{$item->name}}" />
                                 <div class="bg_bg"></div>
-                                <div class="desscription">{!! \Illuminate\Support\Str::limit($item->description, $limit = 100, $end = '...') !!}</div>
+                                <div class="desscription">{!! \Illuminate\Support\Str::words(strip_tags($item->description), $limit = 25, $end = '...') !!}</div>
                                 <div class="seemore">See More ></div>
                                 <div class="title_play">{{$item->name}}</div>
                                 <div class="title_play_des">{{$item->meme}}</div>
@@ -74,7 +74,7 @@
     var countSlide = {{$count - 1}};
     $(document).ready(function() {
         $('.home_content_image').on('DOMMouseScroll mousewheel', $.debounce(250, function(event) {
-            var heightElement = $('.pc_style_slide').height();
+            var heightElement = $('.home_content_image').height();
             var $container = $('.home_content_image');
             if (event.originalEvent.wheelDelta > 0) {
                 var $scrollTo = $('.slide-count-'+ (Math.floor($('.home_content_image').scrollTop()/heightElement) + 1));
