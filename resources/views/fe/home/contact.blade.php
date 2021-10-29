@@ -25,7 +25,7 @@
    </div>
    <div class="contactForm">
         <h1 class="titleTop">Contact Us</h1>
-        <h2 class="desTop">For more details information</h2>
+        <h2 class="desTop">For more detailed information</h2>
         <form action="" method="POST" class="p-0 mx-auto form-data" >
             @csrf
             
