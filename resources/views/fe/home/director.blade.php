@@ -76,7 +76,7 @@
         $('.home_content_image').on('DOMMouseScroll mousewheel', $.debounce(250, function(event) {
             var heightElement = $('.home_content_image').height();
             var $container = $('.home_content_image');
-            if (event.originalEvent.wheelDelta > 0) {
+            if (event.originalEvent.wheelDelta > 0 ) {
                 var $scrollTo = $('.slide-count-'+ (Math.floor($('.home_content_image').scrollTop()/heightElement) + 1));
                 $container.animate({scrollTop: $scrollTo.offset().top - $container.offset().top + $container.scrollTop(), scrollLeft: 0},500); 
             } else {

@@ -8,7 +8,7 @@
 <div class="home_content_image home_banner_video_full">
     <div class="groupSlide slideHome1" style="display: none;">
         <div class="fullSize">
-            <img src="https://wallpaperaccess.com/full/869923.gif" />
+            <img src="{{ asset('fe/media/gif.gif') }}" />
         </div>
         <div class="titleListDirectory">
             <!-- @foreach($listStoryLimit as $item)
@@ -23,7 +23,7 @@
     </div>
     <div class="groupSlide slideHome2" style="display: none;">
         <div class="fullSize">
-            <img src="https://i.pinimg.com/originals/12/b2/3a/12b23a7752e8a7a4464c1ff5e596237f.gif" />
+            <img src="{{ asset('fe/media/gif1.gif') }}" />
         </div>
         <div class="titleListDirectory">
             <!-- @foreach($listStoryLimit as $item)
