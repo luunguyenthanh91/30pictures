@@ -407,6 +407,7 @@ main {
     opacity: 0.8;
     transition: visibility 0s, opacity 0.5s linear;
     z-index: 100;
+    width: calc(100% - 40px);
 }
 
 .pc_style_slide .video_small .item .block .title_play_des {
@@ -679,6 +680,7 @@ main {
     position: absolute;
     right: 31px;
     top: 31px;
+    opacity: 0.8;
 }
 
 .videoDetail .close_video svg {

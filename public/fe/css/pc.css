@@ -52,7 +52,7 @@ a:hover {
 }
 
 .close_menu_box {
-    /* display: none; */
+    display: none;
     width: 24px;
     height: 24px;
     position: absolute;

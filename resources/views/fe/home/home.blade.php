@@ -6,57 +6,26 @@
 @section('class_body', "home_banner_video_full_header")
 @section('content')
 <div class="home_content_image home_banner_video_full">
-    <div class="groupSlide slideHome1" style="display: none;">
-        <div class="fullSize">
-            <img src="{{ asset('fe/media/gif.gif') }}" />
-        </div>
-        <div class="titleListDirectory">
-            <!-- @foreach($listStoryLimit as $item)
-                        <a href="/director-{{$item->id}}.html">{{$item->description}}<span>{{$item->khachhang}}</span></a>
-                    @endforeach -->
-            <i class="fas fa-chevron-up d-none"></i>
-            <a href="#" class="titleSlide">Đỗ Thái Tài</a>
-            <a href="#" class="desSlide">Generalli</a>
-            <i class="fas fa-chevron-down"></i>
+    @foreach($listStoryLimit as $key => $item)
+        <div class="groupSlide slideHome{{$key+1}}" style="display: none;">
+            <div class="fullSize">
+                <img src="{{@url($item->slide_gif_pc ? $item->slide_gif_pc : '/')}}" />
+            </div>
+            <div class="titleListDirectory">
+                <i class="fas fa-chevron-up d-none"></i>
+                <a href="/director-{{$item->id}}.html" class="titleSlide">{{$item->description}}</a>
+                <a href="/director-{{$item->id}}.html" class="desSlide">{{$item->khachhang}}</a>
+                <i class="fas fa-chevron-down"></i>
 
+            </div>
         </div>
-    </div>
-    <div class="groupSlide slideHome2" style="display: none;">
-        <div class="fullSize">
-            <img src="{{ asset('fe/media/gif1.gif') }}" />
-        </div>
-        <div class="titleListDirectory">
-            <!-- @foreach($listStoryLimit as $item)
-                        <a href="/director-{{$item->id}}.html">{{$item->description}}<span>{{$item->khachhang}}</span></a>
-                    @endforeach -->
-            <i class="fas fa-chevron-up"></i>
-            <a href="#" class="titleSlide">Chung Chí Công</a>
-            <a href="#" class="desSlide">Generalli</a>
-            <i class="fas fa-chevron-down"></i>
-
-        </div>
-    </div>
-    <div class="groupSlide slideHome3" style="display: none;">
-        <div class="fullSize">
-            <img src="https://cdn.wallpapersafari.com/70/36/Yqx52k.gif" />
-        </div>
-        <div class="titleListDirectory">
-            <!-- @foreach($listStoryLimit as $item)
-                        <a href="/director-{{$item->id}}.html">{{$item->description}}<span>{{$item->khachhang}}</span></a>
-                    @endforeach -->
-            <i class="fas fa-chevron-up"></i>
-            <a href="#" class="titleSlide">Ai Cũng Được</a>
-            <a href="#" class="desSlide">Generalli</a>
-            <i class="fas fa-chevron-down"></i>
-
-        </div>
-    </div>
+    @endforeach
 </div>
 @endsection
 @section('before_footer_scripts')
 <script>
     var slideImage = 1;
-    var countSlide = 3;
+    var countSlide = {{count($listStoryLimit)}};
     $(document).ready(function() {
         $('.slideHome1').fadeIn(500);
         $('.fa-chevron-down').on('click', function() {

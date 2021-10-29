@@ -211,7 +211,7 @@ $config['DefaultResourceTypes'] = '';
     		'name' => 'Images',
     		'url' => $baseUrl . 'images',
     		'directory' => $baseDir . 'images',
-    		'maxSize' => "16M",
+    		'maxSize' => "100M",
     		'allowedExtensions' => 'bmp,gif,jpeg,jpg,png,avi,iso,mp3',
     		'deniedExtensions' => '');
     

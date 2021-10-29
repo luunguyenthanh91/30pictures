@@ -18,12 +18,6 @@ main {
     height: 100%;
 }
 
-.box {
-    position: absolute;
-    right: 0;
-    top: 0;
-}
-
 .content-about-us {
     width: calc(50% - 31px);
     height: calc(100% - 245px);

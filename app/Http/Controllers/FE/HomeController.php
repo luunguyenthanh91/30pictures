@@ -44,22 +44,19 @@ class HomeController extends Controller
         $menu_active = 'home';
         $menu_parent_active = 'home';
         $slug = '';
-        $bgHome = Setting::find(17);
+        
         if ( @Session::get('slug') ) {
             $slug = @Session::get('slug');
         }
-        $listVideos = VideoHome::all();
-        $listStoryLimit = Story::limit(4)->get();
-        
+        // $listVideos = VideoHome::all();
+        $listStoryLimit = Story::limit(8)->get();
         return view(
             'fe.home.home',
             compact([
                 'menu_active',
                 'menu_parent_active',
                 'listStoryLimit',
-                'slug',
-                'bgHome',
-                'listVideos'
+                'slug'
             ])
         );
     }
