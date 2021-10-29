@@ -256,7 +256,7 @@ footer {
     bottom: 0;
     left: 0;
     display: block;
-    z-index: 1000000;
+    z-index: 800;
     padding: 31px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -442,7 +442,7 @@ main {
     position: fixed;
     right: -350px;
     bottom: 0;
-    z-index: 1000;
+    z-index: 820;
     border-radius: 15px;
 }
 

@@ -205,7 +205,7 @@ main {
     margin: 0px;
     position: absolute;
     left: 20px;
-    bottom: 0px;
+    bottom: -20px;
     opacity: 0;
     transition: visibility 0s, opacity 0.5s linear;
     z-index: 100;
@@ -268,7 +268,7 @@ main {
 
 .pc_style_slide .video_big .item:hover .block .desscription {
     opacity: 1;
-    transform: translate(0, -105px);
+    transform: translate(0, -125px);
     transition: transform 0.5s;
 }
 
@@ -585,4 +585,103 @@ main {
 .down {
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
+}
+
+.videoDetail {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    z-index: 2000;
+    overflow: hidden;
+    padding: 50px 31px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.activeVideo {
+    display: block;
+}
+
+.videoDetail .contentDetailVideo {
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+    padding: 0px 20%;
+    overflow-y: auto;
+}
+
+.videoDetail .contentDetailVideo::-webkit-scrollbar {
+    width: 2px;
+}
+
+.videoDetail .contentDetailVideo::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(255, 255, 255, 0);
+    border-radius: 10px;
+}
+
+.videoDetail .contentDetailVideo::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.2);
+}
+
+.videoDetail .contentDetailVideo .video {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    float: left;
+    width: 100%;
+}
+
+.videoDetail .contentDetailVideo .video video,
+.videoDetail .contentDetailVideo .video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: unset;
+}
+
+.videoDetail .contentDetailVideo .title_video {
+    color: #fff;
+    font-size: 32px;
+    line-height: 40px;
+    font-family: OswaldRegular;
+    margin-top: 31px;
+    margin-bottom: unset;
+    float: left;
+    width: 100%;
+    overflow: hidden;
+}
+
+.videoDetail .contentDetailVideo .content-about-us {
+    color: #fff;
+    font-size: 16px;
+    line-height: 20px;
+    font-family: Nunito;
+    margin-top: 31px;
+    margin-bottom: unset;
+    float: left;
+    width: 100%;
+    overflow: hidden;
+}
+
+.videoDetail .close_video {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: 31px;
+    top: 31px;
+}
+
+.videoDetail .close_video svg {
+    width: 24px;
+    height: 24px;
 }
