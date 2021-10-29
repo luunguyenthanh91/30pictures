@@ -37,7 +37,7 @@
         </div>
 
         <div class="container page__container page-section">
-            <form action="" method="POST" class="p-0 mx-auto form-data" >
+            <form action="" method="POST" class="p-0 mx-auto form-data"  enctype="multipart/form-data">
                 @csrf
                 <div class="row mb-32pt">
                     <div class="col-lg-12">
@@ -100,8 +100,7 @@
                                             No image
                                         </div>
                                         <br />
-                                        <a href="javascript:chooseImage('slide_gif_pc');"><span class="material-icons sidebar-menu-icon sidebar-menu-icon--left icon-image-preview">library_add</span></a>
-                                        <a href="javascript:clearImage('slide_gif_pc');"><span class="material-icons sidebar-menu-icon sidebar-menu-icon--left icon-image-preview">delete</span></a>
+                                        <input type="file" name="file_gif">
                                         
                                     </li>
                                     
@@ -123,9 +122,7 @@
                                             No image
                                         </div>
                                         <br />
-                                        <a href="javascript:chooseImage('slide_gif_mobile');"><span class="material-icons sidebar-menu-icon sidebar-menu-icon--left icon-image-preview">library_add</span></a>
-                                        <a href="javascript:clearImage('slide_gif_mobile');"><span class="material-icons sidebar-menu-icon sidebar-menu-icon--left icon-image-preview">delete</span></a>
-                                        
+                                        <input type="file" name="file_gif_mobile">
                                     </li>
                                     
                                 </div>

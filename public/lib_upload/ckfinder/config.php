@@ -151,6 +151,8 @@ $config['AccessControl'][] = Array(
 		'folderRename' => true,
 		'folderDelete' => true,
 
+		'IMAGE_RESIZE'        => false,
+		'IMAGE_RESIZE_CUSTOM' => false,
 		'fileView' => true,
 		'fileUpload' => true,
 		'fileRename' => true,

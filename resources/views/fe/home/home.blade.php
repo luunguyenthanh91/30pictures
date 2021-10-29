@@ -9,7 +9,7 @@
     @foreach($listStoryLimit as $key => $item)
         <div class="groupSlide slideHome{{$key+1}}" style="display: none;">
             <div class="fullSize">
-                <img src="{{@url($item->slide_gif_pc ? $item->slide_gif_pc : '/')}}" />
+                <img src="{{$item->slide_gif_pc ? $item->slide_gif_pc : '/'}}" />
             </div>
             <div class="titleListDirectory">
                 <i class="fas fa-chevron-up d-none"></i>

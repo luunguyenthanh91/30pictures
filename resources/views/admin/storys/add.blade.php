@@ -84,7 +84,49 @@
                                 </div>
                             </div>
                             <div class="d-flex">
-                                <div class="form-group col-lg-6 p-0">
+                            <div class="form-group col-lg-3 p-0">
+                                    <label class="form-label">Gif PC:</label>
+                                    
+                                    <li id="images" >
+                                        <input class="input_image" type="hidden" name="slide_gif_pc" id="chooseImage_inputslide_gif_pc"
+                                            value="{{@$data->slide_gif_pc != '' ? @$data->slide_gif_pc : '' }}">
+                                        <div id="chooseImage_divslide_gif_pc" style="display: none;">
+                                            <img controls src="{{@$data->slide_gif_pc != '' ? @$data->slide_gif_pc : '' }}"
+                                                id="chooseImage_imgslide_gif_pc"
+                                                style="max-width: 150px; max-height:150px; border:dashed thin;"></img>
+                                        </div>
+                                        <div id="chooseImage_noImage_divslide_gif_pc"
+                                            style="width: 150px; border: thin dashed; text-align: center; padding:70px 0px;">
+                                            No image
+                                        </div>
+                                        <br />
+                                        <input type="file" name="file_gif">
+                                        
+                                    </li>
+                                    
+                                </div>
+                                
+                                <div class="form-group col-lg-3 p-0">
+                                    <label class="form-label">Gif Mobile:</label>
+                                    
+                                    <li id="images" >
+                                        <input class="input_image" type="hidden" name="slide_gif_mobile" id="chooseImage_inputslide_gif_mobile"
+                                            value="{{@$data->slide_gif_mobile != '' ? @$data->slide_gif_mobile : '' }}">
+                                        <div id="chooseImage_divslide_gif_mobile" style="display: none;">
+                                            <img controls src="{{@$data->slide_gif_mobile != '' ? @$data->slide_gif_mobile : '' }}"
+                                                id="chooseImage_imgslide_gif_mobile"
+                                                style="max-width: 150px; max-height:150px; border:dashed thin;"></img>
+                                        </div>
+                                        <div id="chooseImage_noImage_divslide_gif_mobile"
+                                            style="width: 150px; border: thin dashed; text-align: center; padding:70px 0px;">
+                                            No image
+                                        </div>
+                                        <br />
+                                        <input type="file" name="file_gif_mobile">
+                                    </li>
+                                    
+                                </div>
+                                <div class="form-group col-lg-3 p-0">
                                     <label class="form-label">Background PC:</label>
                                     
                                     <li id="images" >
@@ -106,7 +148,7 @@
                                     </li>
                                     
                                 </div>
-                                <div class="form-group col-lg-6 p-0">
+                                <div class="form-group col-lg-3 p-0">
                                     <label class="form-label">Background Mobile:</label>
                                     
                                     <li id="images" >

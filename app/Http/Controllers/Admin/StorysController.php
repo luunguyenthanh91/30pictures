@@ -7,6 +7,7 @@ use App\Models\Derector;
 use App\Models\Story;
 
 
+use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
 use App\Jobs\SendEmail;
 use App\Jobs\SendEmailTemplate;
@@ -59,12 +60,23 @@ class StorysController extends Controller
                     $data->name = $request->name;
                     $data->description = $request->description;
                     $data->image_pc = $request->image_pc;
-                    $data->slide_gif_pc = $request->slide_gif_pc;
-                    $data->slide_gif_mobile = $request->slide_gif_mobile;
+                    // $data->slide_gif_pc = $request->slide_gif_pc;
+                    // $data->slide_gif_mobile = $request->slide_gif_mobile;
                     $data->image_mobile = $request->image_mobile;
                     $data->khachhang = $request->khachhang;
                     $data->save();
-    
+                    if ($request->hasFile('file_gif')) {
+
+                        $path = $request->file('file_gif')->store('public/files');
+                        $data->slide_gif_pc = url('/').Storage::url($path);
+                        $data->save();
+                    }
+                    if ($request->hasFile('file_gif_mobile')) {
+
+                        $path = $request->file('file_gif_mobile')->store('public/files');
+                        $data->slide_gif_mobile = url('/').Storage::url($path);
+                        $data->save();
+                    }
                     if ($request->filesData) {
                         foreach ($request->filesData as $item) {
                             if ($item['id'] != 'new') {
@@ -138,11 +150,24 @@ class StorysController extends Controller
                 $data->name = $request->name;
                 $data->description = $request->description;
                 $data->image_pc = $request->image_pc;
-                $data->slide_gif_pc = $request->slide_gif_pc;
-                $data->slide_gif_mobile = $request->slide_gif_mobile;
+                // $data->slide_gif_pc = $request->slide_gif_pc;
+                // $data->slide_gif_mobile = $request->slide_gif_mobile;
                 $data->image_mobile = $request->image_mobile;
                 $data->khachhang = $request->khachhang;
                 $data->save();
+
+                if ($request->hasFile('file_gif')) {
+
+                    $path = $request->file('file_gif')->store('public/files');
+                    $data->slide_gif_pc = url('/').Storage::url($path);
+                    $data->save();
+                }
+                if ($request->hasFile('file_gif_mobile')) {
+
+                    $path = $request->file('file_gif_mobile')->store('public/files');
+                    $data->slide_gif_mobile = url('/').Storage::url($path);
+                    $data->save();
+                }
 
                 if ($request->filesData) {
                     foreach ($request->filesData as $item) {
