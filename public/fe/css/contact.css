@@ -126,7 +126,7 @@ main {
 }
 
 .home_content_image .contactForm .name_input {
-    width: 100%;
+    width: 70%;
     font-size: 16px;
     color: #fff;
     font-family: Nunito;
@@ -147,7 +147,7 @@ main {
 }
 
 .home_content_image .contactForm .sendBtn {
-    width: 100%;
+    width: 70%;
     font-size: 16px;
     color: #fff;
     font-family: OswaldRegular;
@@ -235,5 +235,5 @@ main {
 .home_content_image .contactInfo .map iframe {
     border-radius: 20px;
     height: 100%;
-    width: 100%;
+    width: calc(100% - 22px);
 }
