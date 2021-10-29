@@ -114,6 +114,7 @@
             $('.videoDetail-'+$(this).attr('rel')).addClass('activeVideo');
         });
         $('.close_video').on('click', function() {
+            $('.videoDetail .video').html('');
             $('.videoDetail').removeClass('activeVideo');
         });
         
