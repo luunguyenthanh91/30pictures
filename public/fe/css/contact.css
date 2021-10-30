@@ -1,5 +1,5 @@
 main {
-    padding: calc(78px + 3%) 31px;
+    padding: calc(78px + 2%) 31px;
     background: #7b0000ff;
 }
 
@@ -23,6 +23,9 @@ main {
     animation-name: slidein;
     position: absolute;
     left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 @-webkit-keyframes slidein {
@@ -84,6 +87,9 @@ main {
     animation-duration: 2s;
     animation-name: slideinForm;
     left: 33%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 @-webkit-keyframes slideinForm {
@@ -177,6 +183,9 @@ main {
     position: absolute;
     right: 0;
     top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 @-webkit-keyframes slideinInfo {

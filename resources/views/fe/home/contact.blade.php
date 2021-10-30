@@ -26,7 +26,7 @@
    <div class="contactForm">
         <h1 class="titleTop">Contact Us</h1>
         <h2 class="desTop">For more detailed information</h2>
-        <form action="" method="POST" class="p-0 mx-auto form-data" >
+        <form action="" method="POST" >
             @csrf
             
             @if($message != '')
