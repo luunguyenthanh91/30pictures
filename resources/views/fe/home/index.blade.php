@@ -51,7 +51,7 @@
         $(document).ready(function() {
             setTimeout(function() {
                 window.location.href = '/index.html'; 
-            }, 7000);
+            }, 6300);
         });
     </script>
     
