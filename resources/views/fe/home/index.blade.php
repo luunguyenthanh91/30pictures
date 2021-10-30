@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zxx" class="js">
 
 <head>
@@ -58,8 +58,8 @@
 
 </body>
 
-</html> -->
-
+</html>
+<!-- 
 <!DOCTYPE html>
 <html>
 <style>
@@ -120,7 +120,6 @@ hr {
     <p id="demo"></p>
   </div>
   <div class="bottomleft">
-    <!-- <p>Some text</p> -->
   </div>
 </div>
 <script src="{{ asset('fe/js/vendor/jquery-3.4.1.min.js') }}"></script>
@@ -155,4 +154,4 @@ var x = setInterval(function() {
 }, 1000);
 </script>
 </body>
-</html>
+</html> -->
