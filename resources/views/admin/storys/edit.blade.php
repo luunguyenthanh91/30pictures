@@ -83,6 +83,10 @@
                                     <input type="text" value="{{@$data->khachhang != '' ? @$data->khachhang : '' }}" name="khachhang"  class="form-control" required >
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <label class="form-label">Hiển Thị Trang Chủ</label>
+                                <input type="checkbox" name="active_video" value="1" @if(@$data->active_video == 1) checked @endif data-toggle="toggle" data-onstyle="outline-primary" data-offstyle="outline-secondary">
+                            </div>
                             <div class="d-flex">
                                 <div class="form-group col-lg-3 p-0">
                                     <label class="form-label">Gif PC:</label>
@@ -346,7 +350,8 @@
 <link href="{{ asset('lib_upload/jquery-ui/css/ui-lightness/jquery-ui.css') }}" rel="stylesheet" type="text/css"/>
 <script src="{{ asset('lib_upload/jquery-ui/js/jquery-ui.js') }}"></script>
 <script src="{{ asset('lib_upload/jquery.slug.js') }}"></script>
-
+<link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
 <script type="text/javascript">
     //<![CDATA[
 

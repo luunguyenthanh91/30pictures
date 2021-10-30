@@ -60,6 +60,11 @@ class StorysController extends Controller
                     $data->name = $request->name;
                     $data->description = $request->description;
                     $data->image_pc = $request->image_pc;
+                    if ($request->active_video) {
+                        $data->active_video = $request->active_video;
+                    } else {
+                        $data->active_video = 0;
+                    }
                     // $data->slide_gif_pc = $request->slide_gif_pc;
                     // $data->slide_gif_mobile = $request->slide_gif_mobile;
                     $data->image_mobile = $request->image_mobile;
@@ -150,6 +155,11 @@ class StorysController extends Controller
                 $data->name = $request->name;
                 $data->description = $request->description;
                 $data->image_pc = $request->image_pc;
+                if ($request->active_video) {
+                    $data->active_video = $request->active_video;
+                } else {
+                    $data->active_video = 0;
+                }
                 // $data->slide_gif_pc = $request->slide_gif_pc;
                 // $data->slide_gif_mobile = $request->slide_gif_mobile;
                 $data->image_mobile = $request->image_mobile;
