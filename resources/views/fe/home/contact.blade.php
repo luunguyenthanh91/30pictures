@@ -17,7 +17,7 @@
         <h2 class="desTop">Hello, we are here!</h2>
 
         <h3 class="titleBox">Address</h3>
-        <p class="dessBox">220/7 Phan Văn Hân Street,<br/>Ward 17, Binh Thanh District,<br/>HCM City</p>
+        <p class="dessBox">220/7 Phan Văn Hân Street,<br/>Ward 17, Binh Thanh District,<br/>Ho Chi Minh City, VN</p>
         <h3 class="titleBox">Email</h3>
         <p class="dessBox">{{Helper::getSetting(13)->description}}</p>
         <h3 class="titleBox">Phone Number</h3>
@@ -55,7 +55,7 @@
         <a href="{{Helper::getSetting(16)->description}}" target="_blank" class="titleBox">Youtube</a>
         <p class="dessBox"></p>
         <div class="map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.2519490667237!2d106.70564131411655!3d10.792005261858595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528b3a504c96f%3A0x4a7cbc1f6740f53e!2zMjIwLCA3IFBoYW4gVsSDbiBIw6JuLCBQaMaw4budbmcgMTksIELDrG5oIFRo4bqhbmgsIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1635503677971!5m2!1svi!2s" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.22105018289!2d106.70136231411652!3d10.79437476181544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528b427886683%3A0xcb81f04ece98186!2zMjIwIFBoYW4gVsSDbiBIw6JuLCBQaMaw4budbmcgMTcsIELDrG5oIFRo4bqhbmgsIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1635592125014!5m2!1svi!2s" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
    </div>
 </div>

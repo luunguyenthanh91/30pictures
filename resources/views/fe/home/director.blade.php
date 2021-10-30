@@ -111,11 +111,11 @@
                     '<video controls class="video_detail"><source src="'+$(this).attr('id')+'" type="video/mp4"></video>'
                 );
             }
-            $('.videoDetail-'+$(this).attr('rel')).addClass('activeVideo');
+            $('.videoDetail-'+$(this).attr('rel')).fadeIn(500);
         });
         $('.close_video').on('click', function() {
             $('.videoDetail .video').html('');
-            $('.videoDetail').removeClass('activeVideo');
+            $('.videoDetail').fadeOut(500);
         });
         
     });
