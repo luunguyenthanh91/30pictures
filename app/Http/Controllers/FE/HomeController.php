@@ -49,7 +49,7 @@ class HomeController extends Controller
             $slug = @Session::get('slug');
         }
         // $listVideos = VideoHome::all();
-        $listStoryLimit = Story::whereNotNull('slide_gif_pc')->where('active_video' , 1)->limit(8)->get();
+        $listStoryLimit = VideoHome::whereNotNull('image')->get();
         return view(
             'fe.home.home',
             compact([

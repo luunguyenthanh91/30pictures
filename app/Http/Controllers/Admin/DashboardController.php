@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Setting;
 use App\Models\VideoHome;
+use Illuminate\Support\Facades\Storage;
 
 class DashboardController extends Controller
 {
@@ -90,13 +91,17 @@ class DashboardController extends Controller
             $homeConfig->save();
 
             if ($request->filesHome) {
-                foreach ($request->filesHome as $item) {
+                foreach ($request->filesHome as $key => $item) {
                     if ($item['id'] != 'new') {
                         if ($item['type'] != 'delete') {
                             $dataUpdate = VideoHome::find($item['id']);
                             $dataUpdate->name = $item['name'];
-                            $dataUpdate->image = $item['image'];
-                            $dataUpdate->video = $item['video'];
+                            $dataUpdate->link = $item['link'];
+                            $dataUpdate->name_contact = $item['name_contact'];
+                            if ($request->hasFile('file_gif.'.$key)) {
+                                $path = $request->file('file_gif.'.$key)->store('public/files');
+                                $dataUpdate->image = url('/').Storage::url($path);
+                            }
                             $dataUpdate->save();
                         } else {
                             VideoHome::where('id', $item['id'])->delete();
@@ -105,8 +110,12 @@ class DashboardController extends Controller
                         if ($item['type'] != 'delete') {
                             $dataUpdate = new VideoHome();
                             $dataUpdate->name = $item['name'];
-                            $dataUpdate->image = $item['image'];
-                            $dataUpdate->video = $item['video'];
+                            $dataUpdate->link = $item['link'];
+                            $dataUpdate->name_contact = $item['name_contact'];
+                            if ($request->hasFile('file_gif.'.$key)) {
+                                $path = $request->file('file_gif.'.$key)->store('public/files');
+                                $dataUpdate->image = url('/').Storage::url($path);
+                            }
                             $dataUpdate->save();
                         }
                     }

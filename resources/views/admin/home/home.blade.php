@@ -37,7 +37,7 @@
         </div>
 
         <div class="container page__container page-section">
-            <form action="" method="POST" class="p-0 mx-auto">
+            <form action="" method="POST" class="p-0 mx-auto"   enctype="multipart/form-data">
                 @csrf
                 <div class="row mb-32pt">
                     <div class="col-lg-12">
@@ -123,9 +123,10 @@
                                 <thead>
                                     <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Video</th>
-                                    <th scope="col">Image</th>
+                                    <th scope="col">Tên Seller</th>
+                                    <th scope="col">Tên Hợp Tác</th>
+                                    <th scope="col">Link Liên Kết</th>
+                                    <th scope="col">Gif</th>
                                     <th scope="col">Action</th>
                                     </tr>
                                 </thead>
@@ -143,25 +144,15 @@
                                             </div>
                                         </td>
                                         <td>
-                                            <div class="form-group p-0">
-                                                
-                                                <li id="images" >
-                                                    <input class="input_image" type="hidden" v-bind:name="'filesHome['+item.idFile+'][video]'" 
-                                                    v-bind:id="'chooseImage_inputVideo'+item.idFile" v-model="item.video">
-                                                    <div v-bind:id="'chooseImage_divVideo'+item.idFile" style="display: none;">
-                                                        <video  controls v-bind:src="item.video"
-                                                        v-bind:id="'chooseImage_imgVideo'+item.idFile" style="max-width: 150px; max-height:150px; border:dashed thin;"></video>
-                                                    </div>
-                                                    <div v-bind:id="'chooseImage_noImage_divVideo'+item.idFile" 
-                                                    style="width: 150px; border: thin dashed; text-align: center; padding:70px 0px;">
-                                                        No image
-                                                    </div>
-                                                    <br />
-                                                    <a :href="'javascript:chooseImage('+ '`Video' + item.idFile + '`);'"><span class="material-icons sidebar-menu-icon sidebar-menu-icon--left icon-image-preview">library_add</span></a>
-                                                    <a :href="'javascript:clearImage('+ '`Video' + item.idFile + '`);'"><span class="material-icons sidebar-menu-icon sidebar-menu-icon--left icon-image-preview">delete</span></a>
-                                                    
-                                                </li>
-                                                
+                                            <div class="form-group">
+                                                <input type="text" v-bind:name="'filesHome['+item.idFile+'][name_contact]'"
+                                                class="form-control" v-model="item.name_contact" class="form-control" >
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <input type="text" v-bind:name="'filesHome['+item.idFile+'][link]'"
+                                                class="form-control" v-model="item.link" class="form-control" >
                                             </div>
                                         </td>
                                         <td>
@@ -179,8 +170,7 @@
                                                         No image
                                                     </div>
                                                     <br />
-                                                    <a :href="'javascript:chooseImage('+ '`Image' + item.idFile + '`);'"><span class="material-icons sidebar-menu-icon sidebar-menu-icon--left icon-image-preview">library_add</span></a>
-                                                    <a :href="'javascript:clearImage('+ '`Image' + item.idFile + '`);'"><span class="material-icons sidebar-menu-icon sidebar-menu-icon--left icon-image-preview">delete</span></a>
+                                                    <input type="file" v-bind:name="'file_gif['+item.idFile+']'" >
                                                     
                                                 </li>
                                                 
@@ -331,6 +321,8 @@ new Vue({
                     name : '{{$item->name}}',
                     image : '{{$item->image}}',
                     video : '{{$item->video}}',
+                    link : '{{$item->link}}',
+                    name_contact : '{{$item->name_contact}}',
                 }
             );
         @endforeach
@@ -346,6 +338,8 @@ new Vue({
                     name : '',
                     image : '',
                     video : '',
+                    link : '',
+                    name_contact : '',
                 }
             );
         },
