@@ -121,7 +121,7 @@ class DashboardController extends Controller
                     }
                 }
             } else {
-                VideoHome::delete();
+                VideoHome::getQuery()->delete();
             }
             $message['message'] = 'Thay đổi dữ liệu thành công.';
             $message['status'] = 1;
