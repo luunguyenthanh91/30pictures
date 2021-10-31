@@ -245,3 +245,7 @@ main {
     height: 100%;
     width: calc(100% - 22px);
 }
+
+.height-auto {
+    height: 383px;
+}

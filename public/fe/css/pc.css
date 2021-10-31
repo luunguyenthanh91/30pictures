@@ -79,7 +79,7 @@ a:hover {
     top: 0px;
     width: 100vw;
     height: 100vh;
-    background: #fff;
+    background: #6e1514;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -91,7 +91,7 @@ a:hover {
 .video_intro #video_intro {
     width: 100vw;
     height: 100vh;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
 }
 
@@ -119,7 +119,7 @@ header {
 .header_titleLogo {
     float: right;
     height: 24 px;
-    margin: 0px 20px 0px 0px;
+    margin: 3px 20px 0px 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
