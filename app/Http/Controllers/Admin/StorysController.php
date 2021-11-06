@@ -59,6 +59,7 @@ class StorysController extends Controller
                     $data = Story::find($id);
                     $data->name = $request->name;
                     $data->description = $request->description;
+                    $data->slug = \App\Helpers\Helper::convertSlug($request->description);
                     $data->image_pc = $request->image_pc;
                     if ($request->active_video) {
                         $data->active_video = $request->active_video;
@@ -89,6 +90,7 @@ class StorysController extends Controller
                                     $dataUpdate = Derector::find($item['id']);
                                     $dataUpdate->name = $item['name'];
                                     $dataUpdate->meme = $item['meme'];
+                                    $dataUpdate->slug = \App\Helpers\Helper::convertSlug($item['name']);
                                     $dataUpdate->description = $item['description'];
                                     $dataUpdate->video = $item['video'];
                                     $dataUpdate->image_pc = $item['image_pc'];
@@ -105,6 +107,7 @@ class StorysController extends Controller
                                     $dataUpdate = new Derector();
                                     $dataUpdate->name = $item['name'];
                                     $dataUpdate->meme = $item['meme'];
+                                    $dataUpdate->slug = \App\Helpers\Helper::convertSlug($item['name']);
                                     $dataUpdate->description = $item['description'];
                                     $dataUpdate->video = $item['video'];
                                     $dataUpdate->image_pc = $item['image_pc'];
@@ -154,6 +157,7 @@ class StorysController extends Controller
                 $data = new Story();
                 $data->name = $request->name;
                 $data->description = $request->description;
+                $data->slug = \App\Helpers\Helper::convertSlug($request->description);
                 $data->image_pc = $request->image_pc;
                 if ($request->active_video) {
                     $data->active_video = $request->active_video;
@@ -185,6 +189,7 @@ class StorysController extends Controller
                             if ($item['type'] != 'delete' && $item['name'] != '') {
                                 $dataUpdate = Derector::find($item['id']);
                                 $dataUpdate->name = $item['name'];
+                                $dataUpdate->slug = \App\Helpers\Helper::convertSlug($item['name']);
                                 $dataUpdate->meme = $item['meme'];
                                 $dataUpdate->description = $item['description'];
                                 $dataUpdate->video = $item['video'];
@@ -202,6 +207,7 @@ class StorysController extends Controller
                                 $dataUpdate = new Derector();
                                 $dataUpdate->name = $item['name'];
                                 $dataUpdate->meme = $item['meme'];
+                                $dataUpdate->slug = \App\Helpers\Helper::convertSlug($item['name']);
                                 $dataUpdate->description = $item['description'];
                                 $dataUpdate->video = $item['video'];
                                 $dataUpdate->image_pc = $item['image_pc'];

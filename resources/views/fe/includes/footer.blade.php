@@ -24,7 +24,7 @@
                     <p class="title_header_list">DIRECTOR LIST</p>
                     <div class="title_content_list">
                         @foreach(Helper::getListStory() as $item)
-                        <a href="/director-{{$item->id}}.html">
+                        <a href="/{{$item->slug}}.html">
                             <p class="title">{{$item->description}}</p>
                         </a>
                         @endforeach

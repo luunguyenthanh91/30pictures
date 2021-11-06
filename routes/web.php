@@ -27,8 +27,10 @@ Route::group(['namespace' => 'FE' ], function () {
     Route::get('/', 'HomeController@index');
     Route::get('/index.html', 'HomeController@home');
     Route::get('/story.html', 'HomeController@story');
+    Route::get('/{slug}.html', 'HomeController@director');
     Route::get('/director-{id}.html', 'HomeController@director');
     Route::get('/video-{id}.html', 'HomeController@directorDetail');
+    Route::get('/{slug}/{key}.html', 'HomeController@directorDetail');
     Route::get('/search.html', 'HomeController@search');
     Route::get('/about-us.html', 'HomeController@about');
     Route::get('/contact.html', 'HomeController@contact');
