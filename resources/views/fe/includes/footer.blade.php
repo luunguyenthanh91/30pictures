@@ -2,11 +2,11 @@
     <div class="block_memu">
         <div class="footer_static footer_static_pc">
             <a href="/index.html">
-                <p class="title">@30PICTURES2021</p>
+                <p class="title">©30PICTURES2021</p>
             </a>
         </div>
         <div class="footer_static footer_static_mobile">
-            <p class="title">@30PICTURES2021</p>
+            <p class="title">©30PICTURES2021</p>
             <p class="description">Director List</p>
         </div>
         <div class="footer_list foter_list_pc">
