@@ -103,6 +103,10 @@ class DashboardController extends Controller
                                 $path = $request->file('file_gif.'.$key)->store('public/files');
                                 $dataUpdate->image = url('/').Storage::url($path);
                             }
+                            if ($request->hasFile('file_gif_mb.'.$key)) {
+                                $path = $request->file('file_gif_mb.'.$key)->store('public/files');
+                                $dataUpdate->video_mobile = url('/').Storage::url($path);
+                            }
                             $dataUpdate->save();
                         } else {
                             VideoHome::where('id', $item['id'])->delete();
@@ -117,6 +121,10 @@ class DashboardController extends Controller
                             if ($request->hasFile('file_gif.'.$key)) {
                                 $path = $request->file('file_gif.'.$key)->store('public/files');
                                 $dataUpdate->image = url('/').Storage::url($path);
+                            }
+                            if ($request->hasFile('file_gif_mb.'.$key)) {
+                                $path = $request->file('file_gif_mb.'.$key)->store('public/files');
+                                $dataUpdate->video_mobile = url('/').Storage::url($path);
                             }
                             $dataUpdate->save();
                         }
