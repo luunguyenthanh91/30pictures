@@ -90,6 +90,7 @@ class StorysController extends Controller
                                     $dataUpdate = Derector::find($item['id']);
                                     $dataUpdate->name = $item['name'];
                                     $dataUpdate->meme = $item['meme'];
+                                    $dataUpdate->sor = $item['sor'];
                                     $dataUpdate->slug = \App\Helpers\Helper::convertSlug($item['name']);
                                     $dataUpdate->description = $item['description'];
                                     $dataUpdate->video = $item['video'];
@@ -107,6 +108,7 @@ class StorysController extends Controller
                                     $dataUpdate = new Derector();
                                     $dataUpdate->name = $item['name'];
                                     $dataUpdate->meme = $item['meme'];
+                                    $dataUpdate->sor = $item['sor'];
                                     $dataUpdate->slug = \App\Helpers\Helper::convertSlug($item['name']);
                                     $dataUpdate->description = $item['description'];
                                     $dataUpdate->video = $item['video'];
@@ -138,7 +140,7 @@ class StorysController extends Controller
             
         }
         $data = Story::find($request->id);
-        $dataList = Derector::where('story_id',$id)->get();
+        $dataList = Derector::where('story_id',$id)->orderBy('sor')->get();
         $newArr = [];
         $newArr = array_pad($newArr, 20, null);
         return view(
@@ -191,6 +193,7 @@ class StorysController extends Controller
                                 $dataUpdate->name = $item['name'];
                                 $dataUpdate->slug = \App\Helpers\Helper::convertSlug($item['name']);
                                 $dataUpdate->meme = $item['meme'];
+                                $dataUpdate->sor = $item['sor'];
                                 $dataUpdate->description = $item['description'];
                                 $dataUpdate->video = $item['video'];
                                 $dataUpdate->image_pc = $item['image_pc'];
@@ -207,6 +210,7 @@ class StorysController extends Controller
                                 $dataUpdate = new Derector();
                                 $dataUpdate->name = $item['name'];
                                 $dataUpdate->meme = $item['meme'];
+                                $dataUpdate->sor = $item['sor'];
                                 $dataUpdate->slug = \App\Helpers\Helper::convertSlug($item['name']);
                                 $dataUpdate->description = $item['description'];
                                 $dataUpdate->video = $item['video'];

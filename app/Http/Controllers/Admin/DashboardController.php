@@ -96,6 +96,7 @@ class DashboardController extends Controller
                         if ($item['type'] != 'delete') {
                             $dataUpdate = VideoHome::find($item['id']);
                             $dataUpdate->name = $item['name'];
+                            $dataUpdate->sor = $item['sor'];
                             $dataUpdate->link = $item['link'];
                             $dataUpdate->name_contact = $item['name_contact'];
                             if ($request->hasFile('file_gif.'.$key)) {
@@ -111,6 +112,7 @@ class DashboardController extends Controller
                             $dataUpdate = new VideoHome();
                             $dataUpdate->name = $item['name'];
                             $dataUpdate->link = $item['link'];
+                            $dataUpdate->sor = $item['sor'];
                             $dataUpdate->name_contact = $item['name_contact'];
                             if ($request->hasFile('file_gif.'.$key)) {
                                 $path = $request->file('file_gif.'.$key)->store('public/files');
@@ -127,7 +129,7 @@ class DashboardController extends Controller
             $message['status'] = 1;
         }
 
-        $listVideoMobile = VideoHome::all();
+        $listVideoMobile = VideoHome::orderBy('sor')->get();
         return view(
             'admin.home.home',
             compact([

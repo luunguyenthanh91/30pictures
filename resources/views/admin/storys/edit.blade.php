@@ -197,9 +197,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-12 align-items-center overflow-auto">
+                    <div id="sortable" class="col-lg-12 align-items-center overflow-auto">
                         
-                        <div :class="item.type != 'update' ? 'flex mb-1 style-group-add hidden added_record'+item.idFile : 'flex mb-1 style-group-add added_record'+item.idFile " v-for="item in listVideo" v-bind:class="item.type == 'delete' ? 'hidden' : '' " >
+                        <div v-bind:rel="item.id" v-bind:id="'blockId'+item.idFile" :class="item.type != 'update' ? 'flex mb-1 style-group-add hidden added_record'+item.idFile : 'flex mb-1 style-group-add added_record'+item.idFile " v-for="item in listVideo" v-bind:class="item.type == 'delete' ? 'hidden' : '' " >
                             <div class="form-group">
                                     <b class="form-label">((item.name))</b>
                             </div>
@@ -215,6 +215,11 @@
                                     class="form-control" v-model="item.id" class="form-control" >
                                     <input type="hidden" v-bind:name="'filesData['+item.idFile+'][type]'"
                                     class="form-control" v-model="item.type" class="form-control" >
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Sắp Xếp</label>
+                                    <input type="text" v-bind:name="'filesData['+item.idFile+'][sor]'"
+                                                class="form-control sor" v-bind:value="item.sor != '' ? item.sor : item.id" >
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label">MeMe</label>
@@ -347,15 +352,26 @@
 
 <script type="text/javascript" src="{{ asset('lib_upload/ckeditor/ckeditor.js') }}"></script> 
 <script type="text/javascript" src="{{ asset('lib_upload/ckfinder/ckfinder.js') }}"></script>  
-<link href="{{ asset('lib_upload/jquery-ui/css/ui-lightness/jquery-ui.css') }}" rel="stylesheet" type="text/css"/>
-<script src="{{ asset('lib_upload/jquery-ui/js/jquery-ui.js') }}"></script>
+<link href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
 <script src="{{ asset('lib_upload/jquery.slug.js') }}"></script>
 <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
 <script type="text/javascript">
     //<![CDATA[
 
-        jQuery(document).ready(function (){
+    jQuery(document).ready(function (){
+        $( "#sortable" ).sortable({
+            update: function (event, ui) {
+                //db id of the item sorted
+                var idLast = ui.item[0].id;
+                var idFirst = ui.item.next().attr("id");
+                var sorLas = $('#'+idLast + ' .sor').val();
+                var sorFirs = $('#'+idFirst + ' .sor').val();
+                $('#'+idLast + ' .sor').val(sorFirs);
+                $('#'+idFirst + ' .sor').val(sorLas);
+            }
+        });
         CKFinder.setupCKEditor( null, '/lib_upload/ckfinder/' );
         jQuery(".input_image[value!='']").parent().find('div').each( function (index, element){
             jQuery(this).toggle();
@@ -442,7 +458,9 @@ new Vue({
     mounted() {
         var flagCount = 0;
         @foreach($dataList as $item)
-            this.countVideo = this.countVideo + 1;
+            if (this.countVideo < {{$item->id}}) {
+                this.countVideo = {{$item->id}};
+            }
             flagCount = flagCount + 1;
             @if($item->type_display != 0)
                 this.additional = '{{$item->type_display}}';
@@ -451,19 +469,21 @@ new Vue({
                 {
                     id : '{{$item->id}}',
                     type : 'update',
-                    idFile : this.countVideo,
+                    idFile : '{{$item->id}}',
                     name : '{{$item->name}}',
                     meme : '{{$item->meme}}',
                     description : @json($item->description),
                     image_pc : '{{$item->image_pc}}',
                     image_mobile : '{{$item->image_mobile}}',
                     video : '{{$item->video}}',
+                    sor : '{{$item->sor}}',
                     type_display : '{{$item->type_display}}',
                     link_video : '{{$item->link_video}}',
                     link_youtube : '{{$item->link_youtube}}'
                 }
             );
         @endforeach
+        flagCount = this.countVideo ;
         @foreach($newArr as $item)
             this.countVideo = this.countVideo + 1;
             this.listVideo.push(
@@ -472,6 +492,7 @@ new Vue({
                     type : 'add',
                     idFile : this.countVideo,
                     name : '',
+                    sor : this.countVideo,
                     meme : '',
                     description : '',
                     image_pc : '',

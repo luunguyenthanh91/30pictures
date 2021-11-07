@@ -49,7 +49,7 @@ class HomeController extends Controller
             $slug = @Session::get('slug');
         }
         // $listVideos = VideoHome::all();
-        $listStoryLimit = VideoHome::whereNotNull('image')->get();
+        $listStoryLimit = VideoHome::orderBy('sor')->whereNotNull('image')->get();
         return view(
             'fe.home.home',
             compact([
@@ -108,15 +108,17 @@ class HomeController extends Controller
             ])
         );
     }
-    function director(Request $request , $id){
-        $slug = '';
+    function director(Request $request , $slug){
         $bgDirectory = Setting::find(19);
+        $key = $request->key;
+        if (!$key) {
+            $story = Story::where("slug" , $slug)->first();
+            $listStory = Derector::where('story_id', $story->id)->orderBy('sor')->get();
+        } else {
+            $story = Story::where("slug" , $slug)->first();
+            $listStory = Derector::where('name', 'like' , '%'. $key . '%')->get();
+        }
         
-        $listStory = Derector::where('story_id', $id)->get();
-        // if (count($listStory)%2 != 0 && count($listStory) > 0) {
-        //     $listStory[] = $listStory[0];
-        // }
-        $story = Story::find($id);
         $listStoryS = Story::all();
         return view(
             'fe.home.director',

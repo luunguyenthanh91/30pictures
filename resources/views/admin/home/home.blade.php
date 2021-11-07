@@ -124,14 +124,15 @@
                                     <tr>
                                     <th scope="col">#</th>
                                     <th scope="col">Tên Seller</th>
+                                    <th scope="col">Vị Trí</th>
                                     <th scope="col">Tên Hợp Tác</th>
                                     <th scope="col">Link Liên Kết</th>
                                     <th scope="col">Gif</th>
                                     <th scope="col">Action</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr v-for="item in listVideo" v-bind:class="item.type == 'delete' ? 'hidden' : '' ">
+                                <tbody id="sortable">
+                                    <tr v-bind:rel="item.id" v-bind:id="'blockId'+item.idFile" class="ui-state-default" v-for="item in listVideo" v-bind:class="item.type == 'delete' ? 'hidden' : '' ">
                                         <th scope="row">((item.idFile))</th>
                                         <td>
                                             <div class="form-group">
@@ -141,6 +142,12 @@
                                                 class="form-control" v-model="item.id" class="form-control" >
                                                 <input type="hidden" v-bind:name="'filesHome['+item.idFile+'][type]'"
                                                 class="form-control" v-model="item.type" class="form-control" >
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <input type="text" v-bind:name="'filesHome['+item.idFile+'][sor]'"
+                                                class="form-control sor" v-bind:value="item.sor != '' ? item.sor : item.id"  >
                                             </div>
                                         </td>
                                         <td>
@@ -222,8 +229,8 @@
 
 <script type="text/javascript" src="{{ asset('lib_upload/ckeditor/ckeditor.js') }}"></script> 
 <script type="text/javascript" src="{{ asset('lib_upload/ckfinder/ckfinder.js') }}"></script>  
-<link href="{{ asset('lib_upload/jquery-ui/css/ui-lightness/jquery-ui.css') }}" rel="stylesheet" type="text/css"/>
-<script src="{{ asset('lib_upload/jquery-ui/js/jquery-ui.js') }}"></script>
+<link href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
 <script src="{{ asset('lib_upload/jquery.slug.js') }}"></script>
 
 <script type="text/javascript">
@@ -233,6 +240,17 @@
         CKFinder.setupCKEditor( null, '/lib_upload/ckfinder/' );
         jQuery(".input_image[value!='']").parent().find('div').each( function (index, element){
             jQuery(this).toggle();
+        });
+        $( "#sortable" ).sortable({
+            update: function (event, ui) {
+                //db id of the item sorted
+                var idLast = ui.item[0].id;
+                var idFirst = ui.item.next().attr("id");
+                var sorLas = $('#'+idLast + ' .sor').val();
+                var sorFirs = $('#'+idFirst + ' .sor').val();
+                $('#'+idLast + ' .sor').val(sorFirs);
+                $('#'+idFirst + ' .sor').val(sorLas);
+            }
         });
     });
     var imgId;
@@ -312,16 +330,20 @@ new Vue({
     delimiters: ["((", "))"],
     mounted() {
         @foreach($listVideoMobile as $item)
-            this.countVideo = this.countVideo + 1;
+            if (this.countVideo < {{$item->id}}) {
+                this.countVideo = {{$item->id}};
+            }
+            
             this.listVideo.push(
                 {
                     id : '{{$item->id}}',
                     type : 'update',
-                    idFile : this.countVideo,
+                    idFile : '{{$item->id}}',
                     name : '{{$item->name}}',
                     image : '{{$item->image}}',
                     video : '{{$item->video}}',
                     link : '{{$item->link}}',
+                    sor : '{{$item->sor}}',
                     name_contact : '{{$item->name_contact}}',
                 }
             );
@@ -339,6 +361,7 @@ new Vue({
                     image : '',
                     video : '',
                     link : '',
+                    sor : this.countVideo,
                     name_contact : '',
                 }
             );

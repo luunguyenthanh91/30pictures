@@ -12,7 +12,11 @@
 @endsection
 @section('nav_title')
 <div class="header_titleLogo">
-    <p class="contentLogo">{{@$story->description}} | SHOWREEL</p>
+    @if ($story)
+        <p class="contentLogo">{{@$story->description}} | SHOWREEL</p>
+    @else 
+    <p class="contentLogo">SHOWREEL</p>
+    @endif
 </div>
 @endsection
 @section('class_body', "home_banner_video_crop_header")

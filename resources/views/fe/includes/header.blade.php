@@ -20,7 +20,6 @@
             </svg>
         </a>
         <form method="get" class="form_search_header hidden" action="/search.html">
-            @csrf
             <input class="search_input" type="text" name="key" required placeholder="Director Video">
         </form>
     </div>

@@ -27,7 +27,7 @@
             @php($count++)
             @endif
             <div class="item @if ($key%3 == 1) first @endif @if ($key%3 == 2) last @endif ">
-                <a rel="{{@url($item->image_pc ? $item->image_pc  : '/' )}}" href="/director-{{$item->id}}.html" class="@if ($key == 0 || $key%2 == 0) block-1 @else block-2 @endif block">
+                <a rel="{{@url($item->image_pc ? $item->image_pc  : '/' )}}" href="/{{$item->slug}}.html" class="@if ($key == 0 || $key%2 == 0) block-1 @else block-2 @endif block">
                     @if ($key%2 == 0)
                     <img src="{{@url($item->image_pc ? $item->image_pc  : '/' )}}" class="image_size" alt="{{$item->description}}" />
                     <div class="box_info">
