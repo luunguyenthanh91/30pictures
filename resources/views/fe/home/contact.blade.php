@@ -18,7 +18,7 @@
             <h2 class="desTop">Hello, we are here!</h2>
 
             <h3 class="titleBox">Address</h3>
-            <p class="dessBox">220/7 Phan Văn Hân Street,<br/>Ward 17, Binh Thanh District,<br/>Ho Chi Minh City, VN</p>
+            <p class="dessBox">220/7 Phan Van Han Street,<br/>Ward 17, Binh Thanh District,<br/>Ho Chi Minh City, VN</p>
             <h3 class="titleBox">Email</h3>
             <p class="dessBox">{{Helper::getSetting(13)->description}}</p>
             <h3 class="titleBox">Phone Number</h3>
