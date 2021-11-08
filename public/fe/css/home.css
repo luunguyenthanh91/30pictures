@@ -1,14 +1,28 @@
-
-header , footer {
+header,
+footer {
     background: #000;
 }
 
-@media screen and (max-width: 1024px)
-{
+.imgPcHome {
+    display: block;
+}
+
+.imgPcMobile {
+    display: none;
+}
+
+.scrollToTop {
+    display: none;
+}
+
+@media screen and (max-width: 1024px) {
     .slide_mobile_mail {
         overflow-y: auto;
     }
-    .slide_mobile_mail .owl-carousel, .slide_mobile_mail .owl-carousel .owl-stage-outer, .slide_mobile_mail .owl-carousel .owl-stage-outer .owl-stage, .slide_mobile_mail .owl-carousel .owl-stage-outer .owl-stage .owl-item {
+    .slide_mobile_mail .owl-carousel,
+    .slide_mobile_mail .owl-carousel .owl-stage-outer,
+    .slide_mobile_mail .owl-carousel .owl-stage-outer .owl-stage,
+    .slide_mobile_mail .owl-carousel .owl-stage-outer .owl-stage .owl-item {
         margin-bottom: 10px;
         padding: 10px 0px;
     }

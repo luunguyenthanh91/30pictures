@@ -15,7 +15,7 @@ $(document).ready(function() {
         }
         if (!$(event.target).closest('.box').length && !$(event.target).closest('.menu_btn_toggle').length) {
             $(".box").animate({
-                right: "-350px"
+                right: "-100%"
             }, 500);
         }
     });
@@ -26,7 +26,7 @@ $(document).ready(function() {
     });
     $('.close_menu_box').on('click', function() {
         $(".box").animate({
-            right: "-350px"
+            right: "-100%"
         }, 500);
     });
 

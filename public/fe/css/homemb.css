@@ -1,0 +1,34 @@
+@media screen and (max-width: 1024px) {}
+
+@media only screen and (max-width: 576px) {
+    .titleListDirectory {
+        left: 15px;
+        bottom: 20%;
+        width: 100%;
+    }
+    .imgPcHome {
+        display: none;
+    }
+    .imgPcMobile {
+        display: block;
+    }
+    .home_content_image .content-about-us {
+        padding: 0px 15px 60px;
+    }
+    .home_content_image .content-about-us img {
+        width: 80%;
+    }
+    .home_content_image .content-about-us {
+        color: #fff;
+    }
+    .scrollToTop {
+        position: fixed;
+        right: 15px;
+        bottom: 15px;
+        z-index: 1000;
+        background: #fff;
+        width: 30px;
+        height: 30px;
+        border-radius: 5px;
+    }
+}
