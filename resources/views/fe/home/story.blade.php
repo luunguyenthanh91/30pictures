@@ -29,7 +29,13 @@
             <div class="item @if ($key%3 == 1) first @endif @if ($key%3 == 2) last @endif ">
                 <a rel="{{@url($item->image_pc ? $item->image_pc  : '/' )}}" href="/{{$item->slug}}.html" class="@if ($key == 0 || $key%2 == 0) block-1 @else block-2 @endif block">
                     @if ($key%2 == 0)
-                    <img src="{{@url($item->image_pc ? $item->image_pc  : '/' )}}" class="image_size" alt="{{$item->description}}" />
+                    <div class="image_size">
+                        <img src="{{@url($item->image_pc ? $item->image_pc  : '/' )}}" class="" alt="{{$item->description}}" />
+                        <div class="hoverBgStory">
+                            <p class="title">{{$item->description}}</span></p>
+                            <p class="description">View Showreel - Projects ></p>
+                        </div>
+                    </div>
                     <div class="box_info">
                         <p class="title">{{$item->description}}</span></p>
                         <p class="description">View Showreel - Projects ></p>
@@ -39,7 +45,14 @@
                         <p class="title">{{$item->description}}</span></p>
                         <p class="description">View Showreel - Projects ></p>
                     </div>
-                    <img src="{{@url($item->image_pc ? $item->image_pc  : '/' )}}" class="image_size" alt="{{$item->description}}" />
+                    <div class="image_size">
+                        <img src="{{@url($item->image_pc ? $item->image_pc  : '/' )}}" alt="{{$item->description}}" />
+                        <div class="hoverBgStory">
+                            <p class="title">{{$item->description}}</span></p>
+                            <p class="description">View Showreel - Projects ></p>
+                        </div>
+                    </div>
+                    
                     @endif
 
                 </a>

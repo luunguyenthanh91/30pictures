@@ -136,6 +136,68 @@ main {
     -o-animation: fadein 2s;
     /* Opera < 12.1 */
     animation: fadein 2s;
+    position: relative;
+}
+
+.pc_style_slide .item .image_size .hoverBgStory {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: #00000079;
+    border-radius: 20px;
+    z-index: 100;
+    opacity: 0;
+    transition: all .2s ease-in-out;
+}
+
+.pc_style_slide .item:hover .image_size .hoverBgStory {
+    opacity: 1;
+    transition: all .2s ease-in-out;
+}
+
+.pc_style_slide .item .image_size .hoverBgStory .title {
+    color: #fff;
+    font-size: 24px;
+    line-height: 24px;
+    font-family: OswaldRegular;
+    margin: 0px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 30px;
+    left: 20px;
+}
+
+.pc_style_slide .item .image_size .hoverBgStory .title span {
+    color: #fff;
+    font-size: 24px;
+    line-height: 24px;
+    font-family: OswaldRegular;
+    margin: 0px;
+    margin-bottom: 10px;
+}
+
+.pc_style_slide .item .image_size .hoverBgStory .description {
+    color: #fff;
+    font-size: 16px;
+    font-family: Nunito;
+    margin: 0px;
+    position: absolute;
+    bottom: 5px;
+    left: 20px;
+}
+
+
+/*  */
+
+.pc_style_slide .item .image_size img {
+    width: 100%;
+    border-radius: 20px;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .pc_style_slide .item .box_info {
