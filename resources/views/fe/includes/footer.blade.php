@@ -12,7 +12,7 @@
         <div class="footer_list foter_list_pc">
 
             <div class="menu_item">
-                <a href="/about-us.html">
+                <a href="/about-us">
                     <p class="title">ABOUT US</p>
                 </a>
             </div>
@@ -24,7 +24,7 @@
                     <p class="title_header_list">DIRECTOR LIST</p>
                     <div class="title_content_list">
                         @foreach(Helper::getListStory() as $item)
-                        <a href="/{{$item->slug}}.html">
+                        <a href="/story-sellers/{{$item->slug}}">
                             <p class="title">{{$item->description}}</p>
                         </a>
                         @endforeach
@@ -33,7 +33,7 @@
                 </div>
             </div>
             <div class="menu_item">
-                <a href="/contact.html">
+                <a href="/contact-us">
                     <p class="title">CONTACT</p>
                 </a>
             </div>

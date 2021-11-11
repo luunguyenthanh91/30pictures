@@ -27,13 +27,13 @@
             @php($count++)
             @endif
             <div class="item @if ($key%3 == 1) first @endif @if ($key%3 == 2) last @endif ">
-                <a rel="{{@url($item->image_pc ? $item->image_pc  : '/' )}}" href="/{{$item->slug}}.html" class="@if ($key == 0 || $key%2 == 0) block-1 @else block-2 @endif block">
+                <a rel="{{@url($item->image_pc ? $item->image_pc  : '/' )}}" href="/story-sellers/{{$item->slug}}" class="@if ($key == 0 || $key%2 == 0) block-1 @else block-2 @endif block">
                     @if ($key%2 == 0)
                     <div class="image_size">
                         <img src="{{@url($item->image_pc ? $item->image_pc  : '/' )}}" class="" alt="{{$item->description}}" />
                         <div class="hoverBgStory">
                             <p class="title">{{$item->description}}</span></p>
-                            <p class="description">View Showreel - Projects ></p>
+                            <p class="description">View Showreel - Project></p>
                         </div>
                     </div>
                     <div class="box_info">
@@ -49,7 +49,7 @@
                         <img src="{{@url($item->image_pc ? $item->image_pc  : '/' )}}" alt="{{$item->description}}" />
                         <div class="hoverBgStory">
                             <p class="title">{{$item->description}}</span></p>
-                            <p class="description">View Showreel - Projects ></p>
+                            <p class="description">View Showreel - Project ></p>
                         </div>
                     </div>
                     

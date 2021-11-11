@@ -80,7 +80,9 @@ class HomeController extends Controller
         $slug = '';
         $idWhere = 0;
         $bgDirectory = Setting::find(19);
-        $storyBig = Derector::where('name', 'like' ,'%'. $request->key . '%')->with('story')->first();
+        $storyBig = Derector::where('name', 'like BINARY' , "%".$request->key."%")
+        ->orWhere('description', 'like BINARY' ,"%".$request->key."%")
+        ->orWhere('meme', 'like BINARY' ,"%".$request->key."%")->with('story')->first();
         if ($storyBig) {
             $idWhere = $storyBig->id;
             $max_length = 340;
@@ -92,7 +94,9 @@ class HomeController extends Controller
             }
             
         }
-        $listStory = Derector::where('name', 'like' ,'%'. $request->key . '%')->where('id','!=' ,$idWhere)->with('story')->get();
+        $listStory = Derector::where('name', 'like' , "%".$request->key."%")
+        ->orWhere('description', 'like' ,"%".$request->key."%")
+        ->orWhere('meme', 'like' ,"%".$request->key."%")->with('story')->get();
         // if (count($listStory)%2 != 0 && count($listStory) > 0) {
         //     $listStory[] = $listStory[0];
         // }
@@ -113,10 +117,10 @@ class HomeController extends Controller
         $key = $request->key;
         if (!$key) {
             $story = Story::where("slug" , $slug)->first();
-            $listStory = Derector::where('story_id', $story->id)->orderBy('sor')->get();
+            $listStory = Derector::where('story_id', $story->id)->with('story')->orderBy('sor')->get();
         } else {
             $story = Story::where("slug" , $slug)->first();
-            $listStory = Derector::where('name', 'like' , '%'. $key . '%')->get();
+            $listStory = Derector::where('name', 'like' , '%'. $key . '%')->with('story')->get();
         }
         
         $listStoryS = Story::all();
@@ -132,9 +136,8 @@ class HomeController extends Controller
         );
     }
 
-    function directorDetail(Request $request , $id){
-        $slug = '';
-        $listStory = Derector::find($id);
+    function directorDetail(Request $request , $slug,  $key){
+        $listStory = Derector::where('slug',$key)->first();
         $story = Story::find($listStory->story_id);
         $listStoryS = Story::all();
         return view(
@@ -143,7 +146,8 @@ class HomeController extends Controller
                 'slug',
                 'listStory',
                 'story',
-                'listStoryS'
+                'listStoryS',
+                'key'
             ])
         );
     }

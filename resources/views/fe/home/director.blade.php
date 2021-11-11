@@ -46,7 +46,7 @@
             @endif
                 @if($key%3 == 0)
                     <div class="video_big">
-                        <a href="#" class="item openVideo" id="@if($item->link_video) {{$item->link_video}} @elseif($item->link_youtube) {{$item->link_youtube}} @else {{@url(@$item->video ? $item->video : '/' )}} @endif" alt="@if($item->link_video) 1 @elseif($item->link_youtube)2 @else 3 @endif" rel="{{$item->id}}" >
+                        <a href="/story-sellers/{{$item->story->slug}}/{{$item->slug}}.html" class="item openVideo" id="@if($item->link_video) {{$item->link_video}} @elseif($item->link_youtube) {{$item->link_youtube}} @else {{@url(@$item->video ? $item->video : '/' )}} @endif" alt="@if($item->link_video) 1 @elseif($item->link_youtube)2 @else 3 @endif" rel="{{$item->id}}" >
                             <div class="block-1 block">
                                 <img src="{{@url($item->image_pc ? $item->image_pc : '/' )}}" class="bg" alt="{{$item->name}}" />
                                 <div class="bg_bg"></div>
@@ -63,7 +63,7 @@
                         <div class="video_content">
                     @endif
                         
-                            <a href="#" class="item openVideo" id="@if($item->link_video) {{$item->link_video}} @elseif($item->link_youtube) {{$item->link_youtube}} @else {{@url(@$item->video ? $item->video : '/' )}} @endif" alt="@if($item->link_video) 1 @elseif($item->link_youtube)2 @else 3 @endif" rel="{{$item->id}}" >
+                            <a href="/story-sellers/{{$item->story->slug}}/{{$item->slug}}.html" class="item openVideo" id="@if($item->link_video) {{$item->link_video}} @elseif($item->link_youtube) {{$item->link_youtube}} @else {{@url(@$item->video ? $item->video : '/' )}} @endif" alt="@if($item->link_video) 1 @elseif($item->link_youtube)2 @else 3 @endif" rel="{{$item->id}}" >
                                 <div class="@if ($key == 0 || $key%2 == 0) block-1 @else block-2 @endif block">
                                     <img src="{{@url($item->image_pc ? $item->image_pc : '/' )}}" class="bg" alt="{{$item->name}}" />
                                     <div class="seemore">See More ></div>
@@ -101,26 +101,26 @@
                 $container.animate({scrollTop: $scrollTo.offset().top - $container.offset().top + $container.scrollTop(), scrollLeft: 0},500); 
             }
         }));
-        $('.openVideo').on('click', function() {
-            if ($(this).attr('alt') == 1) {
-                $('.videoDetail-'+$(this).attr('rel')+ ' .video').html(
-                    '<iframe src="'+$(this).attr('id')+'"></iframe>'
-                );
-            } else if ($(this).attr('alt') == 2) {
-                $('.videoDetail-'+$(this).attr('rel')+ ' .video').html(
-                    '<iframe src="'+$(this).attr('id')+'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
-                );
-            } else {
-                $('.videoDetail-'+$(this).attr('rel')+ ' .video').html(
-                    '<video controls class="video_detail"><source src="'+$(this).attr('id')+'" type="video/mp4"></video>'
-                );
-            }
-            $('.videoDetail-'+$(this).attr('rel')).fadeIn(500);
-        });
-        $('.close_video').on('click', function() {
-            $('.videoDetail .video').html('');
-            $('.videoDetail').fadeOut(500);
-        });
+        // $('.openVideo').on('click', function() {
+        //     if ($(this).attr('alt') == 1) {
+        //         $('.videoDetail-'+$(this).attr('rel')+ ' .video').html(
+        //             '<iframe src="'+$(this).attr('id')+'"  frameborder="0" allow="accelerometer; autoplay; fullscreen; clipboard-write; encrypted-media; gyroscope; picture-in-picture; " webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
+        //         );
+        //     } else if ($(this).attr('alt') == 2) {
+        //         $('.videoDetail-'+$(this).attr('rel')+ ' .video').html(
+        //             '<iframe src="'+$(this).attr('id')+'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; fullscreen; clipboard-write; encrypted-media; gyroscope; picture-in-picture; " webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
+        //         );
+        //     } else {
+        //         $('.videoDetail-'+$(this).attr('rel')+ ' .video').html(
+        //             '<video controls class="video_detail"><source src="'+$(this).attr('id')+'" type="video/mp4"></video>'
+        //         );
+        //     }
+        //     $('.videoDetail-'+$(this).attr('rel')).fadeIn(500);
+        // });
+        // $('.close_video').on('click', function() {
+        //     $('.videoDetail .video').html('');
+        //     $('.videoDetail').fadeOut(500);
+        // });
         
     });
 </script>

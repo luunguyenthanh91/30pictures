@@ -665,7 +665,7 @@ main {
 .videoDetail .contentDetailVideo .content-about-us {
     color: #fff;
     font-size: 16px;
-    line-height: 20px;
+    line-height: 24px;
     font-family: Nunito;
     margin-top: 31px;
     margin-bottom: unset;
@@ -686,4 +686,8 @@ main {
 .videoDetail .close_video svg {
     width: 24px;
     height: 24px;
+}
+
+.active {
+    display: block;
 }
