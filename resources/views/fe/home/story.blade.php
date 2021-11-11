@@ -33,7 +33,7 @@
                         <img src="{{@url($item->image_pc ? $item->image_pc  : '/' )}}" class="" alt="{{$item->description}}" />
                         <div class="hoverBgStory">
                             <p class="title">{{$item->description}}</span></p>
-                            <p class="description">View Showreel - Project></p>
+                            <p class="description">Storyseller</p>
                         </div>
                     </div>
                     <div class="box_info">
@@ -49,7 +49,7 @@
                         <img src="{{@url($item->image_pc ? $item->image_pc  : '/' )}}" alt="{{$item->description}}" />
                         <div class="hoverBgStory">
                             <p class="title">{{$item->description}}</span></p>
-                            <p class="description">View Showreel - Project ></p>
+                            <p class="description">Storyseller</p>
                         </div>
                     </div>
                     
