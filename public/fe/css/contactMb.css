@@ -32,6 +32,7 @@
         width: 100%;
         margin-right: unset;
         margin-left: unset;
+        margin-bottom: 50px;
     }
     .home_content_image .contactForm .name_input {
         width: 100%;
@@ -56,6 +57,12 @@
         display: block;
         float: left;
         width: 100%;
+        height: unset;
+    }
+    .home_content_image .contactForm .sendBtn {
+        width: 100%;
+    }
+    .height-auto {
         height: unset;
     }
 }
