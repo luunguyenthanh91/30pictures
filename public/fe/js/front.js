@@ -49,6 +49,58 @@ $(document).ready(function() {
         $(".moveTopBtn").on('click', function() {
             $("html, body").animate({ scrollTop: 0 }, "slow");
         });
+        document.addEventListener('touchstart', handleTouchStartMobile, false);
+        document.addEventListener('touchmove', handleTouchMoveMobile, false);
     }
 
 });
+
+
+
+function getTouches(evt) {
+    return evt.touches || // browser API
+        evt.originalEvent.touches; // jQuery
+}
+
+function handleTouchStartMobile(evt) {
+    const firstTouchMobile = getTouches(evt)[0];
+    xDownMenu = firstTouchMobile.clientX;
+    yDownMenu = firstTouchMobile.clientY;
+};
+
+function handleTouchMoveMobile(evt) {
+
+    if (!xDownMenu || !yDownMenu) {
+        return;
+    }
+
+    var xUpMenu = evt.touches[0].clientX;
+    var yUpMenu = evt.touches[0].clientY;
+    if (yUpMenu > yDownMenu) {
+        $(".mobileMenuFooter").hide("slow", function() {});
+    } else {
+        var scrollBottom = $(document).height() - $(window).height() - $(window).scrollTop();
+        if (scrollBottom < 80) {
+            $(".mobileMenuFooter").slideDown("slow");
+        }
+    }
+    var xDiffMenu = xDownMenu - xUpMenu;
+    var yDiffMenu = yDownMenu - yUpMenu;
+
+    if (Math.abs(xDiffMenu) > Math.abs(yDiffMenu)) { /*most significant*/
+        if (xDiffMenu > 0) {
+            /* left swipe */
+        } else {
+            /* right swipe */
+        }
+    } else {
+        if (yDiffMenu > 0) {
+            /* up swipe */
+        } else {
+            /* down swipe */
+        }
+    }
+    /* reset values */
+    xDownMenu = null;
+    yDownMenu = null;
+};

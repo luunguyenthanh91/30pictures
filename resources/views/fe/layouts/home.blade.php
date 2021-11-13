@@ -74,7 +74,7 @@
     <script src="{{ asset('fe/js/vendor.min.js') }}"></script>
     <script src="{{ asset('fe/js/functions.js') }}"></script>
     <script src="{{ asset('fe/slick/slick.js') }}" type="text/javascript" charset="utf-8"></script>
-    <script src="{{ asset('fe/js/front.js') }}"></script>
+    <script src="{{ asset('fe/js/home.js') }}"></script>
 
     @yield('before_footer_scripts')
 

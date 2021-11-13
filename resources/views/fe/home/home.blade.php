@@ -1,4 +1,4 @@
-@extends('fe.layouts.master')
+@extends('fe.layouts.home')
 @section('title', Helper::getSetting(1)->description)
 @section('css_page')
 <link rel="stylesheet" href="{{ asset('fe/css/home.css') }}">
