@@ -28,6 +28,7 @@ class DashboardController extends Controller
         $bgHome = Setting::find(17);
         $bgStory = Setting::find(18);
         $bgDirectory = Setting::find(19);
+        $scriptFooter = Setting::find(20);
 
         if ($request->isMethod('post')) {
             $bgHome->description = $request->descriptionbgHome;
@@ -57,6 +58,10 @@ class DashboardController extends Controller
 
             $imageSeo->image_pc = $request->imageSeo;
             $imageSeo->save();
+
+            $scriptFooter->description = $request->scriptFooter;
+            $scriptFooter->save();
+
             $message['message'] = 'Thay đổi dữ liệu thành công.';
             $message['status'] = 1;
         }
@@ -75,7 +80,8 @@ class DashboardController extends Controller
                 'titleAllPage',
                 'bgHome',
                 'bgStory',
-                'bgDirectory'
+                'bgDirectory',
+                'scriptFooter'
             ])
         );
     }

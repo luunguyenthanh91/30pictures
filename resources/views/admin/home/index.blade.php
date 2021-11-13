@@ -93,6 +93,12 @@
                                 <div class="bfh-colorpicker" data-name="descriptionbgDirectory" data-color="{{$bgDirectory->description}}"></div>
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label class="form-label">Script Footer</label>
+                            <div class="search-form" >
+                                <textarea type="text" name="scriptFooter" class="form-control textarea ckeditor" >{{$scriptFooter->description}}</textarea>
+                            </div>
+                        </div>
                         
                         <div class="form-group">
                             <label class="form-label">Nội Dung Website</label>

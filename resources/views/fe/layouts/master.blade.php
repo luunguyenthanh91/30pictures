@@ -78,7 +78,7 @@
 
     @yield('before_footer_scripts')
 
-
+    {!! Helper::getSetting(20)->description !!}
 </body>
 
 </html>
