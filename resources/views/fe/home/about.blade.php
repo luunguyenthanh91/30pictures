@@ -18,9 +18,8 @@
     </div>
 
     <div class="content-about-us">
-
-        <img class="logo-content-about-us mobile-display" src="{{@url(Helper::getSetting(9)->image_pc)}}" />
-
+        {!! Helper::getSetting(9)->description !!}
+        {!! Helper::getSetting(9)->description !!}
         {!! Helper::getSetting(9)->description !!}
     </div>
 </div>

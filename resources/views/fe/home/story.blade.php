@@ -2,6 +2,7 @@
 @section('title', Helper::getSetting(1)->description . ' - STORY SELLERS')
 @section('css_page')
 <link rel="stylesheet" href="{{ asset('fe/css/story.css') }}">
+<link rel="stylesheet" href="{{ asset('fe/css/storyMb.css') }}">
 @if($bgStory->description != '')
     <style>
         main {

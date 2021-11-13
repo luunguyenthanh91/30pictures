@@ -32,6 +32,18 @@
         width: 24px;
         height: 24px;
     }
+    .header_menu a {
+        height: 24px;
+        width: 24px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    .header_titleLogo {
+        position: absolute;
+        top: 15px;
+        right: 70px;
+    }
     .box {
         width: 100%;
         right: -100%;
@@ -60,5 +72,75 @@
         float: left;
         background: #000;
         border-bottom: unset;
+    }
+    .moveTopBtn {
+        position: fixed;
+        z-index: 100;
+        bottom: 15px;
+        right: 15px;
+        width: 30px;
+        height: 30px;
+        display: none;
+    }
+    .mobileMenuFooter {
+        width: 100%;
+        position: fixed;
+        z-index: 102;
+        background: #981d20;
+        bottom: 0;
+        left: 0;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+        border-radius: 20px 20px 0px 0px;
+        flex-direction: column;
+    }
+    .mobileMenuFooter .menuFooterLink {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        float: left;
+        margin-bottom: 10px;
+    }
+    .mobileMenuFooter .menuFooterLink a.linkStatic {
+        color: #fff;
+        font-size: 16px;
+        font-family: OswaldRegular;
+        text-transform: uppercase;
+    }
+    .mobileMenuFooter .menuFooterSocial {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        float: left;
+        margin-bottom: 10px;
+    }
+    .mobileMenuFooter .menuFooterSocial a {
+        padding: 0px 10px;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .mobileMenuFooter .menuFooterSocial a svg {
+        height: 18px;
+        width: auto;
+    }
+    .mobileMenuFooter .menuFooterCopyright {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        float: left;
+        margin-bottom: 0px;
+    }
+    .mobileMenuFooter .menuFooterCopyright p {
+        color: #fff;
+        font-size: 16px;
+        font-family: Nunito;
+        margin-bottom: 0px;
     }
 }
