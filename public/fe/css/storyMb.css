@@ -71,6 +71,7 @@
     .pc_style_slide .item .image_size {
         height: unset;
         float: left;
+        margin-bottom: 30px;
     }
     .slide-story .item .image_size .hoverBgStory {
         position: relative;
@@ -86,5 +87,8 @@
         bottom: unset !important;
         left: unset !important;
         margin: 5px 0px 0px 15px;
+    }
+    .pc_style_slide .item .image_size .hoverBgStory .title {
+        margin: 10px 0px 0px 15px;
     }
 }
