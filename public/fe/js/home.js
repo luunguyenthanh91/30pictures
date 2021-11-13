@@ -80,7 +80,7 @@ function handleTouchMoveMobile(evt) {
         $(".mobileMenuFooter").hide("slow", function() {});
     } else {
         var scrollBottom = $(document).height() - $(window).height() - $(window).scrollTop();
-        if (scrollBottom === 0) {
+        if (scrollBottom < 50) {
             $(".mobileMenuFooter").show("slow", function() {});
         }
     }

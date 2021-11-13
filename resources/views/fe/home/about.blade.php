@@ -19,8 +19,6 @@
 
     <div class="content-about-us">
         {!! Helper::getSetting(9)->description !!}
-        {!! Helper::getSetting(9)->description !!}
-        {!! Helper::getSetting(9)->description !!}
     </div>
 </div>
 @endsection
