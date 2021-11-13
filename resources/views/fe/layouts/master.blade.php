@@ -9,7 +9,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="@yield('title')">
     <meta property="og:description" content="{{Helper::getSetting(2)->description}}">
-    <meta property="og:image" content="{{@url(Helper::getSetting(4)->image_pc)}}">
+    <meta property="og:image" content="@yield('imageShare' , @url(Helper::getSetting(4)->image_pc))">
     <!-- <meta property="fb:app_id" content=""> -->
 
     <meta name="description" content="This is the website description. Nice eh?">
@@ -17,14 +17,14 @@
     <!-- Google / Search Engine Tags -->
     <meta itemprop="name" content="@yield('title')">
     <meta itemprop="description" content="{{Helper::getSetting(2)->description}}">
-    <meta itemprop="image" content="{{@url(Helper::getSetting(4)->image_pc)}}">
+    <meta itemprop="image" content="@yield('imageShare' , @url(Helper::getSetting(4)->image_pc))">
 
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="@yield('title')">
     <meta name="twitter:description" content="{{Helper::getSetting(2)->description}}">
-    <meta name="twitter:image" content="{{@url(Helper::getSetting(4)->image_pc)}}">
+    <meta name="twitter:image" content="@yield('imageShare' , @url(Helper::getSetting(4)->image_pc))">
 
 
     <meta name="keywords" content="@yield('title')">

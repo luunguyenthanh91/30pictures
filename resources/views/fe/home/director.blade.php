@@ -1,7 +1,9 @@
 @extends('fe.layouts.master')
 @section('title', Helper::getSetting(1)->description . ' - STORY SELLERS - ' . @$story->description)
+@section('imageShare', url(@$story->image_pc) )
 @section('css_page')
 <link rel="stylesheet" href="{{ asset('fe/css/derector.css') }}">
+<link rel="stylesheet" href="{{ asset('fe/css/derectorMb.css') }}">
 @if($bgDirectory->description != '')
     <style>
         main {
@@ -54,6 +56,7 @@
                                 <div class="seemore">See More ></div>
                                 <div class="title_play">{{$item->name}}</div>
                                 <div class="title_play_des">{{$item->meme}}</div>
+                                <div class="seemoreMobile">See More ></div>
                             </div>
                         </a>
                     </div>
@@ -70,6 +73,7 @@
                                     <div class="bg_bg"></div>
                                     <div class="title_play">{{$item->name}}</div>
                                     <div class="title_play_des">{{$item->meme}}</div>
+                                    <div class="seemoreMobile">See More ></div>
                                 </div>
                             </a>
                     @if($key%3 == 2 || $key == count($listStory) - 1)

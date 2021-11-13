@@ -782,3 +782,10 @@ main {
     font-style: initial;
     line-height: 20px;
 }
+
+@media only screen and (min-width: 576px) {
+    .moveTopBtn,
+    .mobileMenuFooter {
+        display: none !important;
+    }
+}

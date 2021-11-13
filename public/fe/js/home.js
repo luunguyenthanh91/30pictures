@@ -80,8 +80,8 @@ function handleTouchMoveMobile(evt) {
         $(".mobileMenuFooter").hide("slow", function() {});
     } else {
         var scrollBottom = $(document).height() - $(window).height() - $(window).scrollTop();
-        if (scrollBottom < 50) {
-            $(".mobileMenuFooter").show("slow", function() {});
+        if (scrollBottom < 80) {
+            $(".mobileMenuFooter").slideDown("slow");
         }
     }
     var xDiffMenu = xDownMenu - xUpMenu;
