@@ -124,6 +124,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        margin-right: 20px;
     }
     .mobileMenuFooter .menuFooterSocial a svg {
         height: 18px;
@@ -139,7 +140,7 @@
     }
     .mobileMenuFooter .menuFooterCopyright p {
         color: #fff;
-        font-size: 16px;
+        font-size: 12px;
         font-family: Nunito;
         margin-bottom: 0px;
     }

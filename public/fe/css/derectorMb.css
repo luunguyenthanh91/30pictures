@@ -121,7 +121,7 @@
         margin-bottom: unset;
     }
     .pc_style_slide .video_small .item {
-        margin-bottom: 15px !important;
+        margin-bottom: 25px !important;
         float: left;
         width: 100%;
         height: unset !important;
@@ -140,7 +140,7 @@
         bottom: unset !important;
         padding-left: 15px !important;
         box-sizing: border-box !important;
-        margin-top: 15px !important;
+        margin-top: 5px !important;
     }
     .seemoreMobile {
         color: #fff;
@@ -154,7 +154,7 @@
         bottom: unset !important;
         padding-left: 15px !important;
         box-sizing: border-box !important;
-        margin-top: 15px !important;
+        margin-top: 5px !important;
         line-height: 16px;
         opacity: 0.8;
     }

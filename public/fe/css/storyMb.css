@@ -59,7 +59,7 @@
         margin-right: unset;
         height: unset;
         padding-top: unset;
-        margin-bottom: 15px;
+        margin-bottom: 25px;
     }
     .slide-story .item a .box_info {
         display: none;
@@ -85,6 +85,6 @@
         width: 100%;
         bottom: unset !important;
         left: unset !important;
-        margin: 15px 0px 0px 15px;
+        margin: 5px 0px 0px 15px;
     }
 }
