@@ -142,6 +142,7 @@
                 $('.fa-chevron-down').addClass('d-none');
             }
         } else {
+            slideImage++;
             $('.fa-chevron-down').addClass('d-none');
         }
     }
@@ -154,10 +155,15 @@
         var xUp = evt.touches[0].clientX;                                    
         var yUp = evt.touches[0].clientY;
         if (yUp > yDown) {
-            ChangeSlideUp();
+            if (slideImage > countSlide) {
+                slideImage--;
+                ChangeSlideUp();
+            } else {
+                ChangeSlideUp();
+            }
         } else {
             if (slideImage > countSlide) {
-                
+                window.location.replace("/about-us");
             } else {
                 ChangeSlideDown();
             }

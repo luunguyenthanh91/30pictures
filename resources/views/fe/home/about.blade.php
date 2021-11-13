@@ -2,6 +2,7 @@
 @section('title', Helper::getSetting(1)->description . ' - ABOUT US')
 @section('css_page')
     <link rel="stylesheet" href="{{ asset('fe/css/about.css') }}">
+    <link rel="stylesheet" href="{{ asset('fe/css/aboutMb.css') }}">
 @endsection
 @section('nav_title')
 <div class="header_titleLogo">
