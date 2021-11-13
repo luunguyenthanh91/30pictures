@@ -10,12 +10,12 @@
     @foreach($listStoryLimit as $key => $item)
         <div class="groupSlide slideHome{{$key+1}}" style="display: none;">
             <div class="fullSize">
-                <img src="{{$item->image ? $item->image : '/'}}" />
+                <img alt="{{$item->alt_seo}}" src="{{$item->image ? $item->image : '/'}}" />
             </div>
             <div class="titleListDirectory">
                 <i class="fas fa-chevron-up d-none"></i>
-                <a href="{{$item->link}}" class="titleSlide">{{$item->name}}</a>
-                <a href="{{$item->link}}" class="desSlide">{{$item->name_contact}}</a>
+                <a  alt="{{$item->alt_seo}}" href="{{$item->link}}" class="titleSlide">{{$item->name}}</a>
+                <a  alt="{{$item->alt_seo}}" href="{{$item->link}}" class="desSlide">{{$item->name_contact}}</a>
                 <i class="fas fa-chevron-down"></i>
             </div>
         </div>

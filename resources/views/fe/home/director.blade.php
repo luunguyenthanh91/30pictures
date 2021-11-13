@@ -48,9 +48,9 @@
             @endif
                 @if($key%3 == 0)
                     <div class="video_big">
-                        <a href="/story-sellers/{{$item->story->slug}}/{{$item->slug}}.html" class="item openVideo" id="@if($item->link_video) {{$item->link_video}} @elseif($item->link_youtube) {{$item->link_youtube}} @else {{@url(@$item->video ? $item->video : '/' )}} @endif" alt="@if($item->link_video) 1 @elseif($item->link_youtube)2 @else 3 @endif" rel="{{$item->id}}" >
+                        <a alt="{{$item->alt_seo}}" href="/story-sellers/{{$item->story->slug}}/{{$item->slug}}.html" class="item openVideo" id="@if($item->link_video) {{$item->link_video}} @elseif($item->link_youtube) {{$item->link_youtube}} @else {{@url(@$item->video ? $item->video : '/' )}} @endif" alt="@if($item->link_video) 1 @elseif($item->link_youtube)2 @else 3 @endif" rel="{{$item->id}}" >
                             <div class="block-1 block">
-                                <img src="{{@url($item->image_pc ? $item->image_pc : '/' )}}" class="bg" alt="{{$item->name}}" />
+                                <img src="{{@url($item->image_pc ? $item->image_pc : '/' )}}" class="bg" alt="{{$item->alt_seo}}" />
                                 <div class="bg_bg"></div>
                                 <div class="desscription">{!! \Illuminate\Support\Str::words(strip_tags($item->description), $limit = 20, $end = '...') !!}</div>
                                 <div class="seemore">See More ></div>
@@ -66,9 +66,9 @@
                         <div class="video_content">
                     @endif
                         
-                            <a href="/story-sellers/{{$item->story->slug}}/{{$item->slug}}.html" class="item openVideo" id="@if($item->link_video) {{$item->link_video}} @elseif($item->link_youtube) {{$item->link_youtube}} @else {{@url(@$item->video ? $item->video : '/' )}} @endif" alt="@if($item->link_video) 1 @elseif($item->link_youtube)2 @else 3 @endif" rel="{{$item->id}}" >
+                            <a alt="{{$item->alt_seo}}" href="/story-sellers/{{$item->story->slug}}/{{$item->slug}}.html" class="item openVideo" id="@if($item->link_video) {{$item->link_video}} @elseif($item->link_youtube) {{$item->link_youtube}} @else {{@url(@$item->video ? $item->video : '/' )}} @endif" alt="@if($item->link_video) 1 @elseif($item->link_youtube)2 @else 3 @endif" rel="{{$item->id}}" >
                                 <div class="@if ($key == 0 || $key%2 == 0) block-1 @else block-2 @endif block">
-                                    <img src="{{@url($item->image_pc ? $item->image_pc : '/' )}}" class="bg" alt="{{$item->name}}" />
+                                    <img src="{{@url($item->image_pc ? $item->image_pc : '/' )}}" class="bg" alt="{{$item->alt_seo}}" />
                                     <div class="seemore">See More ></div>
                                     <div class="bg_bg"></div>
                                     <div class="title_play">{{$item->name}}</div>

@@ -213,6 +213,11 @@
                                     class="form-control" v-model="item.type" class="form-control" >
                                 </div>
                                 <div class="form-group">
+                                    <label class="form-label">ALT SEO</label>
+                                    <input type="text" v-bind:name="'filesData['+item.idFile+'][alt_seo]'"
+                                    class="form-control" v-model="item.alt_seo" class="form-control">
+                                </div>
+                                <div class="form-group">
                                     <label class="form-label">MeMe</label>
                                     <input type="text" v-bind:name="'filesData['+item.idFile+'][meme]'"
                                     class="form-control" v-model="item.meme" class="form-control">
@@ -445,6 +450,7 @@ new Vue({
                     image_pc : '',
                     image_mobile : '',
                     video : '',
+                    alt_seo : '',
                     type_display : 0,
                     link_video : '',
                     link_youtube : ''

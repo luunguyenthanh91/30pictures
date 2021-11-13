@@ -125,6 +125,7 @@
                                     <th scope="col">#</th>
                                     <th scope="col">Tên Seller</th>
                                     <th scope="col">Vị Trí</th>
+                                    <th scope="col">Seo ALT</th>
                                     <th scope="col">Tên Hợp Tác</th>
                                     <th scope="col">Link Liên Kết</th>
                                     <th scope="col">Gif</th>
@@ -149,6 +150,12 @@
                                             <div class="form-group">
                                                 <input type="text" v-bind:name="'filesHome['+item.idFile+'][sor]'"
                                                 class="form-control sor" v-bind:value="item.sor != '' ? item.sor : item.id"  >
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <input type="text" v-bind:name="'filesHome['+item.idFile+'][alt_seo]'"
+                                                    class="form-control" v-model="item.alt_seo" class="form-control" >
                                             </div>
                                         </td>
                                         <td>
@@ -366,6 +373,7 @@ new Vue({
                     video : '{{$item->video}}',
                     link : '{{$item->link}}',
                     sor : '{{$item->sor}}',
+                    alt_seo : '{{$item->alt_seo}}',
                     video_mobile : '{{$item->video_mobile}}',
                     name_contact : '{{$item->name_contact}}',
                 }
@@ -384,6 +392,7 @@ new Vue({
                     image : '',
                     video : '',
                     link : '',
+                    alt_seo : '',
                     video_mobile : '',
                     sor : this.countVideo,
                     name_contact : '',

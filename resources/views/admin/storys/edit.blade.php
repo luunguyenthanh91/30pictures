@@ -222,6 +222,11 @@
                                                 class="form-control sor" v-bind:value="item.sor != '' ? item.sor : item.id" >
                                 </div>
                                 <div class="form-group">
+                                    <label class="form-label">ALT SEO</label>
+                                    <input type="text" v-bind:name="'filesData['+item.idFile+'][alt_seo]'"
+                                    class="form-control" v-model="item.alt_seo" class="form-control">
+                                </div>
+                                <div class="form-group">
                                     <label class="form-label">MeMe</label>
                                     <input type="text" v-bind:name="'filesData['+item.idFile+'][meme]'"
                                     class="form-control" v-model="item.meme" class="form-control">
@@ -477,6 +482,7 @@ new Vue({
                     image_mobile : '{{$item->image_mobile}}',
                     video : '{{$item->video}}',
                     sor : '{{$item->sor}}',
+                    alt_seo : '{{$item->alt_seo}}',
                     type_display : '{{$item->type_display}}',
                     link_video : '{{$item->link_video}}',
                     link_youtube : '{{$item->link_youtube}}'
@@ -499,6 +505,7 @@ new Vue({
                     image_mobile : '',
                     video : '',
                     type_display : 0,
+                    alt_seo : '',
                     link_video : '',
                     link_youtube : ''
                 }

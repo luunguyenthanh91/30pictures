@@ -97,6 +97,7 @@ class DashboardController extends Controller
                             $dataUpdate = VideoHome::find($item['id']);
                             $dataUpdate->name = $item['name'];
                             $dataUpdate->sor = $item['sor'];
+                            $dataUpdate->alt_seo = $item['alt_seo'];
                             $dataUpdate->link = $item['link'];
                             $dataUpdate->name_contact = $item['name_contact'];
                             if ($request->hasFile('file_gif.'.$key)) {
@@ -116,6 +117,7 @@ class DashboardController extends Controller
                             $dataUpdate = new VideoHome();
                             $dataUpdate->name = $item['name'];
                             $dataUpdate->link = $item['link'];
+                            $dataUpdate->alt_seo = $item['alt_seo'];
                             $dataUpdate->sor = $item['sor'];
                             $dataUpdate->name_contact = $item['name_contact'];
                             if ($request->hasFile('file_gif.'.$key)) {

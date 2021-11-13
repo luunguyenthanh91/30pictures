@@ -91,6 +91,7 @@ class StorysController extends Controller
                                     $dataUpdate->name = $item['name'];
                                     $dataUpdate->meme = $item['meme'];
                                     $dataUpdate->sor = $item['sor'];
+                                    $dataUpdate->alt_seo = $item['alt_seo'];
                                     $dataUpdate->slug = \App\Helpers\Helper::convertSlug($item['name']);
                                     $dataUpdate->description = $item['description'];
                                     $dataUpdate->video = $item['video'];
@@ -109,6 +110,7 @@ class StorysController extends Controller
                                     $dataUpdate->name = $item['name'];
                                     $dataUpdate->meme = $item['meme'];
                                     $dataUpdate->sor = $item['sor'];
+                                    $dataUpdate->alt_seo = $item['alt_seo'];
                                     $dataUpdate->slug = \App\Helpers\Helper::convertSlug($item['name']);
                                     $dataUpdate->description = $item['description'];
                                     $dataUpdate->video = $item['video'];
@@ -194,6 +196,7 @@ class StorysController extends Controller
                                 $dataUpdate->slug = \App\Helpers\Helper::convertSlug($item['name']);
                                 $dataUpdate->meme = $item['meme'];
                                 $dataUpdate->sor = $item['sor'];
+                                $dataUpdate->alt_seo = $item['alt_seo'];
                                 $dataUpdate->description = $item['description'];
                                 $dataUpdate->video = $item['video'];
                                 $dataUpdate->image_pc = $item['image_pc'];
@@ -214,6 +217,7 @@ class StorysController extends Controller
                                 $dataUpdate->slug = \App\Helpers\Helper::convertSlug($item['name']);
                                 $dataUpdate->description = $item['description'];
                                 $dataUpdate->video = $item['video'];
+                                $dataUpdate->alt_seo = $item['alt_seo'];
                                 $dataUpdate->image_pc = $item['image_pc'];
                                 $dataUpdate->image_mobile = $item['image_mobile'];
                                 $dataUpdate->story_id = $data->id;
