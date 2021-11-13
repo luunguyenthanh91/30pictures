@@ -2,6 +2,7 @@
 @section('title', Helper::getSetting(1)->description . ' - Videos - ' . @Request::get('key'))
 @section('css_page')
 <link rel="stylesheet" href="{{ asset('fe/css/derector.css') }}">
+<link rel="stylesheet" href="{{ asset('fe/css/derectorMb.css') }}">
 @if($bgDirectory->description != '')
     <style>
         main {

@@ -1,7 +1,9 @@
 @extends('fe.layouts.master')
 @section('title', Helper::getSetting(1)->description . ' - DIRECTOR - ' . @$listStory->name)
+@section('imageShare', url(@$listStory->image_pc) )
 @section('css_page')
 <link rel="stylesheet" href="{{ asset('fe/css/derector.css') }}">
+<link rel="stylesheet" href="{{ asset('fe/css/derectorMb.css') }}">
 @endsection
 
 @section('class_body', "home_banner_video_crop_header")
