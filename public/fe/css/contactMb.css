@@ -32,7 +32,7 @@
         width: 100%;
         margin-right: unset;
         margin-left: unset;
-        margin-bottom: 50px;
+        margin-bottom: 32px;
     }
     .home_content_image .contactForm .name_input {
         width: 100%;
@@ -64,5 +64,37 @@
     }
     .height-auto {
         height: unset;
+    }
+    .home_content_image .contact .titleTop,
+    .home_content_image .contactForm .titleTop,
+    .home_content_image .contactInfo .titleTop {
+        line-height: 24px;
+        margin-bottom: 8px;
+    }
+    .home_content_image .contact .desTop,
+    .home_content_image .contactForm .desTop,
+    .home_content_image .contactInfo .desTop {
+        line-height: 20px;
+        margin-bottom: 16px;
+    }
+    .home_content_image .contact .titleBox {
+        line-height: 16px;
+        margin-bottom: 8px;
+    }
+    .home_content_image .contact .dessBox {
+        margin-bottom: 16px;
+        line-height: 20px;
+        text-decoration: none !important;
+        color: #fff !important;
+    }
+    .home_content_image .contact .height-auto p:last-child {
+        margin-bottom: unset;
+    }
+    .home_content_image .contactForm .titleBox {
+        line-height: 16px;
+        margin-bottom: 8px;
+    }
+    .home_content_image .contactForm .name_input {
+        margin-bottom: 16px;
     }
 }

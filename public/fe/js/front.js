@@ -77,7 +77,7 @@ function handleTouchMoveMobile(evt) {
     var xUpMenu = evt.touches[0].clientX;
     var yUpMenu = evt.touches[0].clientY;
     if (yUpMenu > yDownMenu) {
-        $(".mobileMenuFooter").hide("slow", function() {});
+        $(".mobileMenuFooter").slideUp("slow");
     } else {
         var scrollBottom = $(document).height() - $(window).height() - $(window).scrollTop();
         if (scrollBottom < 80) {

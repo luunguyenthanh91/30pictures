@@ -103,7 +103,7 @@
         float: left;
         height: unset;
         margin-right: unset;
-        margin-bottom: 30px;
+        margin-bottom: 32px;
     }
     .pc_style_slide .video_big .item .block .desscription {
         display: none !important;
@@ -138,9 +138,10 @@
         left: unset !important;
         right: unset !important;
         bottom: unset !important;
-        padding-left: 15px !important;
+        padding-left: unset !important;
         box-sizing: border-box !important;
-        margin-top: 10px !important;
+        margin-top: unset !important;
+        margin: 8px 0px 0px 16px !important;
     }
     .title_play_des {
         margin-top: 5px !important;
@@ -155,11 +156,12 @@
         left: unset !important;
         right: unset !important;
         bottom: unset !important;
-        padding-left: 15px !important;
+        padding-left: unset !important;
         box-sizing: border-box !important;
-        margin-top: 5px !important;
+        margin-top: unset !important;
         line-height: 16px;
         opacity: 0.8;
+        margin: 8px 0px 0px 16px !important;
     }
     .videoDetail {
         padding: 0px 15px;

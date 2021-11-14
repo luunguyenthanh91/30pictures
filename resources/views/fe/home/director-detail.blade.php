@@ -1,12 +1,12 @@
-@extends('fe.layouts.master')
+@extends('fe.layouts.null')
 @section('title', Helper::getSetting(1)->description . ' - DIRECTOR - ' . @$listStory->name)
 @section('imageShare', url(@$listStory->image_pc) )
 @section('css_page')
 <link rel="stylesheet" href="{{ asset('fe/css/derector.css') }}">
 <link rel="stylesheet" href="{{ asset('fe/css/derectorMb.css') }}">
+<link rel="stylesheet" href="{{ asset('fe/css/derectorDetailMb.css') }}">
 @endsection
 
-@section('class_body', "home_banner_video_crop_header")
 @section('content')
 <div class="bg_style">
     <div class="home_content_image">
@@ -36,32 +36,4 @@
         </div>
     </div>
 </div>
-@endsection
-@section('before_footer_scripts')
-<script>
-    $(document).ready(function() {
-
-        // $('.openVideo').on('click', function() {
-        //     if ($(this).attr('alt') == 1) {
-        //         $('.videoDetail-'+$(this).attr('rel')+ ' .video').html(
-        //             '<iframe src="'+$(this).attr('id')+'"  frameborder="0" allow="accelerometer; autoplay; fullscreen; clipboard-write; encrypted-media; gyroscope; picture-in-picture; " webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
-        //         );
-        //     } else if ($(this).attr('alt') == 2) {
-        //         $('.videoDetail-'+$(this).attr('rel')+ ' .video').html(
-        //             '<iframe src="'+$(this).attr('id')+'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; fullscreen; clipboard-write; encrypted-media; gyroscope; picture-in-picture; " webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
-        //         );
-        //     } else {
-        //         $('.videoDetail-'+$(this).attr('rel')+ ' .video').html(
-        //             '<video controls class="video_detail"><source src="'+$(this).attr('id')+'" type="video/mp4"></video>'
-        //         );
-        //     }
-        //     $('.videoDetail-'+$(this).attr('rel')).fadeIn(500);
-        // });
-        // $('.close_video').on('click', function() {
-        //     $('.videoDetail .video').html('');
-        //     $('.videoDetail').fadeOut(500);
-        // });
-
-    });
-</script>
 @endsection

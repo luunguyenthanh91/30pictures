@@ -1,0 +1,25 @@
+@media screen and (max-width: 1024px) {}
+
+@media only screen and (max-width: 576px) {
+    body {}
+    .home_content_image {
+        margin-top: unset;
+    }
+    .videoDetail {
+        padding: unset;
+        position: relative;
+        width: 100%;
+        box-sizing: border-box;
+        height: unset;
+        z-index: 100;
+    }
+    .videoDetail .close_video {
+        right: 15px;
+        position: fixed;
+        z-index: 100;
+    }
+    .videoDetail .contentDetailVideo {
+        height: unset;
+        overflow: hidden;
+    }
+}

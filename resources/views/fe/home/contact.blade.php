@@ -54,7 +54,7 @@
         <div class="height-auto">
             <h1 class="titleTop">See More</h1>
             <h2 class="desTop">Find us on social media</h2>
-            <a href="{{Helper::getSetting(14)->description}}" target="_blank"  class="titleBox">FaceBook</a>
+            <a href="{{Helper::getSetting(14)->description}}" target="_blank"  class="titleBox">Facebook</a>
             <p class="dessBox"></p>
             <a href="{{Helper::getSetting(15)->description}}" target="_blank"  class="titleBox">Vimeo</a>
             <p class="dessBox"></p>

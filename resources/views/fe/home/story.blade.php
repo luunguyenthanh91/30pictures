@@ -31,7 +31,7 @@
                 <a alt="{{$item->description}}" rel="{{@url($item->image_pc ? $item->image_pc  : '/' )}}" href="/story-sellers/{{$item->slug}}" class="@if ($key == 0 || $key%2 == 0) block-1 @else block-2 @endif block">
                     @if ($key%2 == 0)
                     <div class="image_size">
-                        <img alt="{{$item->description}}" src="{{@url($item->image_pc ? $item->image_pc  : '/' )}}" class="" alt="{{$item->description}}" />
+                        <img class="lazyloaded" loading="lazy" alt="{{$item->description}}" src="{{@url($item->image_pc ? $item->image_pc  : '/' )}}" />
                         <div class="hoverBgStory">
                             <p class="title">{{$item->description}}</span></p>
                             <p class="description">Storyseller</p>
@@ -47,7 +47,7 @@
                         <p class="description">View Showreel - Projects ></p>
                     </div>
                     <div class="image_size">
-                        <img alt="{{$item->description}}" src="{{@url($item->image_pc ? $item->image_pc  : '/' )}}" alt="{{$item->description}}" />
+                        <img alt="{{$item->description}}" src="{{@url($item->image_pc ? $item->image_pc  : '/' )}}"  class="lazyloaded" loading="lazy"/>
                         <div class="hoverBgStory">
                             <p class="title">{{$item->description}}</span></p>
                             <p class="description">Storyseller</p>

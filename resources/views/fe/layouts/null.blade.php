@@ -48,15 +48,8 @@
 
 <body style="@yield('style_main')" class="nk-body @yield('class_body')">
 
-    <div class="nk-wrap">
-        @include('fe.includes.header')
-        <main class="@yield('class_main')">
-            @yield('content')
-            @include('fe.layouts.menu')
-        </main>
-        @include('fe.includes.footer')
-
-    </div>
+    @yield('content')
+    @include('fe.includes.footer')
     <div class="moveTopBtn">
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 892.32 894">
             <g id="e0ea880a-ebaa-4dd6-8170-1c6acc7fbbba" data-name="Layer 2">
@@ -66,47 +59,7 @@
             </g>
         </svg>
     </div>
-    <script>
-    // // duyệt tất cả tấm ảnh cần lazy-load
-    var lazyImages = document.querySelectorAll('[lazy]');
-
-    // khi tấm ảnh gần chạm viewport (còn 100px nữa là chạm), thì load tấm ảnh ngay
-    var threshold = 20;
-
-    // tránh vấn đề về performance
-    var timeout;
-
-    function lazyload () {
-    clearTimeout(timeout);
-
-    timeout = setTimeout(function() {
-        var scrollTop = window.pageYOffset;
-        lazyImages.forEach(function(lazyImage) {
-        var src = lazyImage.dataset.src;
-
-        // khi vị trí tấm ảnh gần chạm viewport, load ngay
-        if (lazyImage.offsetTop < (window.innerHeight + scrollTop + threshold)) {
-            lazyImage.tagName.toLowerCase() === 'img'
-            // <img>: copy data-src sang src
-            ? lazyImage.src = src
-
-            // <div>: copy data-src sang background-image
-            : lazyImage.style.backgroundImage = "url(\'" + src + "\')";
-
-            // copy xong rồi thì bỏ attribute lazy đi
-            lazyImage.removeAttribute('lazy');
-        }
-        });
-
-        // tất cả tấm ảnh đã được load xong, dọn dẹp và đi thôi.
-        if (lazyImages.length == 0) { 
-        document.removeEventListener('scroll', lazyload);
-        }
-    }, 10);
-    }
-
-    document.addEventListener('scroll', lazyload);
-    </script>
+    
     <!-- JavaScript -->
     <script src="{{ asset('fe/js/vendor/jquery-3.4.1.min.js') }}"></script>
     <script src="{{ asset('fe/js/debounce.js') }}"></script>
@@ -114,7 +67,7 @@
     <script src="{{ asset('fe/js/vendor.min.js') }}"></script>
     <script src="{{ asset('fe/js/functions.js') }}"></script>
     <script src="{{ asset('fe/slick/slick.js') }}" type="text/javascript" charset="utf-8"></script>
-    <script src="{{ asset('fe/js/home.js') }}"></script>
+    <script src="{{ asset('fe/js/front.js') }}"></script>
 
     @yield('before_footer_scripts')
 

@@ -10,7 +10,7 @@
     @foreach($listStoryLimit as $key => $item)
         <div class="groupSlide slideHome{{$key+1}}" style="display: none;">
             <div class="fullSize">
-                <img alt="{{$item->alt_seo}}" src="{{$item->image ? $item->image : '/'}}" />
+                <img class="lazyloaded" loading="lazy" alt="{{$item->alt_seo}}" src="{{$item->image ? $item->image : '/'}}" />
             </div>
             <div class="titleListDirectory">
                 <i class="fas fa-chevron-up d-none"></i>
@@ -25,6 +25,7 @@
 @endsection
 @section('before_footer_scripts')
 <script>
+
     var slideImage = 1;
     var countSlide = {{count($listStoryLimit)}};
     $(document).ready(function() {

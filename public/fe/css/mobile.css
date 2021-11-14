@@ -93,7 +93,7 @@
         display: none;
         justify-content: center;
         align-items: center;
-        padding: 15px;
+        padding: 16px 15px;
         border-radius: 20px 20px 0px 0px;
         flex-direction: column;
     }
@@ -103,13 +103,14 @@
         justify-content: space-around;
         align-items: center;
         float: left;
-        margin-bottom: 10px;
+        margin-bottom: 16px;
     }
     .mobileMenuFooter .menuFooterLink a.linkStatic {
         color: #fff;
         font-size: 16px;
         font-family: OswaldRegular;
         text-transform: uppercase;
+        line-height: 16px;
     }
     .mobileMenuFooter .menuFooterSocial {
         width: 100%;
@@ -117,7 +118,7 @@
         justify-content: center;
         align-items: center;
         float: left;
-        margin-bottom: 10px;
+        margin-bottom: 16px;
     }
     .mobileMenuFooter .menuFooterSocial a {
         padding: 0px 10px;
@@ -144,5 +145,6 @@
         font-size: 12px;
         font-family: Nunito;
         margin-bottom: 0px;
+        line-height: 12px;
     }
 }
