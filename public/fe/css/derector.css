@@ -273,10 +273,6 @@ main {
     outline: none;
 }
 
-.pc_style_slide .video_small .olv_nav .nav_pre:hover {
-    color: #7b0100;
-}
-
 .pc_style_slide .video_small .olv_nav .nav_next {
     position: absolute;
     bottom: -30px;
@@ -286,10 +282,6 @@ main {
     border: 0px;
     background: unset;
     outline: none;
-}
-
-.pc_style_slide .video_small .olv_nav .nav_next:hover {
-    color: #7b0100;
 }
 
 .pc_style_slide .video_small .video_content::-webkit-scrollbar {
@@ -335,10 +327,6 @@ main {
     object-position: center;
     border-radius: 10px;
     transition: transform .5s ease;
-}
-
-.pc_style_slide .video_small .item:hover .block img.bg {
-    transform: scale(1.2);
 }
 
 .pc_style_slide .video_small .item .block .title {
@@ -685,5 +673,14 @@ main {
     }
     .seemoreMobile {
         display: none;
+    }
+    .pc_style_slide .video_small .olv_nav .nav_next:hover {
+        color: #7b0100;
+    }
+    .pc_style_slide .video_small .olv_nav .nav_pre:hover {
+        color: #7b0100;
+    }
+    .pc_style_slide .video_small .item:hover .block img.bg {
+        transform: scale(1.2);
     }
 }
