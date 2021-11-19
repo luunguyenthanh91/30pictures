@@ -5,7 +5,7 @@
             <i class="fas fa-chevron-right"></i>
         </a>
         <div class="logo_menu">
-            <a href="/index.html"><img src="{{@url(Helper::getSetting(3)->image_pc)}}" /></a>
+            <a href="/home"><img src="{{@url(Helper::getSetting(3)->image_pc)}}" /></a>
         </div>
         <div class="menuList">
             @foreach(Helper::getMenu() as $menuItem)

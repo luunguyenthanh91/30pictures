@@ -14,12 +14,21 @@
         z-index: 100;
     }
     .videoDetail .close_video {
-        right: 15px;
-        position: fixed;
+        right: unset;
+        bottom: unset;
+        left: unset;
+        top: unset;
+        position: relative;
         z-index: 100;
+        height: 95px;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
     }
     .videoDetail .contentDetailVideo {
         height: unset;
         overflow: hidden;
+        margin-top: unset;
     }
 }

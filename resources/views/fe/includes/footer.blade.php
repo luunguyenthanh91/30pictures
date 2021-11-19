@@ -1,7 +1,7 @@
 <footer>
     <div class="block_memu">
         <div class="footer_static footer_static_pc">
-            <a href="/index.html">
+            <a href="/home">
                 <p class="title">©30PICTURES2021</p>
             </a>
         </div>
@@ -63,7 +63,7 @@
 </footer>
 <div class="mobileMenuFooter">
     <div class="menuFooterLink">
-        <a class="linkStatic" href="/index.html">Home</a>
+        <a class="linkStatic" href="/home">Home</a>
         <a class="linkStatic" href="/story-sellers">Directors</a>
         <a class="linkStatic" href="/contact-us">Contact</a>
     </div>

@@ -62,6 +62,8 @@ class DashboardController extends Controller
             $scriptFooter->description = $request->scriptFooter;
             $scriptFooter->save();
 
+            
+
             $message['message'] = 'Thay đổi dữ liệu thành công.';
             $message['status'] = 1;
         }
@@ -81,7 +83,7 @@ class DashboardController extends Controller
                 'bgHome',
                 'bgStory',
                 'bgDirectory',
-                'scriptFooter'
+                'scriptFooter',
             ])
         );
     }
@@ -196,6 +198,7 @@ class DashboardController extends Controller
         $vimeo = Setting::find(15);
         $youtube = Setting::find(16);
 
+        $linkAddress = Setting::find(21);
         if ($request->isMethod('post')) {
             $pictures->description = $request->pictures;
             $pictures->save();
@@ -211,6 +214,9 @@ class DashboardController extends Controller
             $vimeo->save();
             $youtube->description = $request->youtube;
             $youtube->save();
+
+            $linkAddress->description = $request->linkAddress;
+            $linkAddress->save();
 
             
             $message['message'] = 'Thay đổi dữ liệu thành công.';
@@ -228,7 +234,8 @@ class DashboardController extends Controller
                 'email',
                 'facebook',
                 'vimeo',
-                'youtube'
+                'youtube',
+                'linkAddress'
 
             ])
         );

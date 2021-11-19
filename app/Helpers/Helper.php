@@ -22,7 +22,7 @@ class Helper
     {
         $listMenu = [];
         
-        $listMenu['home'] = ["url" => "/index.html", "name" => "WELCOME TO" , "description" => "Our Home", 'active' => 'home', 'childrent' => null ];
+        $listMenu['home'] = ["url" => "/home", "name" => "WELCOME TO" , "description" => "Our Home", 'active' => 'home', 'childrent' => null ];
         $listMenu['about'] = ["url" => "/about-us", "name" => "ABOUT US" , "description" => "30 Pictures", 'active' => 'home', 'childrent' => null ];
         $listMenu['story'] = ["url" => "/story-sellers", "name" => "DIRECTORS" , "description" => "Find your Directors", 'active' => 'home', 'childrent' => null ];
         $listMenu['contact'] = ["url" => "/contact-us", "name" => "CONTACT" , "description" => "Connect with us", 'active' => 'home', 'childrent' => null ];

@@ -50,7 +50,7 @@
         }
         $(document).ready(function() {
             setTimeout(function() {
-                window.location.href = '/index.html'; 
+                window.location.href = '/home'; 
             }, 6300);
         });
     </script>

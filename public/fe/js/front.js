@@ -34,13 +34,13 @@ $(document).ready(function() {
     var widthWin = $(window).width();
 
     if (widthWin < 576) {
-        if ($(window).scrollTop() >= 100) {
+        if ($(window).scrollTop() >= 50) {
             $(".moveTopBtn").show("slow", function() {});
         } else {
             $(".moveTopBtn").hide("slow", function() {});
         }
         $(window).scroll(function() {
-            if ($(this).scrollTop() >= 100) {
+            if ($(this).scrollTop() >= 50) {
                 $(".moveTopBtn").show("slow", function() {});
             } else {
                 $(".moveTopBtn").hide("slow", function() {});

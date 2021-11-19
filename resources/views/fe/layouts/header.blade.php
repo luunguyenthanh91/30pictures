@@ -36,7 +36,7 @@
                         <!--Logo start-->
                         <div class="col-lg-3 col-md-3 col-6 order-lg-1 order-md-1 order-1">
                             <div class="logo">
-                                <a href="index.html"><img src="assets/images/logo-white.png" alt=""></a>
+                                <a href="/home"><img src="assets/images/logo-white.png" alt=""></a>
                             </div>
                         </div>
                         <!--Logo end-->

@@ -33,22 +33,5 @@ $(document).ready(function() {
     });
     var widthWin = $(window).width();
 
-    if (widthWin < 576) {
-        if ($(window).scrollTop() >= 100) {
-            $(".moveTopBtn").show("slow", function() {});
-        } else {
-            $(".moveTopBtn").hide("slow", function() {});
-        }
-        $(window).scroll(function() {
-            if ($(this).scrollTop() >= 100) {
-                $(".moveTopBtn").show("slow", function() {});
-            } else {
-                $(".moveTopBtn").hide("slow", function() {});
-            }
-        });
-        $(".moveTopBtn").on('click', function() {
-            $("html, body").animate({ scrollTop: 0 }, "slow");
-        });
-    }
 
 });

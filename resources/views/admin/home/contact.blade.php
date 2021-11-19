@@ -82,6 +82,13 @@
                         </div>
 
                         <div class="form-group">
+                            <label class="form-label">Link Address</label>
+                            <div class="search-form" >
+                                <input type="text" name="linkAddress" class="form-control" value="{{$linkAddress->description}}" >
+                            </div>
+                        </div>
+
+                        <div class="form-group">
                             <label class="form-label">Phone</label>
                             <div class="search-form" >
                                 <input type="text" name="phone" class="form-control" value="{{$phone->description}}" >

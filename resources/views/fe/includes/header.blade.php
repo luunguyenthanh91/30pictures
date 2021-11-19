@@ -1,6 +1,6 @@
 <header>
     <div class="header_logo">
-        <a href="/index.html"><img src="{{@url(Helper::getSetting(5)->image_pc)}}" /></a>
+        <a href="/home"><img src="{{@url(Helper::getSetting(5)->image_pc)}}" /></a>
     </div>
     <div class="header_menu">
         <a class="menu_btn_toggle">

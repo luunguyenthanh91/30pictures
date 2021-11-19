@@ -19,18 +19,18 @@
             <h2 class="desTop">Hello, we are here!</h2>
 
             <h3 class="titleBox">Address</h3>
-            <p class="dessBox">220/7 Phan Van Han Street,<br/>Ward 17, Binh Thanh District,<br/>Ho Chi Minh City, VN</p>
+            <a href="{{Helper::getSetting(21)->description}}" target="_blank" class="dessBox">220/7 Phan Van Han Street,<br/>Ward 17, Binh Thanh District,<br/>Ho Chi Minh City, VN</a>
             <h3 class="titleBox">Email</h3>
-            <p class="dessBox">{{Helper::getSetting(13)->description}}</p>
+            <a href="mailto:{{Helper::getSetting(13)->description}}" class="dessBox">{{Helper::getSetting(13)->description}}</a>
             <h3 class="titleBox">Phone Number</h3>
-            <p class="dessBox">{{Helper::getSetting(12)->description}}</p>
+            <a href="tel:{{Helper::getSetting(12)->description}}" class="dessBox">{{Helper::getSetting(12)->description}}</a>
         </div>
    </div>
    <div class="contactForm">
         <div class="height-auto">
             <h1 class="titleTop">Contact Us</h1>
             <h2 class="desTop">For more detailed information</h2>
-            <form action="" method="POST" >
+            <form action="/contact-us" method="POST" autocomplete="off" id="contactForm" >
                 @csrf
                 
                 @if($message != '')
@@ -39,11 +39,11 @@
                 </div>
                 @endif
                 <h3 class="titleBox">Name</h3>
-                <input type="text" name='name' class="name_input nameIpt" required />
+                <input type="search" autocomplete="off" name='name' class="name_input nameIpt" required />
                 <h3 class="titleBox">Email</h3>
-                <input type="text" name='email' class="name_input emailIpt" required />
+                <input type="search" autocomplete="off" name='email' class="name_input emailIpt" required />
                 <h3 class="titleBox">Phone Number</h3>
-                <input type="text" name='phone' class="name_input phoneIpt" required />
+                <input type="search" autocomplete="off" name='phone' class="name_input phoneIpt" required />
                 <h3 class="titleBox">Content</h3>
                 <input type="text" name='content' class="name_input contentIpt" required />
                 <button type="submit" class="btn_send sendBtn hidden">Send ></button>
@@ -76,10 +76,9 @@
                     flag = 1;
                 }
                 if ($('.emailIpt').val().length == 0) {
-                
                     flag = 1;
                 }
-                if ($('.phoneIpt').val().length == 0) {
+                if ($('.phoneIpt').val().length < 10 || $('.phoneIpt').val().charAt(0) != "0") {
                     flag = 1;
                 }
                 if ($('.contentIpt').val().length == 0) {

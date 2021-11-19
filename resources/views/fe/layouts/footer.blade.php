@@ -84,7 +84,7 @@
             </div>
             <div class="col-lg-6 col-md-6 col-sm-4">
                 <div class="footer-logo text-right">
-                    <a href="index.html"><img src="assets/images/logofoo.png" alt=""></a>
+                    <a href="/home"><img src="assets/images/logofoo.png" alt=""></a>
                 </div>
             </div>
         </div>

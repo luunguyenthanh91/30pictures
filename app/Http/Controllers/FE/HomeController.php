@@ -89,23 +89,13 @@ class HomeController extends Controller
         $slug = '';
         $idWhere = 0;
         $bgDirectory = Setting::find(19);
-        $storyBig = Derector::where('name', 'like BINARY' , "%".$request->key."%")
-        ->orWhere('description', 'like BINARY' ,"%".$request->key."%")
-        ->orWhere('meme', 'like BINARY' ,"%".$request->key."%")->with('story')->first();
-        if ($storyBig) {
-            $idWhere = $storyBig->id;
-            $max_length = 340;
-            $storyBig->description = strip_tags($storyBig->description);
-            if (strlen($storyBig->description) > $max_length)
-            {
-                $offset = ($max_length - 3) - strlen($storyBig->description);
-                $storyBig->description = substr($storyBig->description, 0, strrpos($storyBig->description, ' ', $offset)) . '...';
-            }
-            
-        }
+        
+        $keySearch = $request->key;
         $listStory = Derector::where('name', 'like' , "%".$request->key."%")
         ->orWhere('description', 'like' ,"%".$request->key."%")
-        ->orWhere('meme', 'like' ,"%".$request->key."%")->with('story')->get();
+        ->orWhere('meme', 'like' ,"%".$request->key."%")->orWhereHas('story', function ($query) use ($keySearch) {
+            $query->where('description', 'like', "%".$keySearch."%");
+       })->get();
         // if (count($listStory)%2 != 0 && count($listStory) > 0) {
         //     $listStory[] = $listStory[0];
         // }
@@ -116,7 +106,6 @@ class HomeController extends Controller
                 'slug',
                 'listStory',
                 'bgDirectory',
-                'storyBig',
                 'listStoryS'
             ])
         );
@@ -179,13 +168,13 @@ class HomeController extends Controller
         if ($request->isMethod('post')) {
             $message = 'Email has been sent to the administrator. Please check your email response. Thanks.';
             $admin = Helper::getSetting(13)->description;
+            // $admin = 'luunguyenthanh91@gmail.com';
             $body = [
                 'type' => 'Send Mail',
                 'task' => 'test',
                 'name' => @$request->name ? $request->name : '',
                 'email' => @$request->email ? $request->email : '',
                 'phone' => @$request->phone ? $request->phone : '',
-                'address' => @$request->address ? $request->address : '',
                 'content' => @$request->content ? $request->content : '',
                 'to_email' => $admin
 
