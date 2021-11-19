@@ -626,7 +626,7 @@ main {
     display: block;
 }
 
-@media only screen and (min-width: 576px) {
+@media only screen and (min-width: 1025px) {
     .pc_style_slide .video_big .item:hover .block img.bg {
         transform: scale(1.2);
     }
