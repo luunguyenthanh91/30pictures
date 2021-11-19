@@ -148,6 +148,7 @@
     }
     .title_play_des {
         margin-top: 8px !important;
+        line-height: 16px !important;
     }
     .seemoreMobile {
         color: #fff;

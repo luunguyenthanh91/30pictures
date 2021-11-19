@@ -77,11 +77,15 @@ function handleTouchMoveMobile(evt) {
     var xUpMenu = evt.touches[0].clientX;
     var yUpMenu = evt.touches[0].clientY;
     if (yUpMenu > yDownMenu) {
-        $(".mobileMenuFooter").slideUp("slow");
+        $(".mobileMenuFooter").animate({
+            bottom: "-110px"
+        }, 500);
     } else {
         var scrollBottom = $(document).height() - $(window).height() - $(window).scrollTop();
         if (scrollBottom < 80) {
-            $(".mobileMenuFooter").slideDown("slow");
+            $(".mobileMenuFooter").animate({
+                bottom: "0"
+            }, 500);
         }
     }
     var xDiffMenu = xDownMenu - xUpMenu;

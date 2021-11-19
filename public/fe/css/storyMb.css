@@ -90,6 +90,7 @@
     }
     .pc_style_slide .item .image_size .hoverBgStory .title {
         margin: 16px 0px 0px 16px;
+        line-height: 36px;
     }
     .pc_style_slide .item .image_size .hoverBgStory .description {
         line-height: 16px;
