@@ -9,12 +9,54 @@ use Illuminate\Support\Facades\Validator;
 use App\Models\Setting;
 use App\Models\VideoHome;
 use Illuminate\Support\Facades\Storage;
+use App\Models\Story;
+use File;
+use App\Models\Derector;
 
 class DashboardController extends Controller
 {
     private $limit = 20;
+    function clearFileStorege(Request $request)
+    {
+        $files = Storage::disk('public')->allFiles('files');
+        foreach ($files as $key => $file) {
+            $data = Story::where("slide_gif_pc", "like", "%" . $file . "%")->orWhere("slide_gif_mobile", "like", "%" . $file . "%")->first();
+            if (!$data) {
+                Storage::delete('public/' . $file);
+            }
+        }
+        print_r($files);
+        die;
+    }
+    function clearFileIntro(Request $request)
+    {
+        $path = public_path('media/userfiles');
+        $filesInFolder = File::allFiles($path);
 
-    function index(Request $request) {
+
+        foreach ($filesInFolder as $key => $path) {
+            $files = pathinfo($path);
+            $allMedia[] = $files['basename'];
+            $file = $files['basename'];
+            $data = Setting::where("description", "like", "%" . $file . "%")->orWhere("file", "like", "%" . $file . "%")->orWhere("image_mobile", "like", "%" . $file . "%")->orWhere("image_pc", "like", "%" . $file . "%")->first();
+            if (!$data) {
+                $data = VideoHome::where("image", "like", "%" . $file . "%")->orWhere("video", "like", "%" . $file . "%")->orWhere("video_mobile", "like", "%" . $file . "%")->first();
+                if (!$data) {
+                    $data = Story::where("video", "like", "%" . $file . "%")->orWhere("description", "like", "%" . $file . "%")->orWhere("image_pc", "like", "%" . $file . "%")->orWhere("image_mobile", "like", "%" . $file . "%")->orWhere("background", "like", "%" . $file . "%")->first();
+                    if (!$data) {
+                        $data = Derector::where("video", "like", "%" . $file . "%")->orWhere("background", "like", "%" . $file . "%")->orWhere("description", "like", "%" . $file . "%")->orWhere("image_pc", "like", "%" . $file . "%")->orWhere("image_mobile", "like", "%" . $file . "%")->first();
+                        if (!$data) {
+                            File::delete($path);
+                        }
+                    }
+                }
+            }
+        }
+        print_r($allMedia);
+        die;
+    }
+    function index(Request $request)
+    {
         $menu_active = 'dashboard';
         $message = [];
         $introFile = Setting::find(6);
@@ -62,13 +104,13 @@ class DashboardController extends Controller
             $scriptFooter->description = $request->scriptFooter;
             $scriptFooter->save();
 
-            
+
 
             $message['message'] = 'Thay đổi dữ liệu thành công.';
             $message['status'] = 1;
         }
 
-        
+
         return view(
             'admin.home.index',
             compact([
@@ -87,7 +129,8 @@ class DashboardController extends Controller
             ])
         );
     }
-    function homePage(Request $request) {
+    function homePage(Request $request)
+    {
         $menu_active = 'home';
         $message = [];
         $homeConfig = Setting::find(7);
@@ -108,13 +151,13 @@ class DashboardController extends Controller
                             $dataUpdate->alt_seo = $item['alt_seo'];
                             $dataUpdate->link = $item['link'];
                             $dataUpdate->name_contact = $item['name_contact'];
-                            if ($request->hasFile('file_gif.'.$key)) {
-                                $path = $request->file('file_gif.'.$key)->store('public/files');
-                                $dataUpdate->image = url('/').Storage::url($path);
+                            if ($request->hasFile('file_gif.' . $key)) {
+                                $path = $request->file('file_gif.' . $key)->store('public/files');
+                                $dataUpdate->image = url('/') . Storage::url($path);
                             }
-                            if ($request->hasFile('file_gif_mb.'.$key)) {
-                                $path = $request->file('file_gif_mb.'.$key)->store('public/files');
-                                $dataUpdate->video_mobile = url('/').Storage::url($path);
+                            if ($request->hasFile('file_gif_mb.' . $key)) {
+                                $path = $request->file('file_gif_mb.' . $key)->store('public/files');
+                                $dataUpdate->video_mobile = url('/') . Storage::url($path);
                             }
                             $dataUpdate->save();
                         } else {
@@ -128,13 +171,13 @@ class DashboardController extends Controller
                             $dataUpdate->alt_seo = $item['alt_seo'];
                             $dataUpdate->sor = $item['sor'];
                             $dataUpdate->name_contact = $item['name_contact'];
-                            if ($request->hasFile('file_gif.'.$key)) {
-                                $path = $request->file('file_gif.'.$key)->store('public/files');
-                                $dataUpdate->image = url('/').Storage::url($path);
+                            if ($request->hasFile('file_gif.' . $key)) {
+                                $path = $request->file('file_gif.' . $key)->store('public/files');
+                                $dataUpdate->image = url('/') . Storage::url($path);
                             }
-                            if ($request->hasFile('file_gif_mb.'.$key)) {
-                                $path = $request->file('file_gif_mb.'.$key)->store('public/files');
-                                $dataUpdate->video_mobile = url('/').Storage::url($path);
+                            if ($request->hasFile('file_gif_mb.' . $key)) {
+                                $path = $request->file('file_gif_mb.' . $key)->store('public/files');
+                                $dataUpdate->video_mobile = url('/') . Storage::url($path);
                             }
                             $dataUpdate->save();
                         }
@@ -160,7 +203,8 @@ class DashboardController extends Controller
     }
 
 
-    function aboutPage(Request $request) {
+    function aboutPage(Request $request)
+    {
         $menu_active = 'home';
         $message = [];
         $aboutConfig = Setting::find(9);
@@ -171,7 +215,7 @@ class DashboardController extends Controller
             $aboutConfig->description = $request->description;
             $aboutConfig->save();
 
-            
+
             $message['message'] = 'Thay đổi dữ liệu thành công.';
             $message['status'] = 1;
         }
@@ -186,7 +230,8 @@ class DashboardController extends Controller
         );
     }
 
-    function contactPage(Request $request) {
+    function contactPage(Request $request)
+    {
         $menu_active = 'home';
         $message = [];
 
@@ -218,7 +263,7 @@ class DashboardController extends Controller
             $linkAddress->description = $request->linkAddress;
             $linkAddress->save();
 
-            
+
             $message['message'] = 'Thay đổi dữ liệu thành công.';
             $message['status'] = 1;
         }
@@ -240,6 +285,4 @@ class DashboardController extends Controller
             ])
         );
     }
-
-
 }

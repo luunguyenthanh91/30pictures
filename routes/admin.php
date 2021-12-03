@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::group(['namespace' => 'Admin', 'middleware' => ['adminAuth']], function () {
     Route::get('/',                                     'DashboardController@index')->name('dashboard.index');
     Route::post('/',                                     'DashboardController@index')->name('dashboard.index');
+    Route::get('/clear-files-store',                                     'DashboardController@clearFileStorege');
+    Route::get('/clear-files-intro',                                     'DashboardController@clearFileIntro');
 
     Route::get('/home-page',                                     'DashboardController@homePage');
     Route::post('/home-page',                                     'DashboardController@homePage');
