@@ -126,7 +126,6 @@
                                     <th scope="col">Tên Seller</th>
                                     <th scope="col">Vị Trí</th>
                                     <th scope="col">Seo ALT</th>
-                                    <th scope="col">Tên Hợp Tác</th>
                                     <th scope="col">Link Liên Kết</th>
                                     <th scope="col">Gif</th>
                                     <th scope="col">Action</th>
@@ -149,6 +148,11 @@
                                                 <input type="datetime-local" v-bind:name="'filesHome['+item.idFile+'][start_date]'"
                                                 class="form-control" v-model="item.start_date" class="form-control" >
                                             </div>
+                                            <div class="form-group">
+                                                <label>Tên Hợp Tác</label>
+                                                <input type="text" v-bind:name="'filesHome['+item.idFile+'][name_contact]'"
+                                                class="form-control" v-model="item.name_contact" class="form-control" >
+                                            </div>
                                         </td>
                                         <td>
                                             <div class="form-group">
@@ -160,12 +164,6 @@
                                             <div class="form-group">
                                                 <input type="text" v-bind:name="'filesHome['+item.idFile+'][alt_seo]'"
                                                     class="form-control" v-model="item.alt_seo" class="form-control" >
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="form-group">
-                                                <input type="text" v-bind:name="'filesHome['+item.idFile+'][name_contact]'"
-                                                class="form-control" v-model="item.name_contact" class="form-control" >
                                             </div>
                                         </td>
                                         <td>
