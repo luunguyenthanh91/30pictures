@@ -125,8 +125,6 @@
                                     <th scope="col">#</th>
                                     <th scope="col">Tên Seller</th>
                                     <th scope="col">Vị Trí</th>
-                                    <th scope="col">Seo ALT</th>
-                                    <th scope="col">Link Liên Kết</th>
                                     <th scope="col">Gif</th>
                                     <th scope="col">Action</th>
                                     </tr>
@@ -159,19 +157,18 @@
                                                 <input type="text" v-bind:name="'filesHome['+item.idFile+'][sor]'"
                                                 class="form-control sor" v-bind:value="item.sor != '' ? item.sor : item.id"  >
                                             </div>
-                                        </td>
-                                        <td>
                                             <div class="form-group">
+                                                <label>Seo ALT</label>
                                                 <input type="text" v-bind:name="'filesHome['+item.idFile+'][alt_seo]'"
                                                     class="form-control" v-model="item.alt_seo" class="form-control" >
                                             </div>
-                                        </td>
-                                        <td>
                                             <div class="form-group">
+                                                <label>Link Liên Kết</label>
                                                 <input type="text" v-bind:name="'filesHome['+item.idFile+'][link]'"
                                                 class="form-control" v-model="item.link" class="form-control" >
                                             </div>
                                         </td>
+                                        
                                         <td>
                                             <div class="form-group p-0">
                                                 <label>Gif PC</label>
