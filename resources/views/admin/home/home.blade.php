@@ -129,7 +129,6 @@
                                     <th scope="col">Tên Hợp Tác</th>
                                     <th scope="col">Link Liên Kết</th>
                                     <th scope="col">Gif</th>
-                                    <th scope="col">Gif Mobile</th>
                                     <th scope="col">Action</th>
                                     </tr>
                                 </thead>
@@ -144,6 +143,11 @@
                                                 class="form-control" v-model="item.id" class="form-control" >
                                                 <input type="hidden" v-bind:name="'filesHome['+item.idFile+'][type]'"
                                                 class="form-control" v-model="item.type" class="form-control" >
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Ngày Hiển Thị</label>
+                                                <input type="datetime-local" v-bind:name="'filesHome['+item.idFile+'][start_date]'"
+                                                class="form-control" v-model="item.start_date" class="form-control" >
                                             </div>
                                         </td>
                                         <td>
@@ -172,39 +176,21 @@
                                         </td>
                                         <td>
                                             <div class="form-group p-0">
-                                                
+                                                <label>Gif PC</label>
                                                 <li id="images" >
                                                     <input class="input_image" type="hidden" v-bind:name="'filesHome['+item.idFile+'][image]'" 
                                                     v-bind:id="'chooseImage_inputImage'+item.idFile" v-model="item.image">
-                                                    <div v-bind:id="'chooseImage_divImage'+item.idFile" style="display: none;">
-                                                        <img v-bind:src="item.image"
-                                                        v-bind:id="'chooseImage_imgImage'+item.idFile" style="max-width: 150px; max-height:150px; border:dashed thin;"></img>
-                                                    </div>
-                                                    <div v-bind:id="'chooseImage_noImage_divImage'+item.idFile" 
-                                                    style="width: 150px; border: thin dashed; text-align: center; padding:70px 0px;">
-                                                        No image
-                                                    </div>
                                                     <br />
                                                     <input type="file" v-bind:name="'file_gif['+item.idFile+']'" >
                                                     
                                                 </li>
                                                 
                                             </div>
-                                        </td>
-                                        <td>
                                             <div class="form-group p-0">
-                                                
+                                                <label>Gif Mobile</label>   
                                                 <li id="images" >
                                                     <input class="input_image" type="hidden" v-bind:name="'filesHome['+item.idFile+'][video_mobile]'" 
                                                     v-bind:id="'chooseImage_inputImageMb'+item.idFile" v-model="item.video_mobile">
-                                                    <div v-bind:id="'chooseImage_divImageMb'+item.idFile" style="display: none;">
-                                                        <img v-bind:src="item.video_mobile"
-                                                        v-bind:id="'chooseImage_imgImageMb'+item.idFile" style="max-width: 150px; max-height:150px; border:dashed thin;"></img>
-                                                    </div>
-                                                    <div v-bind:id="'chooseImage_noImage_divImageMb'+item.idFile" 
-                                                    style="width: 150px; border: thin dashed; text-align: center; padding:70px 0px;">
-                                                        No image
-                                                    </div>
                                                     <br />
                                                     <input type="file" v-bind:name="'file_gif_mb['+item.idFile+']'" >
                                                     
@@ -362,7 +348,6 @@ new Vue({
             if (this.countVideo < {{$item->id}}) {
                 this.countVideo = {{$item->id}};
             }
-            
             this.listVideo.push(
                 {
                     id : '{{$item->id}}',
@@ -376,6 +361,7 @@ new Vue({
                     alt_seo : '{{$item->alt_seo}}',
                     video_mobile : '{{$item->video_mobile}}',
                     name_contact : '{{$item->name_contact}}',
+                    start_date : "{{ strftime('%Y-%m-%dT%H:%M', strtotime($item->start_date)) }}",
                 }
             );
         @endforeach
@@ -396,6 +382,7 @@ new Vue({
                     video_mobile : '',
                     sor : this.countVideo,
                     name_contact : '',
+                    start_date : '',
                 }
             );
         },
