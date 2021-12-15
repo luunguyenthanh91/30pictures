@@ -10,6 +10,7 @@ use App\Models\Setting;
 use App\Models\VideoHome;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Story;
+use App\Models\Gallery;
 use File;
 use App\Models\Derector;
 
@@ -20,13 +21,13 @@ class DashboardController extends Controller
     {
         $files = Storage::disk('public')->allFiles('files');
         foreach ($files as $key => $file) {
-            $data = Story::where("slide_gif_pc", "like", "%" . $file . "%")->orWhere("slide_gif_mobile", "like", "%" . $file . "%")->first();
+            $data = VideoHome::where("image", "like", "%" . $file . "%")->orWhere("video_mobile", "like", "%" . $file . "%")->first();
+            
             if (!$data) {
                 Storage::delete('public/' . $file);
             }
         }
-        print_r($files);
-        die;
+        return redirect('/admin/home-page');
     }
     function clearFileIntro(Request $request)
     {
@@ -126,6 +127,54 @@ class DashboardController extends Controller
                 'bgStory',
                 'bgDirectory',
                 'scriptFooter',
+            ])
+        );
+    }
+
+    function galary(Request $request)
+    {
+        $menu_active = 'home';
+        $message = [];
+        if ($request->isMethod('post')) {
+            
+
+            if ($request->filesData) {
+                foreach ($request->filesData as $key => $item) {
+                    if ($item['id'] != 'new') {
+                        if ($item['status'] != 'delete') {
+                            $dataUpdate = Gallery::find($item['id']);
+                            $dataUpdate->image_pc = $item['image_pc'];
+                            $dataUpdate->image_mobile = $item['image_mobile'];
+                            $dataUpdate->type = $item['type'];
+                            $dataUpdate->sor = $item['sor'];
+                            $dataUpdate->save();
+                        } else {
+                            Gallery::where('id', $item['id'])->delete();
+                        }
+                    } else {
+                        if ($item['type'] != 'delete') {
+                            $dataUpdate = new Gallery();
+                            $dataUpdate->image_pc = $item['image_pc'];
+                            $dataUpdate->image_mobile = $item['image_mobile'];
+                            $dataUpdate->type = $item['type'];
+                            $dataUpdate->sor = $item['sor'];
+                            $dataUpdate->save();
+                        }
+                    }
+                }
+            } else {
+                Gallery::getQuery()->delete();
+            }
+            $message['message'] = 'Thay đổi dữ liệu thành công.';
+            $message['status'] = 1;
+        }
+        $listGalary = Gallery::orderBy('sor')->orderBy('id', 'DESC')->get();
+        return view(
+            'admin.home.galary',
+            compact([
+                'menu_active',
+                'message',
+                'listGalary'
             ])
         );
     }

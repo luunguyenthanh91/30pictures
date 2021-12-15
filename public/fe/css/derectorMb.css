@@ -103,7 +103,7 @@
         float: left;
         height: unset;
         margin-right: unset;
-        margin-bottom: 32px;
+        margin-bottom: 15px;
     }
     .pc_style_slide .video_big .item .block .desscription {
         display: none !important;
@@ -121,7 +121,7 @@
         margin-bottom: unset;
     }
     .pc_style_slide .video_small .item {
-        margin-bottom: 25px !important;
+        margin-bottom: 15px !important;
         float: left;
         width: 100%;
         height: unset !important;

@@ -32,6 +32,12 @@
                             Trang Chủ
                     </a>
                 </li>
+                <li class="sidebar-menu-item {{ (request()->is('*galary')) ? 'active open' : '' }} ">
+                    <a class="sidebar-menu-button" href="/admin/galary">
+                        <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">home</span>
+                            Galary
+                    </a>
+                </li>
                 <li class="sidebar-menu-item {{ (request()->is('*about-page')) ? 'active open' : '' }} ">
                     <a class="sidebar-menu-button" href="/admin/about-page">
                         <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">thumbs_up_down</span>
@@ -48,6 +54,12 @@
                     <a class="sidebar-menu-button" href="/admin/storys">
                         <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">collections</span>
                         STORY SELLERS
+                    </a>
+                </li>
+                <li class="sidebar-menu-item {{ (request()->is('*blog*')) ? 'active open' : '' }} ">
+                    <a class="sidebar-menu-button" href="/admin/blog">
+                        <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">collections</span>
+                        Blog
                     </a>
                 </li>
                 <!-- <li class="sidebar-menu-item {{ (request()->is('admin')) ? 'active open' : '' }} {{ (request()->is('*customer*')) ? 'active open' : '' }} ">

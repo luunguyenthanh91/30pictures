@@ -28,6 +28,9 @@ Route::group(['namespace' => 'Admin', 'middleware' => ['adminAuth']], function (
 
     Route::get('/contact-page',                                     'DashboardController@contactPage');
     Route::post('/contact-page',                                     'DashboardController@contactPage');
+
+    Route::get('/galary',                                     'DashboardController@galary');
+    Route::post('/galary',                                     'DashboardController@galary');
 });
 
 Route::group(['namespace' => 'Admin', 'middleware' => ['adminAuth'],  'prefix' => 'user'], function () {
@@ -88,4 +91,15 @@ Route::group(['namespace' => 'Admin', 'middleware' => ['adminAuth'],  'prefix' =
     Route::get('delete/{id}',                  'StorysController@delete')->name('admin.deleteCompany');
     Route::post('add',                  'StorysController@add')->name('admin.addCompany');
     Route::get('add',                  'StorysController@add')->name('admin.addCompany');
+});
+
+Route::group(['namespace' => 'Admin', 'middleware' => ['adminAuth'],  'prefix' => 'blog'], function () {
+    Route::get('/',                  'BlogController@list')->name('admin.Blog');
+    Route::get('get-list',                  'BlogController@getList')->name('admin.getBlog');
+    Route::get('get-list-all',                  'BlogController@getListAll')->name('admin.getAllBlog');
+    Route::post('edit/{id}',                  'BlogController@edit')->name('admin.editBlog');
+    Route::get('edit/{id}',                  'BlogController@edit')->name('admin.editBlog');
+    Route::get('delete/{id}',                  'BlogController@delete')->name('admin.deleteBlog');
+    Route::post('add',                  'BlogController@add')->name('admin.addBlog');
+    Route::get('add',                  'BlogController@add')->name('admin.addBlog');
 });

@@ -88,7 +88,7 @@
                                 <input type="checkbox" name="active_video" value="1" @if(@$data->active_video == 1) checked @endif data-toggle="toggle" data-onstyle="outline-primary" data-offstyle="outline-secondary">
                             </div>
                             <div class="d-flex">
-                                <div class="form-group col-lg-3 p-0">
+                                <!-- <div class="form-group col-lg-3 p-0">
                                     <label class="form-label">Gif PC:</label>
                                     
                                     <li id="images" >
@@ -129,7 +129,7 @@
                                         <input type="file" name="file_gif_mobile">
                                     </li>
                                     
-                                </div>
+                                </div> -->
                                 <div class="form-group col-lg-3 p-0">
                                     <label class="form-label">Background PC:</label>
                                     

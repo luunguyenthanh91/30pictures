@@ -32,7 +32,7 @@
         width: 100%;
         margin-right: unset;
         margin-left: unset;
-        margin-bottom: 32px;
+        margin-bottom: 0px;
     }
     .home_content_image .contactForm .name_input {
         width: 100%;
@@ -82,7 +82,7 @@
         margin-bottom: 8px;
     }
     .home_content_image .contact .dessBox {
-        margin-bottom: 16px;
+        margin-bottom: 15px;
         line-height: 20px;
         text-decoration: none !important;
         color: #fff !important;
@@ -95,6 +95,6 @@
         margin-bottom: 8px;
     }
     .home_content_image .contactForm .name_input {
-        margin-bottom: 16px;
+        margin-bottom: 15px;
     }
 }
