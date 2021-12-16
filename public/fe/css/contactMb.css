@@ -19,7 +19,7 @@
         display: flex;
         justify-content: flex-start;
         align-items: flex-start;
-        margin-top: 95px;
+        margin-top: 111px;
     }
     .home_content_image .contact,
     .home_content_image .contactForm,
@@ -32,7 +32,7 @@
         width: 100%;
         margin-right: unset;
         margin-left: unset;
-        margin-bottom: 0px;
+        margin-bottom: 17px;
     }
     .home_content_image .contactForm .name_input {
         width: 100%;

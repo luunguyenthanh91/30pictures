@@ -18,7 +18,7 @@
         flex-direction: column;
         display: flex;
         padding: 0px 15px;
-        margin-top: 95px;
+        margin-top: 111px;
     }
     .pc_style_slide {
         padding: unset;
@@ -59,7 +59,7 @@
         margin-right: unset;
         height: unset;
         padding-top: unset;
-        margin-bottom: 15px;
+        margin-bottom: 32px;
     }
     .slide-story .item a .box_info {
         display: none;
