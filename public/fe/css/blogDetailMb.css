@@ -10,7 +10,6 @@
     }
     main {
         height: unset;
-        background: unset;
     }
     .home_content_image {
         flex-direction: column;
