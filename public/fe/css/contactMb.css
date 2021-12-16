@@ -97,4 +97,7 @@
     .home_content_image .contactForm .name_input {
         margin-bottom: 15px;
     }
+    .home_content_image .contactInfo .map iframe {
+        width: 100%;
+    }
 }
