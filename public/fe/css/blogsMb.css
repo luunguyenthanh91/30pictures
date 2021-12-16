@@ -1,0 +1,97 @@
+@media screen and (max-width: 1024px) {}
+
+@media only screen and (max-width: 1025px) {
+    body {
+        background-attachment: fixed !important;
+        overflow-x: auto;
+        padding-bottom: 50px;
+        height: unset;
+        box-sizing: border-box;
+        background: #000;
+    }
+    main {
+        height: unset;
+        padding: unset;
+    }
+    .home_content_image {
+        flex-direction: column;
+        display: flex;
+        padding: 0px 15px;
+        margin-top: 111px;
+    }
+    .pc_style_slide {
+        padding: unset;
+    }
+    .logo-content-about-us {
+        height: unset;
+        width: 100%;
+        padding: 0px 15px;
+        margin-bottom: 10px;
+        display: block;
+    }
+    .logo-content-about-us.pc-display img {
+        width: 80%;
+        float: left;
+        height: unset;
+    }
+    .content-about-us {
+        width: 100%;
+        padding: 10px 15px;
+        overflow: hidden;
+        display: block;
+        float: left;
+        width: 100%;
+        height: unset;
+    }
+    .slide-story {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        overflow: hidden;
+    }
+    .slide-story .item,
+    .pc_style_slide .item.first,
+    .pc_style_slide .item.last {
+        width: 100%;
+        float: left;
+        margin-right: unset;
+        height: unset;
+        padding-top: unset;
+        margin-bottom: 32px;
+    }
+    .slide-story .item a .box_info {
+        display: none;
+    }
+    .slide-story .item .image_size img {
+        height: 200px;
+        float: left;
+    }
+    .pc_style_slide .item .image_size {
+        height: unset;
+        float: left;
+        margin-bottom: unset;
+    }
+    .slide-story .item .image_size .hoverBgStory {
+        position: relative;
+        display: block;
+        opacity: 1;
+        float: left;
+    }
+    .pc_style_slide .item .image_size .hoverBgStory .description,
+    .pc_style_slide .item .image_size .hoverBgStory .title {
+        position: relative;
+        float: left;
+        width: 100%;
+        bottom: unset !important;
+        left: unset !important;
+        margin: 8px 0px 0px 16px;
+    }
+    .pc_style_slide .item .image_size .hoverBgStory .title {
+        margin: 16px 0px 0px 16px;
+        line-height: 36px;
+    }
+    .pc_style_slide .item .image_size .hoverBgStory .description {
+        line-height: 16px;
+    }
+}

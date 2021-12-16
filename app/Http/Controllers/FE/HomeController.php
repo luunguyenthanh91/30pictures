@@ -21,6 +21,7 @@ use DateTime;
 use App\Http\Controllers\Controller;
 use App\Helpers\Helper;
 use Carbon\Carbon;
+use App\Models\Blog;
 class HomeController extends Controller
 {
 
@@ -82,6 +83,26 @@ class HomeController extends Controller
                 'slug',
                 'bgStory',
                 'listStory'
+            ])
+        );
+    }
+    function blogs(Request $request){
+        $listBlogs = Blog::whereDate('date_start', '<=', Carbon::today())->get();
+        return view(
+            'fe.home.blogs',
+            compact([
+                'listBlogs'
+            ])
+        );
+    }
+    function blogsDetail(Request $request , $slug){
+       
+        $blog = Blog::where("slug" , $slug)->first();
+        
+        return view(
+            'fe.home.blog-detail',
+            compact([
+                'blog'
             ])
         );
     }

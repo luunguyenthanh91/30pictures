@@ -60,6 +60,47 @@
         @yield('content')
     </div>
 
+    <script>
+    // // duyệt tất cả tấm ảnh cần lazy-load
+    var lazyImages = document.querySelectorAll('[lazy]');
+
+    // khi tấm ảnh gần chạm viewport (còn 100px nữa là chạm), thì load tấm ảnh ngay
+    var threshold = 20;
+
+    // tránh vấn đề về performance
+    var timeout;
+
+    function lazyload () {
+    clearTimeout(timeout);
+
+    timeout = setTimeout(function() {
+        var scrollTop = window.pageYOffset;
+        lazyImages.forEach(function(lazyImage) {
+        var src = lazyImage.dataset.src;
+
+        // khi vị trí tấm ảnh gần chạm viewport, load ngay
+        if (lazyImage.offsetTop < (window.innerHeight + scrollTop + threshold)) {
+            lazyImage.tagName.toLowerCase() === 'img'
+            // <img>: copy data-src sang src
+            ? lazyImage.src = src
+
+            // <div>: copy data-src sang background-image
+            : lazyImage.style.backgroundImage = "url(\'" + src + "\')";
+
+            // copy xong rồi thì bỏ attribute lazy đi
+            lazyImage.removeAttribute('lazy');
+        }
+        });
+
+        // tất cả tấm ảnh đã được load xong, dọn dẹp và đi thôi.
+        if (lazyImages.length == 0) { 
+        document.removeEventListener('scroll', lazyload);
+        }
+    }, 10);
+    }
+
+    document.addEventListener('scroll', lazyload);
+    </script>
     <!-- jQuery -->
     <script src="{{ asset('assets/vendor/jquery.min.js') }}"></script>
 

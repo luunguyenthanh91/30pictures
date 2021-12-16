@@ -144,7 +144,7 @@ class DashboardController extends Controller
                         if ($item['status'] != 'delete') {
                             $dataUpdate = Gallery::find($item['id']);
                             $dataUpdate->image_pc = $item['image_pc'];
-                            $dataUpdate->image_mobile = $item['image_mobile'];
+                            // $dataUpdate->image_mobile = $item['image_mobile'];
                             $dataUpdate->type = $item['type'];
                             $dataUpdate->sor = $item['sor'];
                             $dataUpdate->save();
@@ -155,7 +155,7 @@ class DashboardController extends Controller
                         if ($item['type'] != 'delete') {
                             $dataUpdate = new Gallery();
                             $dataUpdate->image_pc = $item['image_pc'];
-                            $dataUpdate->image_mobile = $item['image_mobile'];
+                            // $dataUpdate->image_mobile = $item['image_mobile'];
                             $dataUpdate->type = $item['type'];
                             $dataUpdate->sor = $item['sor'];
                             $dataUpdate->save();

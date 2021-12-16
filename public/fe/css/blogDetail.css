@@ -1,0 +1,108 @@
+html,
+body,
+.nk-wrap {
+    height: 100%;
+}
+body {
+    background-repeat: no-repeat  !important;
+    background-position: center !important;
+    background-size: cover !important; 
+    width: 100%;
+    height: 100%;
+}
+main {
+    background: rgba(0, 0, 0, 0.6);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
+    margin-top: 0px;
+}
+
+.home_content_image {
+    height: 100%;
+}
+
+.content-about-us {
+    width: calc(50% - 31px);
+    height: calc(100% - 245px);
+    float: left;
+    display: block;
+    overflow-y: auto;
+    padding: 0px 23px 0px 0px;
+    box-sizing: border-box;
+}
+
+.content-about-us::-webkit-scrollbar {
+    width: 2px;
+}
+
+.content-about-us::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(255, 255, 255, 0);
+    border-radius: 10px;
+}
+
+.content-about-us::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.2);
+}
+
+.content-about-us p,
+.content-about-us div {
+    color: #fff;
+    font-size: 16px;
+    line-height: 24px;
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: left;
+    float: left;
+}
+
+.logo-content-about-us {
+    width: 50%;
+    height: 100%;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 0px 31px;
+}
+.logo-content-about-us .titleBlog{
+    color: #fff;
+    font-size: 24px;
+    line-height: 32px;
+    font-family: OswaldRegular;
+    margin: 0px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+.logo-content-about-us .desBlog{
+    color: #fff;
+    font-size: 16px;
+    font-family: Nunito;
+    margin: 0px;
+    text-transform: uppercase;
+}
+.logo-content-about-us .desBlog span{
+    color: rgb(177, 177, 177);
+}
+.logo-content-about-us.pc-display img {
+    height: 96px;
+}
+
+.pc-display {
+    display: flex;
+}
+
+.mobile-display {
+    display: none;
+}
+
+.home_content_image {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}

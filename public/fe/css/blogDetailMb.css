@@ -1,0 +1,40 @@
+@media screen and (max-width: 1024px) {}
+
+@media only screen and (max-width: 1025px) {
+    body {
+        background-attachment: fixed !important;
+        overflow-x: auto;
+        padding-bottom: 50px;
+        height: unset;
+        box-sizing: border-box;
+    }
+    main {
+        height: unset;
+        background: unset;
+    }
+    .home_content_image {
+        flex-direction: column;
+    }
+    .logo-content-about-us {
+        height: unset;
+        width: 100%;
+        padding: 0px 15px;
+        margin-top: 95px;
+        margin-bottom: 10px;
+        display: block;
+    }
+    .logo-content-about-us.pc-display img {
+        width: 80%;
+        float: left;
+        height: unset;
+    }
+    .content-about-us {
+        width: 100%;
+        padding: 10px 15px;
+        overflow: hidden;
+        display: block;
+        float: left;
+        width: 100%;
+        height: unset;
+    }
+}

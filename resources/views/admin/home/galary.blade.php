@@ -76,7 +76,7 @@
                                         <th scope="col">Kiểu</th>
                                         <th scope="col">Thứ Tự</th>
                                         <th scope="col">Pc</th>
-                                        <th scope="col">Mobile</th>
+                                        <!-- <th scope="col">Mobile</th> -->
                                         <th scope="col">Action</th>
                                     </tr>
                                 </thead>
@@ -97,7 +97,7 @@
                                         <td>
                                             <div class="form-group">
                                                 <input type="text" v-bind:name="'filesData['+item.idFile+'][sor]'"
-                                                class="form-control sor" v-bind:value="item.sor" v-model="item.sor" >
+                                                class="form-control sor" v-model="item.sor" >
                                             </div>
                                         </td>
                                         
@@ -108,7 +108,7 @@
                                                     <input class="input_image" type="hidden" v-bind:name="'filesData['+item.idFile+'][image_pc]'" 
                                                     v-bind:id="'chooseImage_inputImage'+item.idFile" v-model="item.image_pc">
                                                     <div v-bind:id="'chooseImage_divImage'+item.idFile" style="display: none;">
-                                                        <img v-bind:src="item.image_pc"
+                                                        <img v-bind:src="item.image_pc" class="lazyloaded" loading="lazy"
                                                         v-bind:id="'chooseImage_imgImage'+item.idFile" style="max-width: 150px; max-height:150px; border:dashed thin;"></img>
                                                     </div>
                                                     <div v-bind:id="'chooseImage_noImage_divImage'+item.idFile" 
@@ -123,14 +123,14 @@
                                                 
                                             </div>
                                         </td>
-                                        <td>
+                                        <!-- <td>
                                             <div class="form-group p-0">
                                                 <label>Image Mobile</label>   
                                                 <li id="images" >
                                                     <input class="input_image" type="hidden" v-bind:name="'filesData['+item.idFile+'][image_mobile]'" 
                                                     v-bind:id="'chooseImage_inputImageImageMobile'+item.idFile" v-model="item.image_mobile">
                                                     <div v-bind:id="'chooseImage_divImageImageMobile'+item.idFile" style="display: none;">
-                                                        <img v-bind:src="item.image_mobile"
+                                                        <img v-bind:src="item.image_mobile" class="lazyloaded" loading="lazy"
                                                         v-bind:id="'chooseImage_imgImageImageMobile'+item.idFile" style="max-width: 150px; max-height:150px; border:dashed thin;"></img>
                                                     </div>
                                                     <div v-bind:id="'chooseImage_noImage_divImageImageMobile'+item.idFile" 
@@ -144,7 +144,7 @@
                                                 </li>
                                                 
                                             </div>
-                                        </td>
+                                        </td> -->
                                         <td>
                                             <button @click="removeRecore(item)" type="button" class="btn btn-danger">Xoá</button>
                                         </td>
