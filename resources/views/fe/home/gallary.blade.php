@@ -1,5 +1,5 @@
 @extends('fe.layouts.master')
-@section('title', Helper::getSetting(1)->description . ' - GALLARY')
+@section('title', Helper::getSetting(1)->description . ' - GALLERY')
 @section('css_page')
 <link rel="stylesheet" href="{{ asset('fe/css/gallary.css') }}">
 <link rel="stylesheet" href="{{ asset('fe/css/gallaryMb.css') }}">
