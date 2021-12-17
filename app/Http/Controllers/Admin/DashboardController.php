@@ -147,6 +147,7 @@ class DashboardController extends Controller
                             // $dataUpdate->image_mobile = $item['image_mobile'];
                             $dataUpdate->type = $item['type'];
                             $dataUpdate->sor = $item['sor'];
+                            $dataUpdate->seo = $item['seo'];
                             $dataUpdate->save();
                         } else {
                             Gallery::where('id', $item['id'])->delete();
@@ -158,6 +159,7 @@ class DashboardController extends Controller
                             // $dataUpdate->image_mobile = $item['image_mobile'];
                             $dataUpdate->type = $item['type'];
                             $dataUpdate->sor = $item['sor'];
+                            $dataUpdate->seo = $item['seo'];
                             $dataUpdate->save();
                         }
                     }

@@ -75,6 +75,7 @@
                                         <th scope="col">#</th>
                                         <th scope="col">Kiểu</th>
                                         <th scope="col">Thứ Tự</th>
+                                        <th scope="col">SEO Tag</th>
                                         <th scope="col">Pc</th>
                                         <!-- <th scope="col">Mobile</th> -->
                                         <th scope="col">Action</th>
@@ -100,7 +101,12 @@
                                                 class="form-control sor" v-model="item.sor" >
                                             </div>
                                         </td>
-                                        
+                                        <td>
+                                            <div class="form-group">
+                                                <input type="text" v-bind:name="'filesData['+item.idFile+'][seo]'"
+                                                class="form-control" v-model="item.seo" >
+                                            </div>
+                                        </td>
                                         <td>
                                             <div class="form-group p-0">
                                                 <label>Image PC</label>
@@ -316,6 +322,7 @@ new Vue({
                     image_pc : '{{$item->image_pc}}',
                     image_mobile : '{{$item->image_mobile}}',
                     sor : '{{$item->sor}}',
+                    seo : '{{$item->seo}}',
                     type : '{{$item->type}}',
                 }
             );
@@ -332,6 +339,7 @@ new Vue({
                     image_pc : '',
                     image_mobile : '',
                     sor : '',
+                    seo : '',
                     type : 1,
                 }
             );
@@ -346,6 +354,7 @@ new Vue({
                     image_pc : '',
                     image_mobile : '',
                     sor : '',
+                    seo : '',
                     type : 2,
                 }
             );

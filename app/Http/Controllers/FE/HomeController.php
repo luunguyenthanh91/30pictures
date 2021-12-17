@@ -22,6 +22,7 @@ use App\Http\Controllers\Controller;
 use App\Helpers\Helper;
 use Carbon\Carbon;
 use App\Models\Blog;
+use App\Models\Gallery;
 class HomeController extends Controller
 {
 
@@ -103,6 +104,17 @@ class HomeController extends Controller
             'fe.home.blog-detail',
             compact([
                 'blog'
+            ])
+        );
+    }
+    function gallary(Request $request){
+       
+        $listGalary = Gallery::orderBy('sor')->orderBy('id', 'DESC')->get();
+        
+        return view(
+            'fe.home.gallary',
+            compact([
+                'listGalary'
             ])
         );
     }

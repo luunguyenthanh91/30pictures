@@ -146,4 +146,7 @@
         margin-bottom: 0px;
         line-height: 12px;
     }
+    .menu_mail_left .menuList {
+        margin-top: 0px;
+    }
 }

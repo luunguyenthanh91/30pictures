@@ -88,7 +88,7 @@ main {
     width: 376px;
     text-align: left;
 }
-.logo-content-about-us .desBlog span{
+.logo-content-about-us .desBlog a{
     color: rgb(177, 177, 177);
 }
 .logo-content-about-us.pc-display img {

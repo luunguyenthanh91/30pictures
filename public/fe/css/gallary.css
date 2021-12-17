@@ -24,7 +24,7 @@ main {
 }
 
 .nk-wrap {
-    background: #fff;
+    background: #000;
 }
 
 
@@ -122,6 +122,20 @@ main {
 .pc_style_slide .item .image_size {
     width: 100%;
     border-radius: 20px;
+    height: calc(50% - 30px);
+    margin-bottom: 30px;
+    object-fit: cover;
+    object-position: center;
+    -webkit-animation: fadein 2s;
+    -moz-animation: fadein 2s;
+    -ms-animation: fadein 2s;
+    -o-animation: fadein 2s;
+    animation: fadein 2s;
+    position: relative;
+}
+.pc_style_slide .item .image_size.bigSize {
+    width: 100%;
+    border-radius: 20px;
     height: calc(100% - 30px);
     margin-bottom: 30px;
     object-fit: cover;
@@ -159,7 +173,7 @@ main {
 .pc_style_slide .item .image_size .hoverBgStory .title {
     color: #fff;
     font-size: 24px;
-    line-height: 32px;
+    line-height: 24px;
     font-family: OswaldRegular;
     margin: 0px;
     margin-bottom: 5px;

@@ -29,6 +29,8 @@ Route::group(['namespace' => 'FE' ], function () {
     Route::get('/blogs', 'HomeController@blogs');
     Route::get('/blogs/{slug}', 'HomeController@blogsDetail');
 
+    Route::get('/gallary', 'HomeController@gallary');
+
     Route::get('/', 'HomeController@index');
     Route::get('/story-sellers/{slug}/{key}.html', 'HomeController@directorDetail');
     Route::get('/story-sellers/{slug}', 'HomeController@director');
