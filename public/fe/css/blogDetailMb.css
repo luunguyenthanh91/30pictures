@@ -4,12 +4,13 @@
     body {
         background-attachment: fixed !important;
         overflow-x: auto;
-        padding-bottom: 50px;
+        padding-bottom: 0px;
         height: unset;
         box-sizing: border-box;
     }
     main {
         height: unset;
+        padding-bottom: 50px;
     }
     .home_content_image {
         flex-direction: column;

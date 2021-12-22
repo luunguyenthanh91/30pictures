@@ -15,7 +15,7 @@
 <div class="home_content_image">
     <div class="logo-content-about-us">
         <p class="titleBlog">{!! $blog->title !!}</p>
-        <p class="desBlog">BLOG <a href="/gallery">| GALLERY</a></p>
+        <p class="desBlog">BLOG <a href="/gallery/{{$blog->slug}}">| GALLERY</a></p>
     </div>
 
     <div class="content-about-us">

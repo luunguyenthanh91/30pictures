@@ -32,12 +32,12 @@
                             Trang Chủ
                     </a>
                 </li>
-                <li class="sidebar-menu-item {{ (request()->is('*galary')) ? 'active open' : '' }} ">
+                <!-- <li class="sidebar-menu-item {{ (request()->is('*galary')) ? 'active open' : '' }} ">
                     <a class="sidebar-menu-button" href="/admin/galary">
                         <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">home</span>
                             Galary
                     </a>
-                </li>
+                </li> -->
                 <li class="sidebar-menu-item {{ (request()->is('*about-page')) ? 'active open' : '' }} ">
                     <a class="sidebar-menu-button" href="/admin/about-page">
                         <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">thumbs_up_down</span>

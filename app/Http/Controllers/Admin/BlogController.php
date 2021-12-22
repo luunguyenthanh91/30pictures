@@ -6,7 +6,7 @@ use App\User;
 use App\Models\Derector;
 use App\Models\Story;
 use App\Models\Blog;
-
+use App\Models\Gallery;
 
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
@@ -71,6 +71,38 @@ class BlogController extends Controller
                     }
                     $data->date_start = $request->date_start;
                     $data->save();
+
+                    if ($request->filesData) {
+                        foreach ($request->filesData as $key => $item) {
+                            if ($item['id'] != 'new') {
+                                if ($item['status'] != 'delete') {
+                                    $dataUpdate = Gallery::find($item['id']);
+                                    $dataUpdate->image_pc = $item['image_pc'];
+                                    // $dataUpdate->image_mobile = $item['image_mobile'];
+                                    $dataUpdate->type = $item['type'];
+                                    $dataUpdate->sor = $item['sor'];
+                                    $dataUpdate->seo = $item['seo'];
+                                    $dataUpdate->blog_id = $item['blog_id'];
+                                    $dataUpdate->save();
+                                } else {
+                                    Gallery::where('id', $item['id'])->delete();
+                                }
+                            } else {
+                                if ($item['type'] != 'delete') {
+                                    $dataUpdate = new Gallery();
+                                    $dataUpdate->image_pc = $item['image_pc'];
+                                    // $dataUpdate->image_mobile = $item['image_mobile'];
+                                    $dataUpdate->type = $item['type'];
+                                    $dataUpdate->sor = $item['sor'];
+                                    $dataUpdate->seo = $item['seo'];
+                                    $dataUpdate->blog_id = $item['blog_id'];
+                                    $dataUpdate->save();
+                                }
+                            }
+                        }
+                    } else {
+                        Gallery::where('blog_id', $id)->delete();
+                    }
                     
                     $message = [
                         "message" => "Đã thêm dữ liệu thành công.",
@@ -87,9 +119,10 @@ class BlogController extends Controller
             
         }
         $data = Blog::find($request->id);
+        $listGalary = Gallery::where('blog_id', $id)->orderBy('sor')->orderBy('id', 'DESC')->get();
         return view(
             'admin.blog.edit',
-            compact(['id' , 'data', 'message' ])
+            compact(['id' , 'data', 'message', 'listGalary' ])
         );
     }
 

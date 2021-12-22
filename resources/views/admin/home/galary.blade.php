@@ -65,7 +65,7 @@
                         
 
                         <div class="page-separator">
-                            <div class="page-separator__text">Information</div>
+                            <div class="page-separator__text">Galary</div>
                             
                         </div>
                         <div class="form-group">

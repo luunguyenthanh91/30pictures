@@ -99,7 +99,6 @@ class HomeController extends Controller
     function blogsDetail(Request $request , $slug){
        
         $blog = Blog::where("slug" , $slug)->first();
-        
         return view(
             'fe.home.blog-detail',
             compact([
@@ -107,10 +106,11 @@ class HomeController extends Controller
             ])
         );
     }
-    function gallary(Request $request){
+    function gallary(Request $request , $slug){
        
-        $listGalary = Gallery::orderBy('sor')->orderBy('id', 'DESC')->get();
         
+        $blog = Blog::where("slug" , $slug)->first();
+        $listGalary = Gallery::where('blog_id', $blog->id)->orderBy('sor')->orderBy('id', 'DESC')->get();
         return view(
             'fe.home.gallary',
             compact([

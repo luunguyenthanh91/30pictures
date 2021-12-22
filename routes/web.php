@@ -29,7 +29,7 @@ Route::group(['namespace' => 'FE' ], function () {
     Route::get('/blogs', 'HomeController@blogs');
     Route::get('/blogs/{slug}', 'HomeController@blogsDetail');
 
-    Route::get('/gallery', 'HomeController@gallary');
+    Route::get('/gallery/{slug}', 'HomeController@gallary');
 
     Route::get('/', 'HomeController@index');
     Route::get('/story-sellers/{slug}/{key}.html', 'HomeController@directorDetail');
