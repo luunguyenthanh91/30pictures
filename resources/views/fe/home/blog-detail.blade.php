@@ -1,5 +1,7 @@
 @extends('fe.layouts.master')
 @section('title', Helper::getSetting(1)->description . ' - BLOGS - '. $blog->title)
+@section('imageShare', url(@$blog->image_pc) )
+
 @section('css_page')
 <link rel="stylesheet" href="{{ asset('fe/css/blogDetail.css') }}">
 <link rel="stylesheet" href="{{ asset('fe/css/blogDetailMb.css') }}">
@@ -71,9 +73,32 @@
 <script>
     
     $(document).ready(function() {
-        $('.pc_style_slide').on('DOMMouseScroll mousewheel', $.debounce(250, function(event) {
-
-        }));
+    
+        var widthWin = $(window).width();
+        var heightWin = $('.main').height();
+        if (widthWin < 1025) {
+            $(window).scroll(function() {
+                var obpaFlag = 0.6;
+                if ($(window).scrollTop() >= heightWin/3) {
+                    obpaFlag = 0.6 + ($(window).scrollTop() / 2000);
+                } else {
+                    obpaFlag = 0.6 + ($(window).scrollTop() / 2000);
+                }
+                console.log(obpaFlag);
+                $('main').attr("style"," background: rgba(0, 0, 0, "+obpaFlag+") !important;")
+            });
+            
+        } else {
+            $('main').scroll(function() {
+                var obpaFlag = 0.6;
+                if ($('main').scrollTop() >= heightWin/3) {
+                    obpaFlag = 0.6 + ($('main').scrollTop() / 2000);
+                } else {
+                    obpaFlag = 0.6 + ($('main').scrollTop() / 2000);
+                }
+                $('.nk-wrap').attr("style","    background: rgba(0, 0, 0, "+obpaFlag+");")
+            });
+        }
     });
 </script>
 @endsection
