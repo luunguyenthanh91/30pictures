@@ -7,7 +7,7 @@ class Helper
 {
     public static function getListStory()
     {
-        $listStory = Story::all();
+        $listStory = Story::orderBy("sor")->get();
         
         return $listStory;
     }

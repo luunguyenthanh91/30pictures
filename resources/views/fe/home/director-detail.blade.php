@@ -1,5 +1,5 @@
 @extends('fe.layouts.null')
-@section('title', Helper::getSetting(1)->description . ' - DIRECTOR - ' . @$listStory->name)
+@section('title', Helper::getSetting(1)->description . ' - '.@$listStory->seo_title.' - ' . @$listStory->name)
 @section('imageShare', url(@$listStory->image_pc) )
 @section('css_page')
 <link rel="stylesheet" href="{{ asset('fe/css/derector.css') }}">

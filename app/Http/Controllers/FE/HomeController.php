@@ -99,10 +99,12 @@ class HomeController extends Controller
     function blogsDetail(Request $request , $slug){
        
         $blog = Blog::where("slug" , $slug)->first();
+        $listGalary = Gallery::where('blog_id', $blog->id)->orderBy('sor')->orderBy('id', 'DESC')->get();
         return view(
             'fe.home.blog-detail',
             compact([
-                'blog'
+                'blog',
+                'listGalary'
             ])
         );
     }

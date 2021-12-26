@@ -95,6 +95,7 @@ class StorysController extends Controller
                                     $dataUpdate->slug = \App\Helpers\Helper::convertSlug($item['name']);
                                     $dataUpdate->description = $item['description'];
                                     $dataUpdate->video = $item['video'];
+                                    $dataUpdate->seo_title = $item['seo_title'];
                                     $dataUpdate->image_pc = $item['image_pc'];
                                     $dataUpdate->image_mobile = $item['image_mobile'];
                                     $dataUpdate->type_display = @$item['type_display'] ? $item['type_display'] : 0;
@@ -114,6 +115,7 @@ class StorysController extends Controller
                                     $dataUpdate->slug = \App\Helpers\Helper::convertSlug($item['name']);
                                     $dataUpdate->description = $item['description'];
                                     $dataUpdate->video = $item['video'];
+                                    $dataUpdate->seo_title = $item['seo_title'];
                                     $dataUpdate->image_pc = $item['image_pc'];
                                     $dataUpdate->image_mobile = $item['image_mobile'];
                                     $dataUpdate->story_id = $data->id;
@@ -199,6 +201,7 @@ class StorysController extends Controller
                                 $dataUpdate->alt_seo = $item['alt_seo'];
                                 $dataUpdate->description = $item['description'];
                                 $dataUpdate->video = $item['video'];
+                                $dataUpdate->seo_title = $item['seo_title'];
                                 $dataUpdate->image_pc = $item['image_pc'];
                                 $dataUpdate->image_mobile = $item['image_mobile'];
                                 $dataUpdate->type_display = @$item['type_display'] ? $item['type_display'] : 0;
@@ -217,6 +220,7 @@ class StorysController extends Controller
                                 $dataUpdate->slug = \App\Helpers\Helper::convertSlug($item['name']);
                                 $dataUpdate->description = $item['description'];
                                 $dataUpdate->video = $item['video'];
+                                $dataUpdate->seo_title = $item['seo_title'];
                                 $dataUpdate->alt_seo = $item['alt_seo'];
                                 $dataUpdate->image_pc = $item['image_pc'];
                                 $dataUpdate->image_mobile = $item['image_mobile'];
