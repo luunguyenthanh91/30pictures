@@ -30,7 +30,7 @@ class StorysController extends Controller
 
     function getList(Request $request) {
         $page = $request->page - 1;
-        $data = Story::orderBy("id" , "DESC");
+        $data = Story::orderBy("sor");
         if(@$request->name != '' ){
             $data = $data->where('description', 'like', '%'.$request->name.'%');
         }
