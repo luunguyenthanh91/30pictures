@@ -18,7 +18,7 @@
     <div class="logo-content-about-us">
         <div class="flex-start">
             <p class="titleBlog">{!! $blog->title !!}</p>
-            <p class="desBlog">BLOG <span>| GALLERY</span></p>
+            <p class="desBlog">BLOG <span class="scrollToGallery">| GALLERY</span></p>
         </div>
     </div>
 
@@ -73,7 +73,17 @@
 <script>
     
     $(document).ready(function() {
-    
+        $('.scrollToGallery').on('click', function () {
+            if (widthWin < 1025) {
+                $(window).animate({
+                    scrollTop: $(".bg_style").offset().top
+                }, 2000);
+            } else {
+                $('main').animate({
+                    scrollTop: $(".bg_style").offset().top
+                }, 2000);
+            }
+        });
         var widthWin = $(window).width();
         var heightWin = $('.main').height();
         if (widthWin < 1025) {
@@ -92,9 +102,9 @@
             $('main').scroll(function() {
                 var obpaFlag = 0.6;
                 if ($('main').scrollTop() >= heightWin/3) {
-                    obpaFlag = 0.6 + ($('main').scrollTop() / 2000);
+                    obpaFlag = 0.6 + ($('main').scrollTop() / 1000);
                 } else {
-                    obpaFlag = 0.6 + ($('main').scrollTop() / 2000);
+                    obpaFlag = 0.6 + ($('main').scrollTop() / 1000);
                 }
                 $('.nk-wrap').attr("style","    background: rgba(0, 0, 0, "+obpaFlag+");")
             });
