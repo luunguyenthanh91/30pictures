@@ -43,14 +43,14 @@
                         @if ($item->type == 2)
                         @php($flag=1)
                         <div class="image_size">
-                            <img class="lazyloaded" loading="lazy" alt="{{$item->seo}}" src="{{@url($item->image_pc ? $item->image_pc  : '/' )}}" />
+                            <img class="lazyloaded fullImage" loading="lazy" alt="{{$item->seo}}" src="{{@url($item->image_pc ? $item->image_pc  : '/' )}}" />
                         </div>
                         <div class="image_size">
-                            <img class="lazyloaded" loading="lazy" alt="{{$listGalary[$key + 1]->seo}}" src="{{@url($listGalary[$key + 1]->image_pc ? $listGalary[$key + 1]->image_pc  : '/' )}}" />
+                            <img class="lazyloaded fullImage" loading="lazy" alt="{{$listGalary[$key + 1]->seo}}" src="{{@url($listGalary[$key + 1]->image_pc ? $listGalary[$key + 1]->image_pc  : '/' )}}" />
                         </div>
                         @else
                         <div class="image_size bigSize">
-                            <img alt="{{$item->seo}}" src="{{@url($item->image_pc ? $item->image_pc  : '/' )}}" class="lazyloaded" loading="lazy" />
+                            <img alt="{{$item->seo}}" src="{{@url($item->image_pc ? $item->image_pc  : '/' )}}" class="lazyloaded fullImage" loading="lazy" />
                         </div>
                         @endif
                     </a>
