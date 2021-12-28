@@ -60,11 +60,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
     <div class="nk-wrap">
         @include('fe.includes.header')
+        @include('fe.includes.footer')
         <main class="@yield('class_main')">
             @yield('content')
             @include('fe.layouts.menu')
         </main>
-        @include('fe.includes.footer')
 
     </div>
     <div class="moveTopBtn">
