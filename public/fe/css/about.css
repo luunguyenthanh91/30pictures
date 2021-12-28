@@ -20,12 +20,16 @@ main {
 
 .content-about-us {
     width: calc(50% - 31px);
-    height: calc(100% - 245px);
+    height: calc(100% - 156px);
     float: left;
     display: block;
     overflow-y: auto;
     padding: 0px 23px 0px 0px;
     box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .content-about-us::-webkit-scrollbar {
