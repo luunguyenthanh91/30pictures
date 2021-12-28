@@ -84,6 +84,12 @@
                                 </div>
                             </div>
                             <div class="form-group">
+                                <label class="form-label">Thứ tự hiển thị</label>
+                                <div class="search-form" >
+                                    <input type="text" value="{{@$data->sor != '' ? @$data->sor : '' }}" name="sor"  class="form-control" required >
+                                </div>
+                            </div>
+                            <div class="form-group">
                                 <label class="form-label">Hiển Thị Trang Chủ</label>
                                 <input type="checkbox" name="active_video" value="1" @if(@$data->active_video == 1) checked @endif data-toggle="toggle" data-onstyle="outline-primary" data-offstyle="outline-secondary">
                             </div>

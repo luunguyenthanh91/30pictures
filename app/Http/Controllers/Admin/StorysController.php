@@ -59,6 +59,7 @@ class StorysController extends Controller
                     $data = Story::find($id);
                     $data->name = $request->name;
                     $data->description = $request->description;
+                    $data->sor = $request->sor;
                     $data->slug = \App\Helpers\Helper::convertSlug($request->description);
                     $data->image_pc = $request->image_pc;
                     if ($request->active_video) {
