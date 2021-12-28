@@ -102,4 +102,17 @@
     .pc_style_slide .item .image_size .hoverBgStory .description {
         line-height: 16px;
     }
+    .fancyboxImage .showImage { 
+        padding: 0px 15px;
+    }
+    .fancyboxImage .showImage img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        object-position: center;
+    }
+    .fancyboxImage .close_video  {
+        right: 15px;
+        top: 15px;
+    }
 }

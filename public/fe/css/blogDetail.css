@@ -522,3 +522,37 @@ main::-webkit-scrollbar-thumb {
     color: #fff !important;
     opacity: 0.95;
 }
+.fancyboxImage {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10000;
+    background: #000;
+}
+.fancyboxImage .close_video {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: 31px;
+    top: 31px;
+    opacity: 0.8;
+    cursor: pointer;
+}
+.fancyboxImage  .showImage {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fancyboxImage  .showImage img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    object-position: center;
+}
+.hidden {
+    display: none;
+}
