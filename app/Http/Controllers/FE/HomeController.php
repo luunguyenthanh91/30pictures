@@ -88,7 +88,7 @@ class HomeController extends Controller
         );
     }
     function blogs(Request $request){
-        $listBlogs = Blog::whereDate('date_start', '<=', Carbon::today())->get();
+        $listBlogs = Blog::whereDate('date_start', '<=', Carbon::today())->orderBy('id', 'DESC')->get();
         return view(
             'fe.home.blogs',
             compact([
