@@ -143,6 +143,7 @@ header {
     line-height: 24px;
     opacity: 0.8;
     text-transform: uppercase;
+    cursor: pointer;
 }
 
 .header_logo a img {
@@ -171,6 +172,7 @@ header {
     height: 24px;
     color: #fff;
     opacity: 0.8;
+    cursor: pointer;
 }
 
 .header_search a:hover svg {
@@ -239,6 +241,7 @@ header {
 .header_menu a svg {
     height: 100%;
     opacity: 0.8;
+    cursor: pointer;
 }
 
 .header_menu a:hover img {
@@ -381,6 +384,7 @@ footer {
     justify-content: center;
     align-items: center;
     line-height: 16px;
+    cursor: pointer;
 }
 
 .footer_list .menu_item p.title i {
