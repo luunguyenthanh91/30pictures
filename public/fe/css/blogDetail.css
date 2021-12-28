@@ -515,3 +515,8 @@ main::-webkit-scrollbar-thumb {
         opacity: 1;
     }
 }
+.content-about-us p, 
+.content-about-us span {
+    color: #fff !important;
+    opacity: 0.8;
+}
