@@ -79,13 +79,13 @@ function handleTouchMoveMobile(evt) {
     if (yUpMenu > yDownMenu) {
         $(".mobileMenuFooter").animate({
             bottom: "-110px"
-        }, 500);
+        }, 200);
     } else {
         var scrollBottom = $(document).height() - $(window).height() - $(window).scrollTop();
         if (scrollBottom < 80) {
             $(".mobileMenuFooter").animate({
                 bottom: "0"
-            }, 500);
+            }, 200);
         }
     }
     var xDiffMenu = xDownMenu - xUpMenu;
