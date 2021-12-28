@@ -73,19 +73,20 @@
 <script>
     
     $(document).ready(function() {
+        
+        var widthWin = $(window).width();
+        var heightWin = $('.main').height();
         $('.scrollToGallery').on('click', function () {
             if (widthWin < 1025) {
                 $(window).animate({
                     scrollTop: $(".bg_style").offset().top
-                }, 2000);
+                }, 1000);
             } else {
                 $('main').animate({
                     scrollTop: $(".bg_style").offset().top
-                }, 2000);
+                }, 1000);
             }
         });
-        var widthWin = $(window).width();
-        var heightWin = $('.main').height();
         if (widthWin < 1025) {
             $(window).scroll(function() {
                 var obpaFlag = 0.6;
