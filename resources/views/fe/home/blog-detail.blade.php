@@ -78,7 +78,7 @@
         var heightWin = $('.main').height();
         $('.scrollToGallery').on('click', function () {
             if (widthWin < 1025) {
-                $(window).animate({
+                $([document.documentElement, document.body]).animate({
                     scrollTop: $(".bg_style").offset().top
                 }, 1000);
             } else {
@@ -95,7 +95,6 @@
                 } else {
                     obpaFlag = 0.6 + ($(window).scrollTop() / 2000);
                 }
-                console.log(obpaFlag);
                 $('main').attr("style"," background: rgba(0, 0, 0, "+obpaFlag+") !important;")
             });
             
