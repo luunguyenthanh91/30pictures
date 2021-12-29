@@ -729,6 +729,7 @@ main {
     float: left;
     line-height: 16px;
     margin-top: 10px;
+    text-transform: initial;
 }
 
 .d-none {
