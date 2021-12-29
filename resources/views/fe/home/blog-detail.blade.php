@@ -83,6 +83,13 @@
 <script>
     
     $(document).ready(function() {
+        $(document).on('keyup', function(e) {
+            if (e.key == "Escape") $('.fancyboxImage').addClass('hidden');
+        });
+        $('.fancyboxImage').on('click', function(){
+            $('.fancyboxImage').addClass('hidden');
+        });
+
         $('.fullImage').on('click', function(){
             $('.fancyboxImage .showImage').html('<img src="'+$(this).attr('src')+'" />');
             $('.fancyboxImage').removeClass('hidden');
