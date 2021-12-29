@@ -154,6 +154,11 @@
                                                 <input type="text" v-bind:name="'filesHome['+item.idFile+'][name_contact]'"
                                                 class="form-control" v-model="item.name_contact" class="form-control" >
                                             </div>
+                                            <div class="form-group">
+                                                <label>Tên Hợp Tác 2</label>
+                                                <input type="text" v-bind:name="'filesHome['+item.idFile+'][name_contact_2]'"
+                                                class="form-control" v-model="item.name_contact_2" class="form-control" >
+                                            </div>
                                         </td>
                                         <td>
                                             <div class="form-group">
@@ -359,6 +364,7 @@ new Vue({
                     alt_seo : '{{$item->alt_seo}}',
                     video_mobile : '{{$item->video_mobile}}',
                     name_contact : '{{$item->name_contact}}',
+                    name_contact_2 : '{{$item->name_contact_2}}',
                     start_date : "{{ strftime('%Y-%m-%dT%H:%M', strtotime($item->start_date)) }}",
                 }
             );
@@ -380,6 +386,7 @@ new Vue({
                     video_mobile : '',
                     sor : 1,
                     name_contact : '',
+                    name_contact_2 : '',
                     start_date : '',
                 }
             );

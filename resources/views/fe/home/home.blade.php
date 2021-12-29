@@ -16,6 +16,7 @@
                 <i class="fas fa-chevron-up d-none"></i>
                 <a  alt="{{$item->alt_seo}}" href="{{$item->link}}" class="titleSlide">{{$item->name}}</a>
                 <a  alt="{{$item->alt_seo}}" href="{{$item->link}}" class="desSlide">{{$item->name_contact}}</a>
+                <a  alt="{{$item->alt_seo}}" href="{{$item->link}}" class="desSlide desSlide2">{{$item->name_contact_2}}</a>
                 <i class="fas fa-chevron-down"></i>
             </div>
         </div>

@@ -203,6 +203,7 @@ class DashboardController extends Controller
                             $dataUpdate->link = $item['link'];
                             $dataUpdate->start_date = $item['start_date'];
                             $dataUpdate->name_contact = $item['name_contact'];
+                            $dataUpdate->name_contact_2 = $item['name_contact_2'];
                             if ($request->hasFile('file_gif.' . $key)) {
                                 $path = $request->file('file_gif.' . $key)->store('public/files');
                                 $dataUpdate->image = url('/') . Storage::url($path);
@@ -224,6 +225,7 @@ class DashboardController extends Controller
                             $dataUpdate->alt_seo = $item['alt_seo'];
                             $dataUpdate->sor = $item['sor'];
                             $dataUpdate->name_contact = $item['name_contact'];
+                            $dataUpdate->name_contact_2 = $item['name_contact_2'];
                             if ($request->hasFile('file_gif.' . $key)) {
                                 $path = $request->file('file_gif.' . $key)->store('public/files');
                                 $dataUpdate->image = url('/') . Storage::url($path);
