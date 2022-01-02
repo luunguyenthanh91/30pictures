@@ -33,10 +33,7 @@ Route::group(['namespace' => 'Admin', 'middleware' => ['adminAuth']], function (
     Route::post('/galary',                                     'DashboardController@galary');
     Route::get('/manager-file',                                     'DashboardController@files');
 });
-Route::group(['middleware' => ['adminAuth']], function () {
-    Route::get('/laravel-filemanager', '\UniSharp\LaravelFilemanager\controllers\LfmController@show');
-    Route::post('/laravel-filemanager/upload', '\UniSharp\LaravelFilemanager\controllers\UploadController@upload');
-});
+
 Route::group(['namespace' => 'Admin', 'middleware' => ['adminAuth'],  'prefix' => 'user'], function () {
     Route::get('list',                  'UserController@list')->name('admin.listUser');
     Route::get('get-list',                  'UserController@getList')->name('admin.getListUser');

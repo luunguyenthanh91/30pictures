@@ -37,8 +37,7 @@
         </div>
 
         <div class="container page__container page-section">
-            <iframe src="/admin/files/laravel-filemanager" style="width: 100%; height: 500px; overflow: hidden; border: none;"></iframe>
-
+            
         </div>
     </div>
 
