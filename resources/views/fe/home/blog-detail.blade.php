@@ -41,13 +41,15 @@
                 <div class="item @if ($countItem%3 == 1) first @endif @if ($countItem%3 == 2) last @endif ">
                     <a alt="{{$item->seo}}" rel="{{@url($item->image_pc ? $item->image_pc  : '/' )}}" class="@if ($countItem == 0 || $countItem%2 == 0) block-1 @else block-2 @endif block">
                         @if ($item->type == 2)
-                        @php($flag=1)
-                        <div class="image_size">
-                            <img class="lazyloaded fullImage" loading="lazy" alt="{{$item->seo}}" src="{{@url($item->image_pc ? $item->image_pc  : '/' )}}" />
-                        </div>
-                        <div class="image_size">
-                            <img class="lazyloaded fullImage" loading="lazy" alt="{{$listGalary[$key + 1]->seo}}" src="{{@url($listGalary[$key + 1]->image_pc ? $listGalary[$key + 1]->image_pc  : '/' )}}" />
-                        </div>
+                            @php($flag=1)
+                            <div class="image_size">
+                                <img class="lazyloaded fullImage" loading="lazy" alt="{{$item->seo}}" src="{{@url($item->image_pc ? $item->image_pc  : '/' )}}" />
+                            </div>
+                            @if(@$listGalary[$key + 1])
+                                <div class="image_size">
+                                    <img class="lazyloaded fullImage" loading="lazy" alt="{{$listGalary[$key + 1]->seo}}" src="{{@url($listGalary[$key + 1]->image_pc ? $listGalary[$key + 1]->image_pc  : '/' )}}" />
+                                </div>
+                            @endif
                         @else
                         <div class="image_size bigSize">
                             <img alt="{{$item->seo}}" src="{{@url($item->image_pc ? $item->image_pc  : '/' )}}" class="lazyloaded fullImage" loading="lazy" />

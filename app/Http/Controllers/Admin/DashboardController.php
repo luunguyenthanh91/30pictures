@@ -17,6 +17,13 @@ use App\Models\Derector;
 class DashboardController extends Controller
 {
     private $limit = 20;
+    function files(Request $request)
+    {
+        return view(
+            'admin.home.files',
+            compact([])
+        );
+    }
     function clearFileStorege(Request $request)
     {
         $files = Storage::disk('public')->allFiles('files');

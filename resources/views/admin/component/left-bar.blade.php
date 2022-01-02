@@ -62,6 +62,12 @@
                         Blog
                     </a>
                 </li>
+                <li class="sidebar-menu-item {{ (request()->is('*manager-file*')) ? 'active open' : '' }} ">
+                    <a class="sidebar-menu-button" href="/admin/manager-file">
+                        <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">list</span>
+                        Manager File
+                    </a>
+                </li>
                 <!-- <li class="sidebar-menu-item {{ (request()->is('admin')) ? 'active open' : '' }} {{ (request()->is('*customer*')) ? 'active open' : '' }} ">
                     <a class="sidebar-menu-button" href="/admin/customer">
                         <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">supervisor_account</span>

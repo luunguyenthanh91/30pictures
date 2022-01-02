@@ -312,6 +312,7 @@ If enabled, characters with diactric marks, like å, ä, ö, ć, č, đ, š
 will be automatically converted to ASCII letters.
 */
 $config['ForceAscii'] = false;
+$config['multiple'] = true;
 
 
 include_once "plugins/imageresize/plugin.php";

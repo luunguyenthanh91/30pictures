@@ -31,6 +31,7 @@ Route::group(['namespace' => 'Admin', 'middleware' => ['adminAuth']], function (
 
     Route::get('/galary',                                     'DashboardController@galary');
     Route::post('/galary',                                     'DashboardController@galary');
+    Route::get('/manager-file',                                     'DashboardController@files');
 });
 
 Route::group(['namespace' => 'Admin', 'middleware' => ['adminAuth'],  'prefix' => 'user'], function () {
