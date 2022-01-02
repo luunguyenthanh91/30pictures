@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\FileManagerController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,9 +33,7 @@ Route::group(['namespace' => 'Admin', 'middleware' => ['adminAuth']], function (
     Route::post('/galary',                                     'DashboardController@galary');
     Route::get('/manager-file',                                     'DashboardController@files');
 });
-Route::group(['middleware' => ['adminAuth']], function () {
-    Route::get('filemanager', [FileManagerController::class, 'index']);
-});
+
 Route::group(['namespace' => 'Admin', 'middleware' => ['adminAuth'],  'prefix' => 'user'], function () {
     Route::get('list',                  'UserController@list')->name('admin.listUser');
     Route::get('get-list',                  'UserController@getList')->name('admin.getListUser');
