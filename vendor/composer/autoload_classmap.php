@@ -53,6 +53,7 @@ return array(
     'App\\Http\\Controllers\\Admin\\BlogController' => $baseDir . '/app/Http/Controllers/Admin/BlogController.php',
     'App\\Http\\Controllers\\Admin\\CustomerController' => $baseDir . '/app/Http/Controllers/Admin/CustomerController.php',
     'App\\Http\\Controllers\\Admin\\DashboardController' => $baseDir . '/app/Http/Controllers/Admin/DashboardController.php',
+    'App\\Http\\Controllers\\Admin\\FileManagerController' => $baseDir . '/app/Http/Controllers/Admin/FileManagerController.php',
     'App\\Http\\Controllers\\Admin\\ListVoteController' => $baseDir . '/app/Http/Controllers/Admin/ListVoteController.php',
     'App\\Http\\Controllers\\Admin\\StorysController' => $baseDir . '/app/Http/Controllers/Admin/StorysController.php',
     'App\\Http\\Controllers\\Admin\\UserController' => $baseDir . '/app/Http/Controllers/Admin/UserController.php',

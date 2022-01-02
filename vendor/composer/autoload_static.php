@@ -638,6 +638,7 @@ class ComposerStaticInit02252f3be4afc3416711e712fcb434ab
         'App\\Http\\Controllers\\Admin\\BlogController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/BlogController.php',
         'App\\Http\\Controllers\\Admin\\CustomerController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/CustomerController.php',
         'App\\Http\\Controllers\\Admin\\DashboardController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/DashboardController.php',
+        'App\\Http\\Controllers\\Admin\\FileManagerController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/FileManagerController.php',
         'App\\Http\\Controllers\\Admin\\ListVoteController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ListVoteController.php',
         'App\\Http\\Controllers\\Admin\\StorysController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/StorysController.php',
         'App\\Http\\Controllers\\Admin\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/UserController.php',
