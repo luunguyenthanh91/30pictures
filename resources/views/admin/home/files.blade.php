@@ -19,8 +19,7 @@
     <!-- Page Content -->
 
     <div id="list-data">
-        <div
-            class="container page__container d-flex flex-column flex-md-row align-items-center text-center text-sm-left">
+        <div class="container page__container d-flex flex-column flex-md-row align-items-center text-center text-sm-left">
             <div class="flex d-flex flex-column flex-sm-row align-items-center mb-24pt mb-md-0">
 
                 <div class="mb-24pt mb-sm-0 mr-sm-24pt">
@@ -37,7 +36,13 @@
         </div>
 
         <div class="container page__container page-section">
-            
+            <!-- ckfinder -->
+
+            <div id="ckfinder1"></div>
+
+            <input type="text" size="48" name="url" id="url" /> <button onclick="openPopup()">Select file</button>
+
+
         </div>
     </div>
 
@@ -62,115 +67,41 @@
 <link href="{{ asset('js/libs/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />
 <script src="{{ asset('js/libs/sweetalert2/sweetalert2.min.js') }}"></script>
 <script src="{{ asset('js/pages/sweet-alerts.init.js') }}"></script>
-
-<script type="text/javascript" src="{{ asset('lib_upload/ckeditor/ckeditor.js') }}"></script> 
-<script type="text/javascript" src="{{ asset('lib_upload/ckfinder/ckfinder.js') }}"></script>  
-<link href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+<link href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
 <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
 <script src="{{ asset('lib_upload/jquery.slug.js') }}"></script>
+<script type="text/javascript" language="javascript" src=" {{ asset('ckfinder/ckfinder.js') }}"></script>
+
+<script>
+    function openPopup() {
+        CKFinder.popup({
+            chooseFiles: true,
+            onInit: function(finder) {
+                finder.on('files:choose', function(evt) {
+                    var file = evt.data.files.first();
+                    document.getElementById('url').value = file.getUrl();
+                });
+                finder.on('file:choose:resizedImage', function(evt) {
+                    document.getElementById('url').value = evt.data.resizedUrl;
+                });
+            }
+        });
+    }
+</script>
+
 
 <script type="text/javascript">
     //<![CDATA[
 
-    jQuery(document).ready(function (){
-        CKFinder.setupCKEditor( null, '/lib_upload/ckfinder/' );
-        jQuery(".input_image[value!='']").parent().find('div').each( function (index, element){
-            jQuery(this).toggle();
-        });
-        $( "#sortable" ).sortable({
-            update: function (event, ui) {
-                //db id of the item sorted
-                var idLast = ui.item[0].id;
-                var idFirst = ui.item.next().attr("id");
-                var sorLas = $('#'+idLast + ' .sor').val();
-                var sorFirs = $('#'+idFirst + ' .sor').val();
-                $('#'+idLast + ' .sor').val(sorFirs);
-                $('#'+idFirst + ' .sor').val(sorLas);
-            }
-        });
+    jQuery(document).ready(function() {
+
     });
-    var imgId;
-
-    function chooseImage(id) {
-        imgId = id;
-        // You can use the "CKFinder" class to render CKFinder in a page:
-        var finder = new CKFinder();
-        finder.basePath = '/lib_upload/ckfinder/'; // The path for the installation of CKFinder (default = "/ckfinder/").
-        finder.selectActionFunction = setFileField;
-        finder.popup();
-    }
-    // This is a sample function which is called when a file is selected in CKFinder.
-    function setFileField(fileUrl) {
-        document.getElementById('chooseImage_img' + imgId).src = fileUrl;
-        document.getElementById('chooseImage_input' + imgId).value = fileUrl;
-        document.getElementById('chooseImage_div' + imgId).style.display = '';
-        document.getElementById('chooseImage_noImage_div' + imgId).style.display = 'none';
-    }
-
-    function clearImage(imgId) {
-        document.getElementById('chooseImage_img' + imgId).src = '';
-        document.getElementById('chooseImage_input' + imgId).value = '';
-        document.getElementById('chooseImage_div' + imgId).style.display = 'none';
-        document.getElementById('chooseImage_noImage_div' + imgId).style.display = '';
-    }
 
 
-    function chooseFile(event)
-    {   
-        id= event.rel;
-        imgId = id;
-        console.log('chooseImage_input' + imgId);
-        // You can use the "CKFinder" class to render CKFinder in a page:
-        var finder = new CKFinder();
-        finder.basePath = '/lib_upload/ckfinder/'; // The path for the installation of CKFinder (default = "/ckfinder/").
-        finder.selectActionFunction = setFileFieldFile;
-        finder.popup();
-    } 
-    // This is a sample function which is called when a file is selected in CKFinder.
-    function setFileFieldFile( fileUrl )
-    {
-        document.getElementById( 'chooseImage_input' + imgId).value = fileUrl;
-        $("#chooseImage_input"+ imgId).val(fileUrl)[0].dispatchEvent(new Event('input'));
-
-    }
-    function clearFile(event)
-    {
-        imgId= event.rel;
-        document.getElementById( 'chooseImage_input' + imgId ).value = '';
-        $("#chooseImage_input"+ imgId).val('')[0].dispatchEvent(new Event('input'));
-    }
-
-
-    function addMoreImg()
-    {
-        jQuery("ul#images > li.hidden").filter(":first").removeClass('hidden');
-    }
-
-//]]>
+    //]]>
 </script>
-<style type="text/css">
-    #images { list-style-type: none; margin: 0; padding: 0;}
-    #images li { margin: 10px; float: left; text-align: center;  height: 190px;}
-</style>
 
 
-<script type="text/javascript">
-var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
 
-new Vue({
-    el: '#list-data',
-    data: {
-        listVideo : [],
-        countVideo : 0
-    },
-    delimiters: ["((", "))"],
-    mounted() {
-        
-    },
-    methods: {
-        
-    },
-});
-</script>
 
 @stop
