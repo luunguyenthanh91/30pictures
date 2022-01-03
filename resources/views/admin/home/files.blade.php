@@ -37,11 +37,7 @@
 
         <div class="container page__container page-section">
             <!-- ckfinder -->
-
-            <div id="ckfinder1"></div>
-
-            <input type="text" size="48" name="url" id="url" /> <button onclick="openPopup()">Select file</button>
-
+            <div id="ckfinder"></div>
 
         </div>
     </div>
@@ -73,20 +69,9 @@
 <script type="text/javascript" language="javascript" src=" {{ asset('ckfinder/ckfinder.js') }}"></script>
 
 <script>
-    function openPopup() {
-        CKFinder.popup({
-            chooseFiles: true,
-            onInit: function(finder) {
-                finder.on('files:choose', function(evt) {
-                    var file = evt.data.files.first();
-                    document.getElementById('url').value = file.getUrl();
-                });
-                finder.on('file:choose:resizedImage', function(evt) {
-                    document.getElementById('url').value = evt.data.resizedUrl;
-                });
-            }
-        });
-    }
+    CKFinder.widget('ckfinder', {
+        height: 600
+    });
 </script>
 
 
