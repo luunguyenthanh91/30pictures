@@ -37,13 +37,7 @@
         </div>
 
         <div class="container page__container page-section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12" id="fm-main-block">
-                        <div id="fm"></div>
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </div>
 
@@ -73,19 +67,8 @@
 <script type="text/javascript" src="{{ asset('lib_upload/ckfinder/ckfinder.js') }}"></script>  
 <link href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
 <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
-<link href="{{ asset('vendor/file-manager/css/file-manager.css') }}" rel="stylesheet">
 <script src="{{ asset('lib_upload/jquery.slug.js') }}"></script>
-<script src="{{ asset('vendor/file-manager/js/file-manager.js') }}"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('fm-main-block').setAttribute('style', 'height:' + window.innerHeight + 'px');
 
-    fm.$store.commit('fm/setFileCallBack', function(fileUrl) {
-        window.opener.fmSetLink(fileUrl);
-        window.close();
-    });
-    });
-</script>
 <script type="text/javascript">
     //<![CDATA[
 
