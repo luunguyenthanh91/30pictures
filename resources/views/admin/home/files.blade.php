@@ -37,8 +37,8 @@
 
         <div class="container page__container page-section">
             <!-- ckfinder -->
-            <div id="ckfinder"></div>
-
+            <iframe height="600" width="100%" style="border:1px solid black;" frameborder="" src="{{ asset('/filemanager/dialog.php?type=0/') }}">
+            </iframe>
         </div>
     </div>
 
@@ -66,13 +66,7 @@
 <link href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
 <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
 <script src="{{ asset('lib_upload/jquery.slug.js') }}"></script>
-<script type="text/javascript" language="javascript" src=" {{ asset('ckfinder/ckfinder.js') }}"></script>
 
-<script>
-    CKFinder.widget('ckfinder', {
-        height: 600
-    });
-</script>
 
 
 <script type="text/javascript">
