@@ -19,7 +19,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta property="og:image" content="@yield('imageShare' , @url(Helper::getSetting(4)->image_pc))">
     <!-- <meta property="fb:app_id" content=""> -->
 
-    <meta name="description" content="This is the website description. Nice eh?">
+    <meta name="description" content="{{Helper::getSetting(2)->description}}">
 
     <!-- Google / Search Engine Tags -->
     <meta itemprop="name" content="@yield('title')">

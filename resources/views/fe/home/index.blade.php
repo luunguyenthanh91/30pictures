@@ -18,7 +18,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta property="og:title" content="{{Helper::getSetting(1)->description}}">
     <meta property="og:description" content="{{Helper::getSetting(2)->description}}">
     <meta property="og:image" content="{{@url(Helper::getSetting(4)->image_pc)}}">
-    <meta name="description" content="This is the website description. Nice eh?">
+    <meta name="description" content="{{Helper::getSetting(2)->description}}">
     <meta itemprop="name" content="{{Helper::getSetting(1)->description}}">
     <meta itemprop="description" content="{{Helper::getSetting(2)->description}}">
     <meta itemprop="image" content="{{@url(Helper::getSetting(4)->image_pc)}}">
